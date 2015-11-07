@@ -34,7 +34,8 @@
                 <td data-title="'Subject'" sortable="'subject'">{{course.subject}}</td>
                 <td data-title="'Course #'" sortable="'id'">{{course.id}}</td>
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>                
-                <td data-title="'Offering'" sortable="'available'">{{ctrl.availabilityText(course.available)}}</td>
+                <td data-title="'Availability'" sortable="'available'">{{ctrl.availabilityText(course.available)}}</td>
+                <td data-title="'Instructor(s)'"><label ng-repeat="i in course.instructors">{{i}}{{$last ? '' : ', '}}</label></td>
             </tr>
         </table>
     </div>

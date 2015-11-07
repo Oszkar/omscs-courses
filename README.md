@@ -17,7 +17,7 @@ As of now, it is on pre-alpha state - meaning I'm only fiddling around at this p
 | simple table that lists the courses | ✔ | 
 | semester and foundational selector |    ✔   | 
 | CSS row coloring + color code table 	|    ✘   | 
-| proper display of instructors |    ✘   | 
+| proper display of instructors |    ✔   | 
 | set up github.io + gh-pages branch	|    ✔   |
 | code cleanup					|    ✘   | 
 
