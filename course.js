@@ -1,6 +1,5 @@
 var App;
 (function (App) {
-    App.CURRENT_SEMESTER = Semester.Fall2015;
     (function (Semester) {
         Semester[Semester["Before"] = 0] = "Before";
         Semester[Semester["Fall2015"] = 1] = "Fall2015";
@@ -10,6 +9,8 @@ var App;
     })(App.Semester || (App.Semester = {}));
     var Semester = App.Semester;
     ;
+    // TODO update this every semester :)
+    App.CURRENT_SEMESTER = Semester.Fall2015;
     var Course = (function () {
         function Course() {
         }

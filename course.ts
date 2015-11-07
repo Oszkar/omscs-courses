@@ -1,8 +1,9 @@
 ﻿module App {
 
-    export const CURRENT_SEMESTER = Semester.Fall2015;
-
     export enum Semester { Before, Fall2015, Spring2016, Fall2016, Future };
+
+    // TODO update this every semester :)
+    export const CURRENT_SEMESTER = Semester.Fall2015;
 
     export class Course {
         id: number;
