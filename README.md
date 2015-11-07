@@ -2,6 +2,8 @@
 
 Simple webpage/webapp to display the courses offered by [Georgia Tech's OMSCS program](http://www.omscs.gatech.edu). Also, a playground for me to practice TypeScript/JavaScript and AngularJS.
 
+A live version can be found at [http://oszkar.github.io/omscs-courses/](http://oszkar.github.io/omscs-courses/). Latest code is on `master`, live code is on `gh-pages` branch.
+
 As of now, it is on pre-alpha state - meaning I'm only fiddling around at this point.
 
 ### TODO/roadmap/planned features
@@ -16,7 +18,7 @@ As of now, it is on pre-alpha state - meaning I'm only fiddling around at this p
 | semester and foundational selector |    ✔   | 
 | CSS row coloring + color code table 	|    ✘   | 
 | proper display of instructors |    ✘   | 
-| set up github.io + dev branch	|    ✘   |
+| set up github.io + gh-pages branch	|    ✔   |
 | code cleanup					|    ✘   | 
 
 ##### ~Alpha~
@@ -28,6 +30,7 @@ As of now, it is on pre-alpha state - meaning I'm only fiddling around at this p
 | CSS row coloring 	|    ✘   | 
 | proper display of instructors |    ✘   | 
 | code cleanup		|    ✘   | 
+| github.io page cleanup		|    ✘   | 
 
 ##### ~Beta~
 
