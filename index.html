@@ -14,7 +14,6 @@
 </head>
 <body ng-app="controllerAsExample">
     <div id="ctrl" ng-controller="coursecontroller as ctrl">
-        Only current: <input type="checkbox" ng-model="checked">
         <!--
         <button ng-click="ctrl.filter()">greet</button><br />
         Courses:
@@ -24,6 +23,9 @@
                 <td><a href="{{course.url}}">{{ course.title }}</a></td>
             </tr>
         </table>-->
+        <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
+            <option value=""></option>
+        </select>
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped">
             <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id)">
                 <td data-title="'Dept'" sortable="'dept'">{{course.dept}}</td>

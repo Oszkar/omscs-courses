@@ -3,13 +3,17 @@
         private _courses: Course[];
 
         tableParams: any;
-        selections = ["a", "b"]
-        currentselection: Semester;
+        currentSelection: Semester;
+        semesterOptions = [{ id: Semester.Future, text: "All courses" },
+            { id: Semester.Falll2016, text: "Current + Spring2016 + Fall2016" },
+            { id: Semester.Spring2016, text: "Current + Spring2016" },
+            { id: Semester.Fall2015, text: "Currently" }]
 
         constructor($scope: ng.IScope, NgTableParams) {
             var that = this;
             $.getJSON("coursedata.json", (data) => {
                 that._courses = <Course[]>data;
+                this.currentSelection = Semester.Future;
                 this.tableParams = new NgTableParams({}, { counts: [], dataset: this._courses });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
@@ -17,7 +21,6 @@
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);
                 });
-            this.currentselection = Semester.Future;
         }
 
         get Courses() {
@@ -47,11 +50,11 @@
                 // can happen if it's still string, won't deserialize to enum from JSON for some reason
                 // convert back to enum/number and compare
                 // (toString needed for typescript because it thinks it is an enum but it isn't)
-                return Semester[avail.toString()] <= this.currentselection;
+                return Semester[avail.toString()] <= this.currentSelection;
             }
             else if (typeof avail == "number") {
                 // happy path
-                return avail <= this.currentselection;
+                return avail <= this.currentSelection;
             }
             else {
                 console.log("Cannot read availability property of id# " + id + ", it won't show up in the table");
