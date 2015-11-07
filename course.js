@@ -1,7 +1,7 @@
 var App;
 (function (App) {
     (function (Semester) {
-        Semester[Semester["Currently"] = 0] = "Currently";
+        Semester[Semester["Before"] = 0] = "Before";
         Semester[Semester["Fall2015"] = 1] = "Fall2015";
         Semester[Semester["Spring2016"] = 2] = "Spring2016";
         Semester[Semester["Fall2016"] = 3] = "Fall2016";
@@ -14,7 +14,7 @@ var App;
         }
         Object.defineProperty(Course.prototype, "current", {
             get: function () {
-                return this.available == Semester.Currently || this.available == Semester.Fall2015;
+                return this.available <= Semester.Fall2015;
             },
             enumerable: true,
             configurable: true
