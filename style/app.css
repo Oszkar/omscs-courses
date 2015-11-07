@@ -1,0 +1,21 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+span {
+    font-style: italic;
+}
+
+table, th , td  {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+table .foundational {
+  background-color: #f1f1f1;
+}
+
+table .not {
+  background-color: #ffffff;
+}

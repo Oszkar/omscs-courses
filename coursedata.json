@@ -1,0 +1,101 @@
+[
+    {
+        "id": "6476",
+        "dept": "CS",
+        "title": "Computer Vision",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6476-computer-vision/",
+        "instructors": [
+            "Aaron Bobick",
+            "Irfan Essa"
+        ]
+    },
+    {
+        "id": "6035",
+        "dept": "CS",
+        "title": "Introduction to Information Security",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-6035-introduction-to-information-security/",
+        "instructors": [
+            "Wenke Lee",
+            "Mustaque Ahamad"
+        ]
+    },
+    {
+        "id": "6210",
+        "dept": "CS",
+        "title": "Advanced Operating Systems",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6210-advanced-operating-systems/",
+        "instructors": [
+            "Kishore Ramachandran",
+            "Charlie Brubaker"
+        ]
+    },
+    {
+        "id": "6220",
+        "dept": "CSE",
+        "title": "Intro to High-Performance Computing",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/courses/cse-6220-intro-hpc/",
+        "instructors": [
+            "Rich Vuduc",
+            "Catherine Gamboa",
+            "Amanda Deisler"
+        ]
+    },
+    {
+        "id": "6250",
+        "dept": "CS",
+        "title": "Computer Networks",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6250-computer-networks/",
+        "instructors": [
+            "Nick Feamster",
+            "Sean Donovan"
+        ]
+    },
+    {
+        "id": "6290",
+        "dept": "CS",
+        "title": "High Performance Computer Architecture",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6290-high-performance-computer-architecture/",
+        "instructors": [
+            "Milos Prvulovic",
+            "Catherine Gamboa"
+        ]
+    },
+    {
+        "id": "6300",
+        "dept": "CS",
+        "title": "Software Development Process",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6300-software-development-process/",
+        "instructors": [
+            "Alessandro Orso",
+          "Shashank Jagirdar",
+          "Mattia Fazzini"
+        ]
+    },
+    {
+        "id": "6340",
+        "dept": "CS",
+        "title": "Software Analysis and Test",
+        "available": "Spring2016",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-6340-software-analysis-and-test/",
+        "instructors": [
+            "Mayur Naikr",
+          "Chris Pryby",
+          "Ravi Mangal"
+        ]
+    }
+]
