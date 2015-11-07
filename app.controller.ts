@@ -5,7 +5,7 @@
         tableParams: any;
         currentSelection: Semester;
         semesterOptions = [{ id: Semester.Future, text: "All courses" },
-            { id: Semester.Falll2016, text: "Current + Spring2016 + Fall2016" },
+            { id: Semester.Fall2016, text: "Current + Spring2016 + Fall2016" },
             { id: Semester.Spring2016, text: "Current + Spring2016" },
             { id: Semester.Fall2015, text: "Current only" }]
 
@@ -14,7 +14,9 @@
             $.getJSON("coursedata.json", (data) => {
                 that._courses = <Course[]>data;
                 this.currentSelection = Semester.Future;
-                this.tableParams = new NgTableParams({}, { counts: [], dataset: this._courses });
+                this.tableParams = new NgTableParams({
+                    count: 50 // initial page size
+                }, { counts: [], dataset: this._courses });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail((jqxhr, textStatus, error) => {

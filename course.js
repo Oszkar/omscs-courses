@@ -4,7 +4,7 @@ var App;
         Semester[Semester["Currently"] = 0] = "Currently";
         Semester[Semester["Fall2015"] = 1] = "Fall2015";
         Semester[Semester["Spring2016"] = 2] = "Spring2016";
-        Semester[Semester["Falll2016"] = 3] = "Falll2016";
+        Semester[Semester["Fall2016"] = 3] = "Fall2016";
         Semester[Semester["Future"] = 4] = "Future";
     })(App.Semester || (App.Semester = {}));
     var Semester = App.Semester;

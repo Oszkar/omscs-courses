@@ -31,7 +31,7 @@
         <input type="checkbox" ng-model="onlyfoundational">
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped">
             <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )">
-                <td data-title="'Dept'" sortable="'dept'">{{course.dept}}</td>
+                <td data-title="'Subject'" sortable="'dept'">{{course.subject}}</td>
                 <td data-title="'Course #'" sortable="'id'">{{course.id}}</td>
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>                
                 <td data-title="'Offering'" sortable="'title'">{{course.available}}</td>

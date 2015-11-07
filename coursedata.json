@@ -1,7 +1,7 @@
 [
     {
         "id": "6476",
-        "dept": "CS",
+        "subject": "CS",
         "title": "Computer Vision",
         "available": "Currently",
         "foundational": true,
@@ -13,7 +13,7 @@
     },
     {
         "id": "6035",
-        "dept": "CS",
+        "subject": "CS",
         "title": "Introduction to Information Security",
         "available": "Currently",
         "foundational": false,
@@ -25,7 +25,7 @@
     },
     {
         "id": "6210",
-        "dept": "CS",
+        "subject": "CS",
         "title": "Advanced Operating Systems",
         "available": "Currently",
         "foundational": true,
@@ -37,7 +37,7 @@
     },
     {
         "id": "6220",
-        "dept": "CSE",
+        "subject": "CSE",
         "title": "Intro to High-Performance Computing",
         "available": "Currently",
         "foundational": true,
@@ -50,7 +50,7 @@
     },
     {
         "id": "6250",
-        "dept": "CS",
+        "subject": "CS",
         "title": "Computer Networks",
         "available": "Currently",
         "foundational": true,
@@ -62,7 +62,7 @@
     },
     {
         "id": "6290",
-        "dept": "CS",
+        "subject": "CS",
         "title": "High Performance Computer Architecture",
         "available": "Currently",
         "foundational": true,
@@ -74,7 +74,7 @@
     },
     {
         "id": "6300",
-        "dept": "CS",
+        "subject": "CS",
         "title": "Software Development Process",
         "available": "Currently",
         "foundational": true,
@@ -86,8 +86,137 @@
         ]
     },
     {
+        "id": "6310",
+        "subject": "CS",
+        "title": "Software Architecture and Design",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6310-software-architecture-design/",
+        "instructors": [
+            "Spencer Rugaber"
+        ]
+    },
+    {
+        "id": "6440",
+        "subject": "CS",
+        "title": "Intro to Health Informatics",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-6440-intro-health-informatics/",
+        "instructors": [
+            "Mark Braunstein"
+        ]
+    },
+    {
+        "id": "6460",
+        "subject": "CS",
+        "title": "Educational Technology",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-6460-educational-technology/",
+        "instructors": [
+            "David Joyner"
+        ]
+    },
+    {
+        "id": "6475",
+        "subject": "CS",
+        "title": "Computational Photography",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-6475-computational-photography/",
+        "instructors": [
+          "Irfan Essa",
+          "Daniel Castro"
+        ]
+    },
+    {
+        "id": "6505",
+        "subject": "CS",
+        "title": "Computability, Complexity & Algorithms",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6505-computability-algorithms/",
+        "instructors": [
+          "Charlie Brubaker"
+        ]
+    },
+    {
+        "id": "7637",
+        "subject": "CS",
+        "title": "Knowledge-Based Artificial Intelligence: Cognitive Systems",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-7637-knowledge-based-artificial-intelligence-cognitive-systems/",
+        "instructors": [
+          "Ashok Goel",
+          "David Joyner"
+        ]
+    },
+    {
+        "id": "7641",
+        "subject": "CS",
+        "title": "Machine Learning",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-7641-machine-learning/",
+        "instructors": [
+          "Charles Isbell",
+          "Michael Littman",
+          "Pushkar Kolhe"
+        ]
+    },
+    {
+        "id": "7646",
+        "subject": "CS",
+        "title": "Machine Learning for Trading",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-7646-machine-learning-trading/",
+        "instructors": [
+          "Tucker Balch"
+        ]
+    },
+    {
+        "id": "8803001",
+        "subject": "CS",
+        "title": "Artificial Intelligence for Robotics",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-8803-artificial-intelligence-robotics/",
+        "instructors": [
+          "Sebastian Thrun",
+          "Chris Pryby"
+        ]
+    },
+    {
+        "id": "8803002",
+        "subject": "CS",
+        "title": "Introduction to Operating Systems",
+        "available": "Currently",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-8803-introduction-operating-systems/",
+        "instructors": [
+          "Ada Gavrilovska",
+          "Jarrod Parkes"
+        ]
+    },
+    {
+        "id": "8803003",
+        "subject": "CS",
+        "title": "Special Topics: Reinforcement Learning",
+        "available": "Currently",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/courses/cs-8803-special-topics-reinforcement-learning/",
+        "instructors": [
+          "Charles Isbell",
+          "Michael Littman",
+          "Chris Pryby"
+        ]
+    },
+    {
         "id": "6340",
-        "dept": "CS",
+        "subject": "CS",
         "title": "Software Analysis and Test",
         "available": "Spring2016",
         "foundational": false,
@@ -97,5 +226,94 @@
           "Chris Pryby",
           "Ravi Mangal"
         ]
+    },
+    {
+        "id": "6400",
+        "subject": "CS",
+        "title": "Database Systems Concepts and Design",
+        "available": "Spring2016",
+        "foundational": true,
+        "url": "http://www.omscs.gatech.edu/cs-6400-database-systems-concepts-and-design/",
+        "instructors": [
+            "Leo Mark"
+        ]
+    },
+    {
+        "id": "8803004",
+        "subject": "CS",
+        "title": "Special Topics: Embedded Software",
+        "available": "Spring2016",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/cs-8803-special-topics-embedded-software/",
+        "instructors": [
+            "Santosh Pande",
+            "Catherine Gamboa"
+        ]
+    },
+    {
+        "id": "8803005",
+        "subject": "CSE",
+        "title": "Special Topics: Big Data for Health Informatics",
+        "available": "Spring2016",
+        "foundational": false,
+        "url": "http://www.omscs.gatech.edu/courses/cse-8803-special-topics-big-data-for-health-informatics/",
+        "instructors": [
+            "Jimeng Sun",
+          "David Joyner"
+        ]
+    },
+    {
+        "id": "6242",
+        "subject": "CSE",
+        "title": "Data and Visual Analytics",
+        "available": "Fall2016",
+        "foundational": false,
+        "url": "",
+        "instructors": []
+    },
+    {
+        "id": "6262",
+        "subject": "CS",
+        "title": "Network Security",
+        "available": "Fall2016",
+        "foundational": false,
+        "url": "",
+        "instructors": []
+    },
+    {
+        "id": "6465",
+        "subject": "CS",
+        "title": "Computational Journalism",
+        "available": "Fall2016",
+        "foundational": false,
+        "url": "",
+        "instructors": []
+    },
+    {
+        "id": "6601",
+        "subject": "CS",
+        "title": "Artificial Intelligence",
+        "available": "Fall2016",
+        "foundational": false,
+        "url": "",
+        "instructors": []
+    },
+    {
+        "id": "8803006",
+        "subject": "CS",
+        "title": "Special Topics: Data Visualization",
+        "available": "Fall2016",
+        "foundational": false,
+        "url": "",
+        "instructors": []
+    },
+    {
+        "id": "8803007",
+        "subject": "CS",
+        "title": "Special Topics: Biomedical Analytics",
+        "available": "Fall2016",
+        "foundational": false,
+        "url": "",
+        "instructors": []
     }
 ]

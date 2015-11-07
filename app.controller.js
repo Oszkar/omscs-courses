@@ -4,14 +4,16 @@ var App;
         function CourseController($scope, NgTableParams) {
             var _this = this;
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
-                { id: App.Semester.Falll2016, text: "Current + Spring2016 + Fall2016" },
+                { id: App.Semester.Fall2016, text: "Current + Spring2016 + Fall2016" },
                 { id: App.Semester.Spring2016, text: "Current + Spring2016" },
                 { id: App.Semester.Fall2015, text: "Current only" }];
             var that = this;
             $.getJSON("coursedata.json", function (data) {
                 that._courses = data;
                 _this.currentSelection = App.Semester.Future;
-                _this.tableParams = new NgTableParams({}, { counts: [], dataset: _this._courses });
+                _this.tableParams = new NgTableParams({
+                    count: 50 // initial page size
+                }, { counts: [], dataset: _this._courses });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail(function (jqxhr, textStatus, error) {

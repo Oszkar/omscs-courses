@@ -1,10 +1,10 @@
 ﻿module App {
 
-    export enum Semester { Currently, Fall2015, Spring2016, Falll2016, Future };
+    export enum Semester { Currently, Fall2015, Spring2016, Fall2016, Future };
 
     export class Course {
         id: number;
-        dept: string;
+        subject: string;
         title: string;
         available: Semester;
         foundational: boolean;
