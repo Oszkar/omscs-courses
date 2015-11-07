@@ -1,6 +1,6 @@
 ﻿module App {
 
-    export enum Semester { Currently, Fall2015, Spring2016, Fall2016, Future };
+    export enum Semester { Before, Fall2015, Spring2016, Fall2016, Future };
 
     export class Course {
         id: number;
@@ -11,8 +11,8 @@
         url: string;
         instructors: string[];
 
-        get current() {
-            return this.available == Semester.Currently || this.available == Semester.Fall2015;
+        get current(): boolean {
+            return this.available <= Semester.Fall2015;
         }
     }
 }
