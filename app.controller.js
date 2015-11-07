@@ -6,7 +6,7 @@ var App;
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
                 { id: App.Semester.Falll2016, text: "Current + Spring2016 + Fall2016" },
                 { id: App.Semester.Spring2016, text: "Current + Spring2016" },
-                { id: App.Semester.Fall2015, text: "Currently" }];
+                { id: App.Semester.Fall2015, text: "Current only" }];
             var that = this;
             $.getJSON("coursedata.json", function (data) {
                 that._courses = data;

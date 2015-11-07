@@ -7,7 +7,7 @@
         semesterOptions = [{ id: Semester.Future, text: "All courses" },
             { id: Semester.Falll2016, text: "Current + Spring2016 + Fall2016" },
             { id: Semester.Spring2016, text: "Current + Spring2016" },
-            { id: Semester.Fall2015, text: "Currently" }]
+            { id: Semester.Fall2015, text: "Current only" }]
 
         constructor($scope: ng.IScope, NgTableParams) {
             var that = this;

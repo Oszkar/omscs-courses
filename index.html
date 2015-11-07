@@ -23,11 +23,14 @@
                 <td><a href="{{course.url}}">{{ course.title }}</a></td>
             </tr>
         </table>-->
+        Select availability: 
         <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
             <option value=""></option>
         </select>
+        Show only foundational courses: 
+        <input type="checkbox" ng-model="onlyfoundational">
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped">
-            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id)">
+            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )">
                 <td data-title="'Dept'" sortable="'dept'">{{course.dept}}</td>
                 <td data-title="'Course #'" sortable="'id'">{{course.id}}</td>
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>                
