@@ -11,7 +11,7 @@ var App;
             var that = this;
             $.getJSON("coursedata.json", function (data) {
                 that._courses = data;
-                that.currentSelection = App.Semester.Future;
+                that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
                     count: 50 // initial page size
                 }, { counts: [], dataset: that._courses });
