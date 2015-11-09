@@ -1,5 +1,9 @@
 var App;
 (function (App) {
+    /**
+     * Enum for semesters, 'Before' is before Fall 2015, 'Future' is after Fall 2016
+     * @enum {number}
+     */
     (function (Semester) {
         Semester[Semester["Before"] = 0] = "Before";
         Semester[Semester["Fall2015"] = 1] = "Fall2015";
@@ -10,12 +14,18 @@ var App;
     var Semester = App.Semester;
     ;
     // TODO update this every semester :)
+    /** @constant {Semester} The currently ongoing semester */
     App.CURRENT_SEMESTER = Semester.Fall2015;
+    /**
+     * Class that represents a single course
+     * @class
+     */
     var Course = (function () {
         function Course() {
         }
         Object.defineProperty(Course.prototype, "current", {
             // TODO: maybe links to reviews / critique
+            /** @property {boolean } current Is the course currently offered? */
             get: function () {
                 return this.available <= App.CURRENT_SEMESTER;
             },
@@ -23,6 +33,7 @@ var App;
             configurable: true
         });
         Object.defineProperty(Course.prototype, "fullCourseNumber", {
+            /** @property {string } fullCourseNumber Subject+id, e.g. CS4242 */
             get: function () {
                 return this.subject + this.id.toString();
             },

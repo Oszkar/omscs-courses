@@ -1,6 +1,16 @@
 var App;
 (function (App) {
+    /**
+     * AngularJS contorller for the simple course list view. Holds the list of courses and can
+     * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
+     * @class
+     */
     var CourseController = (function () {
+        /**
+         * @constructor
+         * @param {ng.IScope} $scope - AngularJS scope
+         * @param {NgTableParams} NgTableParams - ng-table module
+         */
         function CourseController($scope, NgTableParams) {
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
@@ -9,12 +19,16 @@ var App;
                 { id: App.Semester.Spring2016, text: "Current + Spring2016" },
                 { id: App.Semester.Fall2015, text: "Current only" }];
             var that = this;
+            // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {
                 that._courses = data;
                 that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
                     count: 50 // initial page size
-                }, { counts: [], dataset: that._courses });
+                }, {
+                    counts: [],
+                    dataset: that._courses
+                });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail(function (jqxhr, textStatus, error) {
@@ -22,13 +36,19 @@ var App;
                 console.log("Request Failed: " + err);
             });
         }
-        Object.defineProperty(CourseController.prototype, "Courses", {
+        Object.defineProperty(CourseController.prototype, "courses", {
+            /** @property {Course[]} Courses The course data as an array */
             get: function () {
                 return this._courses;
             },
             enumerable: true,
             configurable: true
         });
+        /**
+         * @function
+         * @param {number} id - Course id (without the subject)
+         * @returns {Course} The found course, null if not found
+         */
         CourseController.prototype.getById = function (id) {
             var found;
             this._courses.forEach(function (item) {
@@ -38,6 +58,11 @@ var App;
             });
             return found;
         };
+        /**
+         * @function
+         * @param {number} id - Course id (without the subject)
+         * @returns {boolean} Whether the queried class should be shown in the table based on the current settings
+         */
         CourseController.prototype.canShow = function (id) {
             var course = this.getById(id);
             if (course == null) {
@@ -59,7 +84,12 @@ var App;
                 return false;
             }
         };
-        // convert the enum into user-friendly text
+        /**
+         * Convert the semester enum into user-friendly text
+         * @function
+         * @param {number} num - Semester enum, which is esentially a number on the JS side
+         * @returns {string} Enum converted to display-friendly text
+         */
         CourseController.prototype.availabilityText = function (num) {
             switch (num) {
                 case App.Semester.Before:
