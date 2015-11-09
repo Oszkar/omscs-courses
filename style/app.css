@@ -20,6 +20,10 @@ table .regular {
   
 }
 
+table .notavailable {
+  background-color: #fff1f1;
+}
+
 .info-bottom {
     margin-top: 20px;
 }

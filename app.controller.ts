@@ -5,7 +5,7 @@
      * @class
      */
     export class CourseController {
-        private _courses: Course[];
+        private _courses: Course[] = [];
 
         /** @property {NgTableParams } tableParams The ng-table settings */
         tableParams: any;
@@ -26,10 +26,13 @@
          */
         constructor($scope: ng.IScope, NgTableParams) {
             var that = this;
-
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", (data) => {
-                that._courses = <Course[]>data;
+                data.forEach((item) => {
+                    // use the serializationhelper to properly deserialize from JSON
+                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
+                    that._courses.push(CourseController.toInstance(new Course(), JSON.stringify(item)));
+                });
                 that.currentSelection = Semester.Spring2016;
                 that.tableParams = new NgTableParams(
                     {
@@ -45,7 +48,7 @@
             }).fail((jqxhr, textStatus, error) => {
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);
-                });
+            });
         }
 
         /** @property {Course[]} Courses The course data as an array */
@@ -124,6 +127,28 @@
                 default:
                     return "Uknown availability property"
             }
+        }
+
+        /**
+         * SerializationHelper
+         * helps to properly deserialize JSON data so that the deserialized object will have functions also not only the data in the JSON
+         * @function
+         * @param {T} obj - The object to deserialize into
+         * @param {string} json - The json
+         * @returns {T} The object filled with the json data
+         */
+        static toInstance<T>(obj: T, json: string): T {
+            var jsonObj = JSON.parse(json);
+            if (typeof obj["fromJSON"] === "function") {
+                obj["fromJSON"](jsonObj);
+            }
+            else {
+                for (var propName in jsonObj) {
+                    obj[propName] = jsonObj[propName]
+                }
+            }
+
+            return obj;
         }
     }
 }

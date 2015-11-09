@@ -12,6 +12,7 @@ var App;
          * @param {NgTableParams} NgTableParams - ng-table module
          */
         function CourseController($scope, NgTableParams) {
+            this._courses = [];
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
@@ -21,7 +22,11 @@ var App;
             var that = this;
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {
-                that._courses = data;
+                data.forEach(function (item) {
+                    // use the serializationhelper to properly deserialize from JSON
+                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
+                    that._courses.push(CourseController.toInstance(new App.Course(), JSON.stringify(item)));
+                });
                 that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
                     count: 70 // initial page size
@@ -110,6 +115,26 @@ var App;
                 default:
                     return "Uknown availability property";
             }
+        };
+        /**
+         * SerializationHelper
+         * helps to properly deserialize JSON data so that the deserialized object will have functions also not only the data in the JSON
+         * @function
+         * @param {T} obj - The object to deserialize into
+         * @param {string} json - The json
+         * @returns {T} The object filled with the json data
+         */
+        CourseController.toInstance = function (obj, json) {
+            var jsonObj = JSON.parse(json);
+            if (typeof obj["fromJSON"] === "function") {
+                obj["fromJSON"](jsonObj);
+            }
+            else {
+                for (var propName in jsonObj) {
+                    obj[propName] = jsonObj[propName];
+                }
+            }
+            return obj;
         };
         return CourseController;
     })();
