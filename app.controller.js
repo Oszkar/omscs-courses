@@ -1,7 +1,18 @@
 var App;
 (function (App) {
+    /**
+     * AngularJS contorller for the simple course list view. Holds the list of courses and can
+     * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
+     * @class
+     */
     var CourseController = (function () {
+        /**
+         * @constructor
+         * @param {ng.IScope} $scope - AngularJS scope
+         * @param {NgTableParams} NgTableParams - ng-table module
+         */
         function CourseController($scope, NgTableParams) {
+            this._courses = [];
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
@@ -9,12 +20,20 @@ var App;
                 { id: App.Semester.Spring2016, text: "Current + Spring2016" },
                 { id: App.Semester.Fall2015, text: "Current only" }];
             var that = this;
+            // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {
-                that._courses = data;
-                that.currentSelection = App.Semester.Future;
+                data.forEach(function (item) {
+                    // use the serializationhelper to properly deserialize from JSON
+                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
+                    that._courses.push(CourseController.toInstance(new App.Course(), JSON.stringify(item)));
+                });
+                that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
-                    count: 50 // initial page size
-                }, { counts: [], dataset: that._courses });
+                    count: 70 // initial page size
+                }, {
+                    counts: [],
+                    dataset: that._courses
+                });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail(function (jqxhr, textStatus, error) {
@@ -22,13 +41,19 @@ var App;
                 console.log("Request Failed: " + err);
             });
         }
-        Object.defineProperty(CourseController.prototype, "Courses", {
+        Object.defineProperty(CourseController.prototype, "courses", {
+            /** @property {Course[]} Courses The course data as an array */
             get: function () {
                 return this._courses;
             },
             enumerable: true,
             configurable: true
         });
+        /**
+         * @function
+         * @param {number} id - Course id (without the subject)
+         * @returns {Course} The found course, null if not found
+         */
         CourseController.prototype.getById = function (id) {
             var found;
             this._courses.forEach(function (item) {
@@ -38,6 +63,11 @@ var App;
             });
             return found;
         };
+        /**
+         * @function
+         * @param {number} id - Course id (without the subject)
+         * @returns {boolean} Whether the queried class should be shown in the table based on the current settings
+         */
         CourseController.prototype.canShow = function (id) {
             var course = this.getById(id);
             if (course == null) {
@@ -59,7 +89,12 @@ var App;
                 return false;
             }
         };
-        // convert the enum into user-friendly text
+        /**
+         * Convert the semester enum into user-friendly text
+         * @function
+         * @param {number} num - Semester enum, which is esentially a number on the JS side
+         * @returns {string} Enum converted to display-friendly text
+         */
         CourseController.prototype.availabilityText = function (num) {
             switch (num) {
                 case App.Semester.Before:
@@ -80,6 +115,26 @@ var App;
                 default:
                     return "Uknown availability property";
             }
+        };
+        /**
+         * SerializationHelper
+         * helps to properly deserialize JSON data so that the deserialized object will have functions also not only the data in the JSON
+         * @function
+         * @param {T} obj - The object to deserialize into
+         * @param {string} json - The json
+         * @returns {T} The object filled with the json data
+         */
+        CourseController.toInstance = function (obj, json) {
+            var jsonObj = JSON.parse(json);
+            if (typeof obj["fromJSON"] === "function") {
+                obj["fromJSON"](jsonObj);
+            }
+            else {
+                for (var propName in jsonObj) {
+                    obj[propName] = jsonObj[propName];
+                }
+            }
+            return obj;
         };
         return CourseController;
     })();

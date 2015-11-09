@@ -1,8 +1,15 @@
 ﻿module App {
+    /**
+     * AngularJS contorller for the simple course list view. Holds the list of courses and can 
+     * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
+     * @class
+     */
     export class CourseController {
-        private _courses: Course[];
+        private _courses: Course[] = [];
 
+        /** @property {NgTableParams } tableParams The ng-table settings */
         tableParams: any;
+        /** @property {Semester } currentSelection The currently selected semester (via HTML) as an enum */
         currentSelection: Semester;
 
         // these will be the options in the semester selector dropdown that we will be populating with angular from here
@@ -12,26 +19,48 @@
             { id: Semester.Spring2016, text: "Current + Spring2016" },
             { id: Semester.Fall2015, text: "Current only" }]
 
+        /**
+         * @constructor
+         * @param {ng.IScope} $scope - AngularJS scope
+         * @param {NgTableParams} NgTableParams - ng-table module
+         */
         constructor($scope: ng.IScope, NgTableParams) {
             var that = this;
+            // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", (data) => {
-                that._courses = <Course[]>data;
-                that.currentSelection = Semester.Future;
-                that.tableParams = new NgTableParams({
-                    count: 50 // initial page size
-                }, { counts: [], dataset: that._courses });
+                data.forEach((item) => {
+                    // use the serializationhelper to properly deserialize from JSON
+                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
+                    that._courses.push(CourseController.toInstance(new Course(), JSON.stringify(item)));
+                });
+                that.currentSelection = Semester.Spring2016;
+                that.tableParams = new NgTableParams(
+                    {
+                        count: 70 // initial page size
+                    },
+                    {
+                        counts: [],
+                        dataset: that._courses
+                    });
+
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail((jqxhr, textStatus, error) => {
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);
-                });
+            });
         }
 
-        get Courses() {
+        /** @property {Course[]} Courses The course data as an array */
+        get courses(): Course[] {
             return this._courses;
         }
 
+        /**
+         * @function
+         * @param {number} id - Course id (without the subject)
+         * @returns {Course} The found course, null if not found
+         */
         public getById(id: number): Course {
             var found: Course;
             this._courses.forEach((item) => {
@@ -43,6 +72,11 @@
             return found;
         }
 
+        /**
+         * @function
+         * @param {number} id - Course id (without the subject)
+         * @returns {boolean} Whether the queried class should be shown in the table based on the current settings
+         */
         public canShow(id: number) {
             var course = this.getById(id);
             if (course == null) {
@@ -66,7 +100,12 @@
             }
         }
 
-        // convert the enum into user-friendly text
+        /**
+         * Convert the semester enum into user-friendly text
+         * @function
+         * @param {number} num - Semester enum, which is esentially a number on the JS side
+         * @returns {string} Enum converted to display-friendly text
+         */
         public availabilityText(num: Semester): string {
             switch (num)
             {
@@ -88,6 +127,28 @@
                 default:
                     return "Uknown availability property"
             }
+        }
+
+        /**
+         * SerializationHelper
+         * helps to properly deserialize JSON data so that the deserialized object will have functions also not only the data in the JSON
+         * @function
+         * @param {T} obj - The object to deserialize into
+         * @param {string} json - The json
+         * @returns {T} The object filled with the json data
+         */
+        static toInstance<T>(obj: T, json: string): T {
+            var jsonObj = JSON.parse(json);
+            if (typeof obj["fromJSON"] === "function") {
+                obj["fromJSON"](jsonObj);
+            }
+            else {
+                for (var propName in jsonObj) {
+                    obj[propName] = jsonObj[propName]
+                }
+            }
+
+            return obj;
         }
     }
 }
