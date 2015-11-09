@@ -4,7 +4,7 @@ Simple webpage/webapp to display the courses offered by [Georgia Tech's OMSCS pr
 
 A live version can be found at [http://oszkar.github.io/omscs-courses/](http://oszkar.github.io/omscs-courses/). Latest code is on `master`, live code is on `gh-pages` branch.
 
-As of now, it is on pre-alpha state - meaning I'm only fiddling around at this point.
+I'm still fiddling around with the features and the code - as some basic stuff already works, let's call it alpha stage.
 
 ### TODO/roadmap/planned features
 
@@ -12,14 +12,14 @@ As of now, it is on pre-alpha state - meaning I'm only fiddling around at this p
 
 | Feature  |    Status     | 
 |----------|:-------------:|
-| coursedata.json 				|  Partial | 
-| specdata.json 				|    ✔   | 
-| simple table that lists the courses | ✔ | 
-| semester and foundational selector |    ✔   | 
-| CSS row coloring + color code table 	|    ✘   | 
-| proper display of instructors |    ✔   | 
+| coursedata.json 			|    ✔   | 
+| specdata.json 			|    ✔   | 
+| simple table that lists the courses 	|    ✔   | 
+| semester and foundational selector 	|    ✔   | 
+| CSS row coloring + color code table 	|    ✔   | 
+| proper display of instructors 	|    ✔   | 
 | set up github.io + gh-pages branch	|    ✔   |
-| code cleanup					|    ✘   | 
+| code cleanup				|    ✔   | 
 
 ##### ~Alpha~
 
@@ -27,18 +27,19 @@ As of now, it is on pre-alpha state - meaning I'm only fiddling around at this p
 |----------|:-------------:|
 | menu				|    ✘   | 
 | matrix view with specializations 	|    ✘   | 
-| CSS row coloring 	|    ✘   | 
+| fancy coloring of matrix view	|    ✘   | 
 | proper display of instructors |    ✘   | 
-| code cleanup		|    ✘   | 
-| github.io page cleanup		|    ✘   | 
+| code cleanup			|    ✘   | 
+| github.io page cleanup	|    ✘   | 
 
 ##### ~Beta~
 
 | Feature  |    Status     | 
 |----------|:-------------:|
+| look&feel / UX pimping|    ✘   |
 | specialization view	|    ✘   | 
-| instructor view	 	|    ✘   | 
-| code cleanup			|    ✘   | 
+| instructor view	|    ✘   | 
+| code cleanup		|    ✘   | 
 
 ##### ~Final/1.0~
 
