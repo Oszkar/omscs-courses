@@ -13,7 +13,7 @@ table, th , td  {
 }
 
 table .foundational {
-  background-color: #f1f1f1;
+  background-color: #e0e0e0;
 }
 
 table .regular {
@@ -21,7 +21,7 @@ table .regular {
 }
 
 table .notavailable {
-  background-color: #fff1f1;
+  background-color: #ffd1d1;
 }
 
 .info-bottom {
