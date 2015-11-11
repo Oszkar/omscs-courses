@@ -13,18 +13,16 @@
     <script src="libs/ng-table/ng-table.js"></script>
 </head>
 
-<body ng-app="omscs-course-app">
-
-    <div class="navcontainer">
+<body ng-app="omscs-course-app" ng-init="toshow='courselist'">
+    <div nav-tabs class="navcontainer">
         <ul class="nav">
-            <li><a href="/">Course list</a></li>
-            <li><a href="/page/about">Courses vs Specializations</a></li>
-            <li><a href="/page/properties">Specializazion view</a></li>
-            <li><a href="/page/services">Info/About</a></li>
+            <li><label ng-click="toshow='courselist'">Course list</label></li>
+            <li><label ng-click="toshow='matrix'">Courses vs Specializations</label></li>
+            <li><label ng-click="toshow='specializations'">Specializazion view</label></li>
+            <li><label ng-click="toshow='info'">Info/About</label></li>
         </ul>
     </div>
-
-    <div id="ctrl" ng-controller="coursecontroller as ctrl">
+    <div id="ctrl" ng-controller="coursecontroller as ctrl" ng-show="toshow=='courselist'">
         <div class="config-top">
             Select availability:
             <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
@@ -55,5 +53,11 @@
             </table>
         </div>
     </div>
+
+    <div ng-show="toshow=='matrix'">Under construction</div>
+
+    <div ng-show="toshow=='specializations'">Under construction</div>
+
+    <div ng-show="toshow=='info'">Soon</div>
 </body>
 </html>

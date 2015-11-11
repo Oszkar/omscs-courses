@@ -45,7 +45,7 @@ table .notavailable {
     display: inline-block;
 }
 
-.nav > li a:link, .nav > li a:visited {
+.nav > li label {
     display: block;
     font-weight: bold;
     color: #FFFFFF;
@@ -57,7 +57,7 @@ table .notavailable {
     line-height: 35px;
 }
 
-.nav > li a:hover, .nav > li a:active {
+.nav > li label:hover {
     background-color: cornflowerblue;
 }
 
