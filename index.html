@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/app.css" type="text/css" />
     <link rel="stylesheet" href="style/ui-grid.css" type="text/css" />
-    <link rel="stylesheet" href="style/ng-table.css" type="text/css" />
+    <link rel="stylesheet" href="style/ng-table.css" type="text/css" />    
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
     <script src="libs/jquery/jquery-2.1.1.min.js"></script>
     <script src="course.js"></script>
@@ -13,9 +13,16 @@
     <script src="libs/ng-table/ng-table.js"></script>
 </head>
 
-<body ng-app="omscs-course-app">
-
-    <div id="ctrl" ng-controller="coursecontroller as ctrl">
+<body ng-app="omscs-course-app" ng-init="toshow='courselist'">
+    <div nav-tabs class="navcontainer">
+        <ul class="nav">
+            <li><label ng-click="toshow='courselist'">Course list</label></li>
+            <li><label ng-click="toshow='matrix'">Courses vs Specializations</label></li>
+            <li><label ng-click="toshow='specializations'">Specializazion view</label></li>
+            <li><label ng-click="toshow='info'">Info/About</label></li>
+        </ul>
+    </div>
+    <div id="ctrl" ng-controller="coursecontroller as ctrl" ng-show="toshow=='courselist'">
         <div class="config-top">
             Select availability:
             <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
@@ -46,5 +53,11 @@
             </table>
         </div>
     </div>
+
+    <div ng-show="toshow=='matrix'">Under construction</div>
+
+    <div ng-show="toshow=='specializations'">Under construction</div>
+
+    <div ng-show="toshow=='info'">Soon</div>
 </body>
 </html>

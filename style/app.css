@@ -24,6 +24,46 @@ table .notavailable {
   background-color: #ffd1d1;
 }
 
+.config-top {
+    margin-bottom: 10px;
+}
+
 .info-bottom {
     margin-top: 20px;
+}
+
+.nav {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0 auto;
+    display: table;
+    height: 35px;
+}
+
+.nav li {
+    float: left;
+    display: inline-block;
+}
+
+.nav > li label {
+    display: block;
+    font-weight: bold;
+    color: #FFFFFF;
+    min-width: 190px;
+    background-color: steelblue;
+    text-align: center;
+    text-decoration: none;
+    height: 35px;
+    line-height: 35px;
+}
+
+.nav > li label:hover {
+    background-color: cornflowerblue;
+}
+
+.navcontainer {
+    width: 100%;
+    height: 35px;
+    background-color: steelblue;
+    margin-bottom: 20px;
 }
