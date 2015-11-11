@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/app.css" type="text/css" />
     <link rel="stylesheet" href="style/ui-grid.css" type="text/css" />
-    <link rel="stylesheet" href="style/ng-table.css" type="text/css" />
+    <link rel="stylesheet" href="style/ng-table.css" type="text/css" />    
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
     <script src="libs/jquery/jquery-2.1.1.min.js"></script>
     <script src="course.js"></script>
@@ -14,6 +14,15 @@
 </head>
 
 <body ng-app="omscs-course-app">
+
+    <div class="navcontainer">
+        <ul class="nav">
+            <li><a href="/">Course list</a></li>
+            <li><a href="/page/about">Courses vs Specializations</a></li>
+            <li><a href="/page/properties">Specializazion view</a></li>
+            <li><a href="/page/services">Info/About</a></li>
+        </ul>
+    </div>
 
     <div id="ctrl" ng-controller="coursecontroller as ctrl">
         <div class="config-top">
