@@ -25,10 +25,10 @@ I'm still fiddling around with the features and the code - as some basic stuff a
 
 | Feature  |    Status     | 
 |----------|:-------------:|
-| menu				|    ✘   | 
+| menu				|    ✔   | 
 | matrix view with specializations 	|    ✘   | 
-| fancy coloring of matrix view	|    ✘   | 
-| proper display of instructors |    ✘   | 
+| fancy coloring of matrix view	|    ✘   |
+| info page			|    ✘   |
 | code cleanup			|    ✘   | 
 | github.io page cleanup	|    ✘   | 
 
@@ -46,3 +46,4 @@ I'm still fiddling around with the features and the code - as some basic stuff a
 Would-be-nice-to-have features for the future/2.0:
 
 * Cookie handling so one can select which courses he/she completed so far and in which specialization he/she is interested in
+* More links (critique, student review site, etc.)
