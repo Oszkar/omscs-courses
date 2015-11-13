@@ -1,109 +1,107 @@
-﻿{
-  "specializationList": [
-    {
-      "title": "Computational Perception and Robotics",
-      "core": {
-        "minCourses": 2,
-        "groups": [
-          {
-            "groupName": "Algorithms",
-            "minCourses": 1,
-            "courseList": [
-              6505,
-              6520,
-              6550,
-              7520,
-              7530,
-              6140
-            ]
-          },
-          {
-            "groupName": "AI/ML",
-            "minCourses": 1,
-            "courseList": [
-              6601,
-              7641
-            ]
-          }
-        ]
-      },
-      "electives": {
-        "minCourses": 3,
-        "groups": [
-          {
-            "groupName": "Perception",
-            "minCourses": 1,
-            "courseList": [
-              6475,
-              7495,
-              7499,
-              7636,
-              8803008
-            ]
-          },
-          {
-            "groupName": "Robotics",
-            "minCourses": 1,
-            "courseList": [
-              7630,
-              7631,
-              7633,
-              7649,
-              8803001
-            ]
-          }
-        ]
-      }
+﻿[
+  {
+    "title": "Computational Perception and Robotics",
+    "core": {
+      "minCourses": 2,
+      "groups": [
+        {
+          "groupName": "Algorithms",
+          "minCourses": 1,
+          "courseList": [
+            6505,
+            6520,
+            6550,
+            7520,
+            7530,
+            6140
+          ]
+        },
+        {
+          "groupName": "AI/ML",
+          "minCourses": 1,
+          "courseList": [
+            6601,
+            7641
+          ]
+        }
+      ]
     },
-    {
-      "title": "Computing Systems",
-      "core": {
-        "minCourses": 3,
-        "groups": [
-          {
-            "groupName": "Algorithms",
-            "minCourses": 1,
-            "courseList": [
-              6505
-            ]
-          },
-          {
-            "groupName": "And the rest",
-            "minCourses": 2,
-            "courseList": [
-              6210,
-              6241
-            ]
-          }
-        ]
-      },
-      "electives": {
-        "minCourses": 3,
-        "groups": [
-          {
-            "groupName": "Perception",
-            "minCourses": 1,
-            "courseList": [
-              6475,
-              7495,
-              7499,
-              7636,
-              8803008
-            ]
-          },
-          {
-            "groupName": "Robotics",
-            "minCourses": 1,
-            "courseList": [
-              7630,
-              7631,
-              7633,
-              7649,
-              8803001
-            ]
-          }
-        ]
-      }
+    "electives": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Perception",
+          "minCourses": 1,
+          "courseList": [
+            6475,
+            7495,
+            7499,
+            7636,
+            8803008
+          ]
+        },
+        {
+          "groupName": "Robotics",
+          "minCourses": 1,
+          "courseList": [
+            7630,
+            7631,
+            7633,
+            7649,
+            8803001
+          ]
+        }
+      ]
     }
-  ]
-}
+  },
+  {
+    "title": "Computing Systems",
+    "core": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Algorithms",
+          "minCourses": 1,
+          "courseList": [
+            6505
+          ]
+        },
+        {
+          "groupName": "And the rest",
+          "minCourses": 2,
+          "courseList": [
+            6210,
+            6241
+          ]
+        }
+      ]
+    },
+    "electives": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Perception",
+          "minCourses": 1,
+          "courseList": [
+            6475,
+            7495,
+            7499,
+            7636,
+            8803008
+          ]
+        },
+        {
+          "groupName": "Robotics",
+          "minCourses": 1,
+          "courseList": [
+            7630,
+            7631,
+            7633,
+            7649,
+            8803001
+          ]
+        }
+      ]
+    }
+  }
+]

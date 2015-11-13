@@ -15,6 +15,28 @@ var App;
         function CourseMatrixController($scope, NgTableParams) {
             _super.call(this, $scope, NgTableParams);
             this._specializations = [];
+            // super loads course data, load spec data here
+            var that = this;
+            // TODO move json loading outside from here if I can figure out how
+            $.getJSON("specdata.json", function (data) {
+                data.forEach(function (item) {
+                    // use the serializationhelper to properly deserialize from JSON
+                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
+                    that._specializations.push(CourseMatrixController.toInstance(new App.Specialization(), JSON.stringify(item)));
+                });
+                that.currentSelection = App.Semester.Spring2016;
+                that.tableParams = new NgTableParams({
+                    count: 70 // initial page size
+                }, {
+                    counts: [],
+                    dataset: that._courses
+                });
+                // call apply as we updated the model from jquery which is not the prettiest solution around
+                $scope.$apply();
+            }).fail(function (jqxhr, textStatus, error) {
+                var err = textStatus + ", " + error;
+                console.log("Request Failed: " + err);
+            });
         }
         return CourseMatrixController;
     })(App.CourseListController);

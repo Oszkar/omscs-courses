@@ -37,6 +37,7 @@
     <TypeScriptCompile Include="libs\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="libs\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="libs\ng-table\ng-table.d.ts" />
+    <TypeScriptCompile Include="specialization.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="coursedata.json" />
