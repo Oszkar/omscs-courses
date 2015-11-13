@@ -4,32 +4,31 @@
     text-align: center;
 }
 
-table, th , td  {
-  border: 1px solid grey;
-  border-collapse: collapse;
-  padding: 5px;
-  margin-left:auto; 
-  margin-right:auto;
+table, th, td {
+    border: 1px solid grey;
+    border-collapse: collapse;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table .foundational {
-  background-color: #e0e0e0;
+    background-color: #e0e0e0;
 }
 
 table .regular {
-  
 }
 
 table .notavailable {
-  background-color: #ffd1d1;
+    background-color: #ffd1d1;
 }
 
 table .core {
-  background-color: lightgreen;
+    background-color: lightgreen;
 }
 
 table .elective {
-  background-color: lightskyblue;
+    background-color: lightskyblue;
 }
 
 .config-top {

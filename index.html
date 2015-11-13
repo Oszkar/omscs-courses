@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/app.css" type="text/css" />
-    <link rel="stylesheet" href="style/ng-table.css" type="text/css" />    
+    <link rel="stylesheet" href="style/ng-table.css" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
     <script src="libs/jquery/jquery-2.1.1.min.js"></script>
     <script src="course.js"></script>
@@ -13,12 +13,14 @@
     <script src="app.js"></script>
     <script src="libs/ng-table/ng-table.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-70086439-1', 'auto');
-      ga('send', 'pageview');
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-70086439-1', 'auto');
+        ga('send', 'pageview');
     </script>
 </head>
 
@@ -103,31 +105,35 @@
     <div ng-show="toshow=='info'" class="infopage">
         <h1>omscs-courses-app</h1>
         <p>This a simple webpage/webapp to display the courses offered by <a href="http://www.omscs.gatech.edu/">Georgia Tech's OMSCS program</a>.</p>
-        <p>The webpage is written in TypeScript (compiled to JS) and using the AngularJS library. The source code is <a href="https://github.com/Oszkar/omscs-courses">available on GitHub</a>.
-        I am not a web developer, take that into account when looking at the code.
-        Feel free to ontact me with ideas/suggestions or error reports. Pull requests are also welcome.</p>
-        <p>Not all of the features are implemented yet - please refer to the GitHub page what I still plan or what I'm working on. 
-        As of now, the course list and the course vs specialization view is working so let's call this stage beta</p>
+        <p>
+            The webpage is written in TypeScript (compiled to JS) and using the AngularJS library. The source code is <a href="https://github.com/Oszkar/omscs-courses">available on GitHub</a>.
+            I am not a web developer, take that into account when looking at the code.
+            Feel free to ontact me with ideas/suggestions or error reports. Pull requests are also welcome.
+        </p>
+        <p>
+            Not all of the features are implemented yet - please refer to the GitHub page what I still plan or what I'm working on.
+            As of now, the course list and the course vs specialization view is working so let's call this stage beta
+        </p>
         <p>And yeah, the page is not exactly a beauty pageant winner but hey, it does the job. I'm even less of a designer than a webdev, so that's the best I can do.</p>
         <h2>Views</h2>
         <p>They are pretty straightforward.<p>
-        <ul>
-            <li><b>Course list</b> is just a list of courses with some details about them.</li>
-            <li><b>Courses vs Specializations</b> is a matrix view of which course is elective or core in which specialization.</li>
-            <li><b>Specializazion list</b> is, similarly ti the course list, a detailed view just the specializations themselves.</li>
-        </ul>
-        <h2>The data</h2>
-        <ul>
-            <li>The data is typed in by hand from the official program page. This means that it can easily contain errors. Also, if something changes, I have to track that manually. Please bear that in mind.</li>
-            <li>In order to use the course numbers as numeric id, I excluded the dashes from them, i.e. CS8803-001 became CS8803001.</li>
-            <li>
-                The official page lists Computer Vision as CS7495 on the <a href="http://www.omscs.gatech.edu/specialization-computational-perception-robotics/">Perception and Robotics</a> page.
-                I suppose that is an error and it should be CS6476. I use tha latter in the database.
-            </li>
-            <li>The database is just two JSONs: <a href="coursedata.json">coursedata.json</a> and <a href="specdata.json">specdata.json</a>.</li>
-        </ul>
-        <h2>The author</h2>
+            <ul>
+                <li><b>Course list</b> is just a list of courses with some details about them.</li>
+                <li><b>Courses vs Specializations</b> is a matrix view of which course is elective or core in which specialization.</li>
+                <li><b>Specializazion list</b> is, similarly ti the course list, a detailed view just the specializations themselves.</li>
+            </ul>
+            <h2>The data</h2>
+            <ul>
+                <li>The data is typed in by hand from the official program page. This means that it can easily contain errors. Also, if something changes, I have to track that manually. Please bear that in mind.</li>
+                <li>In order to use the course numbers as numeric id, I excluded the dashes from them, i.e. CS8803-001 became CS8803001.</li>
+                <li>
+                    The official page lists Computer Vision as CS7495 on the <a href="http://www.omscs.gatech.edu/specialization-computational-perception-robotics/">Perception and Robotics</a> page.
+                    I suppose that is an error and it should be CS6476. I use tha latter in the database.
+                </li>
+                <li>The database is just two JSONs: <a href="coursedata.json">coursedata.json</a> and <a href="specdata.json">specdata.json</a>.</li>
+            </ul>
+            <h2>The author</h2>
         <p>My name is Oszkar Jozsa. I started the OMSCS program Fall 2015. I live in Budapest, Hungary and you can contact me at <i>jozsa [dot] oszkar [dot] gmail</i> or through the GitHub link above.</p>
-</div>
+    </div>
 </body>
 </html>
