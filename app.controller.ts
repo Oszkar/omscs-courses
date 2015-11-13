@@ -4,7 +4,7 @@
      * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
      * @class
      */
-    export class CourseController {
+    export class CourseListController {
         private _courses: Course[] = [];
 
         /** @property {NgTableParams } tableParams The ng-table settings */
@@ -31,7 +31,7 @@
                 data.forEach((item) => {
                     // use the serializationhelper to properly deserialize from JSON
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._courses.push(CourseController.toInstance(new Course(), JSON.stringify(item)));
+                    that._courses.push(CourseListController.toInstance(new Course(), JSON.stringify(item)));
                 });
                 that.currentSelection = Semester.Spring2016;
                 that.tableParams = new NgTableParams(

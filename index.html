@@ -22,7 +22,7 @@
             <li><label ng-click="toshow='info'">Info/About</label></li>
         </ul>
     </div>
-    <div id="ctrl" ng-controller="coursecontroller as ctrl" ng-show="toshow=='courselist'">
+    <div id="ctrl" ng-controller="courselistcontroller as ctrl" ng-show="toshow=='courselist'">
         <div class="config-top">
             Select availability:
             <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
@@ -54,7 +54,9 @@
         </div>
     </div>
 
-    <div ng-show="toshow=='matrix'">Under construction</div>
+    <div ng-controller="courselistcontroller as ctrl" ng-show="toshow=='matrix'">
+
+    </div>
 
     <div ng-show="toshow=='specializations'">Under construction</div>
 

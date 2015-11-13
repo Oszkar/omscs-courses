@@ -1,5 +1,6 @@
 ﻿// angular init/start
 // TODO json data should be loaded here beforehand but for some reason angular won't start/initialize from callback
 
-angular.module('omscs-course-app', ['ngTable'])
-    .controller('coursecontroller', ($scope, NgTableParams) => new App.CourseController($scope, NgTableParams));
+var app = angular.module('omscs-course-app', ['ngTable']);
+
+app.controller('courselistcontroller', ($scope, NgTableParams) => new App.CourseListController($scope, NgTableParams));

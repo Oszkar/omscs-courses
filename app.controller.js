@@ -5,13 +5,13 @@ var App;
      * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
      * @class
      */
-    var CourseController = (function () {
+    var CourseListController = (function () {
         /**
          * @constructor
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        function CourseController($scope, NgTableParams) {
+        function CourseListController($scope, NgTableParams) {
             this._courses = [];
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
@@ -25,7 +25,7 @@ var App;
                 data.forEach(function (item) {
                     // use the serializationhelper to properly deserialize from JSON
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._courses.push(CourseController.toInstance(new App.Course(), JSON.stringify(item)));
+                    that._courses.push(CourseListController.toInstance(new App.Course(), JSON.stringify(item)));
                 });
                 that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
@@ -41,7 +41,7 @@ var App;
                 console.log("Request Failed: " + err);
             });
         }
-        Object.defineProperty(CourseController.prototype, "courses", {
+        Object.defineProperty(CourseListController.prototype, "courses", {
             /** @property {Course[]} Courses The course data as an array */
             get: function () {
                 return this._courses;
@@ -54,7 +54,7 @@ var App;
          * @param {number} id - Course id (without the subject)
          * @returns {Course} The found course, null if not found
          */
-        CourseController.prototype.getById = function (id) {
+        CourseListController.prototype.getById = function (id) {
             var found;
             this._courses.forEach(function (item) {
                 if (item.id == id) {
@@ -68,7 +68,7 @@ var App;
          * @param {number} id - Course id (without the subject)
          * @returns {boolean} Whether the queried class should be shown in the table based on the current settings
          */
-        CourseController.prototype.canShow = function (id) {
+        CourseListController.prototype.canShow = function (id) {
             var course = this.getById(id);
             if (course == null) {
                 console.log("Can't find course id# " + id + ", it won't show up in the table");
@@ -95,7 +95,7 @@ var App;
          * @param {number} num - Semester enum, which is esentially a number on the JS side
          * @returns {string} Enum converted to display-friendly text
          */
-        CourseController.prototype.availabilityText = function (num) {
+        CourseListController.prototype.availabilityText = function (num) {
             switch (num) {
                 case App.Semester.Before:
                     return "Before Fall 2015";
@@ -124,7 +124,7 @@ var App;
          * @param {string} json - The json
          * @returns {T} The object filled with the json data
          */
-        CourseController.toInstance = function (obj, json) {
+        CourseListController.toInstance = function (obj, json) {
             var jsonObj = JSON.parse(json);
             if (typeof obj["fromJSON"] === "function") {
                 obj["fromJSON"](jsonObj);
@@ -136,8 +136,8 @@ var App;
             }
             return obj;
         };
-        return CourseController;
+        return CourseListController;
     })();
-    App.CourseController = CourseController;
+    App.CourseListController = CourseListController;
 })(App || (App = {}));
 //# sourceMappingURL=app.controller.js.map
