@@ -75,3 +75,16 @@ table .elective {
     background-color: steelblue;
     margin-bottom: 20px;
 }
+
+.infopage > h2 {
+    font-size: 17px;
+    text-align: left;
+}
+
+.infopage > p {
+    text-align: left;
+}
+
+.infopage > ul > li {
+    text-align: left;
+}
