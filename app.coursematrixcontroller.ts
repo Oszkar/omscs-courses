@@ -6,6 +6,7 @@
      */
     export class CourseMatrixController extends App.CourseListController {
         private _specializations: Specialization[] = [];
+
         constructor($scope: ng.IScope, NgTableParams) {
             super($scope, NgTableParams);
 
@@ -34,6 +35,58 @@
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);
             });
+        }
+
+        public getCourseType(courseId: number, specTitle: string): string {
+            var spec = this.getSpec(specTitle);
+            if (spec == null) {
+                console.log("ERROR in getCourseType, cannot find spectialization " + specTitle);
+                return "";
+            }
+
+            if (this.isCoreOf(courseId, spec)) {
+                return "Core";
+            } else if (this.isElectiveOf(courseId, spec)) {
+                return "Elective";
+            } else {
+                return "";
+            }
+        }
+
+        public getSpec(title: string): Specialization {
+            if (this._specializations == null) {
+                console.log("ERROR in getSpec, spec list is empty/null");
+                return null;
+            }
+
+            var found: Specialization;
+            this._specializations.forEach((item) => {
+                if (item.title == title) {
+                    found = item;
+                }
+            });
+
+            return found;
+        }
+
+        public isElectiveOf(courseId: number, spec: Specialization): boolean {
+            var found: boolean = false;
+
+            spec.electives.groups.forEach((group: courseGroup) => {
+                found = found || $.inArray(parseInt(courseId.toString()), group.courseList) >= 0;
+            });
+
+            return found;
+        }
+
+        public isCoreOf(courseId: number, spec: Specialization): boolean {
+            var found: boolean = false;
+
+            spec.core.groups.forEach((group: courseGroup) => {
+                found = found || $.inArray(parseInt(courseId.toString()), group.courseList) >= 0;
+            });
+
+            return found;
         }
     }
 }

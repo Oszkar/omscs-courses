@@ -35,7 +35,7 @@ var App;
                     dataset: that._courses
                 });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
-                $scope.$apply();
+                //$scope.$apply(); // this will be called in matrixcontroller instead
             }).fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);

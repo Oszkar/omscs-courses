@@ -38,6 +38,49 @@ var App;
                 console.log("Request Failed: " + err);
             });
         }
+        CourseMatrixController.prototype.getCourseType = function (courseId, specTitle) {
+            var spec = this.getSpec(specTitle);
+            if (spec == null) {
+                console.log("ERROR in getCourseType, cannot find spectialization " + specTitle);
+                return "";
+            }
+            if (this.isCoreOf(courseId, spec)) {
+                return "Core";
+            }
+            else if (this.isElectiveOf(courseId, spec)) {
+                return "Elective";
+            }
+            else {
+                return "";
+            }
+        };
+        CourseMatrixController.prototype.getSpec = function (title) {
+            if (this._specializations == null) {
+                console.log("ERROR in getSpec, spec list is empty/null");
+                return null;
+            }
+            var found;
+            this._specializations.forEach(function (item) {
+                if (item.title == title) {
+                    found = item;
+                }
+            });
+            return found;
+        };
+        CourseMatrixController.prototype.isElectiveOf = function (courseId, spec) {
+            var found = false;
+            spec.electives.groups.forEach(function (group) {
+                found = found || $.inArray(parseInt(courseId.toString()), group.courseList) >= 0;
+            });
+            return found;
+        };
+        CourseMatrixController.prototype.isCoreOf = function (courseId, spec) {
+            var found = false;
+            spec.core.groups.forEach(function (group) {
+                found = found || $.inArray(parseInt(courseId.toString()), group.courseList) >= 0;
+            });
+            return found;
+        };
         return CourseMatrixController;
     })(App.CourseListController);
     App.CourseMatrixController = CourseMatrixController;
