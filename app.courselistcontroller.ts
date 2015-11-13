@@ -5,7 +5,7 @@
      * @class
      */
     export class CourseListController {
-        private _courses: Course[] = [];
+        protected _courses: Course[] = [];
 
         /** @property {NgTableParams } tableParams The ng-table settings */
         tableParams: any;

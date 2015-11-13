@@ -4,3 +4,4 @@
 var app = angular.module('omscs-course-app', ['ngTable']);
 
 app.controller('courselistcontroller', ($scope, NgTableParams) => new App.CourseListController($scope, NgTableParams));
+app.controller('coursematrixcontroller', ($scope, NgTableParams) => new App.CourseMatrixController($scope, NgTableParams));

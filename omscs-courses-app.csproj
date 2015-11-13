@@ -31,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="app.courselistcontroller.ts" />
+    <TypeScriptCompile Include="app.coursematrixcontroller.ts" />
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="course.ts" />
     <TypeScriptCompile Include="libs\angularjs\angular.d.ts" />
