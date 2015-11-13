@@ -1,109 +1,213 @@
-﻿{
-  "specializationList": [
-    {
-      "title": "Computational Perception and Robotics",
-      "core": {
-        "minCourses": 2,
-        "groups": [
-          {
-            "groupName": "Algorithms",
-            "minCourses": 1,
-            "courseList": [
-              6505,
-              6520,
-              6550,
-              7520,
-              7530,
-              6140
-            ]
-          },
-          {
-            "groupName": "AI/ML",
-            "minCourses": 1,
-            "courseList": [
-              6601,
-              7641
-            ]
-          }
-        ]
-      },
-      "electives": {
-        "minCourses": 3,
-        "groups": [
-          {
-            "groupName": "Perception",
-            "minCourses": 1,
-            "courseList": [
-              6475,
-              7495,
-              7499,
-              7636,
-              8803008
-            ]
-          },
-          {
-            "groupName": "Robotics",
-            "minCourses": 1,
-            "courseList": [
-              7630,
-              7631,
-              7633,
-              7649,
-              8803001
-            ]
-          }
-        ]
-      }
+﻿[
+  {
+    "title": "Computational Perception and Robotics",
+    "core": {
+      "minCourses": 2,
+      "groups": [
+        {
+          "groupName": "Algorithms",
+          "minCourses": 1,
+          "courseList": [
+            6505,
+            6520,
+            6550,
+            7520,
+            7530,
+            6140
+          ]
+        },
+        {
+          "groupName": "AI/ML",
+          "minCourses": 1,
+          "courseList": [
+            6601,
+            7641
+          ]
+        }
+      ]
     },
-    {
-      "title": "Computing Systems",
-      "core": {
-        "minCourses": 3,
-        "groups": [
-          {
-            "groupName": "Algorithms",
-            "minCourses": 1,
-            "courseList": [
-              6505
-            ]
-          },
-          {
-            "groupName": "And the rest",
-            "minCourses": 2,
-            "courseList": [
-              6210,
-              6241
-            ]
-          }
-        ]
-      },
-      "electives": {
-        "minCourses": 3,
-        "groups": [
-          {
-            "groupName": "Perception",
-            "minCourses": 1,
-            "courseList": [
-              6475,
-              7495,
-              7499,
-              7636,
-              8803008
-            ]
-          },
-          {
-            "groupName": "Robotics",
-            "minCourses": 1,
-            "courseList": [
-              7630,
-              7631,
-              7633,
-              7649,
-              8803001
-            ]
-          }
-        ]
-      }
+    "electives": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Perception",
+          "minCourses": 1,
+          "courseList": [
+            6475,
+            6476,
+            7499,
+            7636,
+            8803008
+          ]
+        },
+        {
+          "groupName": "Robotics",
+          "minCourses": 1,
+          "courseList": [
+            7630,
+            7631,
+            7633,
+            7649,
+            8803001
+          ]
+        }
+      ]
     }
-  ]
-}
+  },
+  {
+    "title": "Computing Systems",
+    "core": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Algorithms",
+          "minCourses": 1,
+          "courseList": [
+            6505
+          ]
+        },
+        {
+          "groupName": "And the rest",
+          "minCourses": 2,
+          "courseList": [
+            6210,
+            6241,
+            6250,
+            6290,
+            6300,
+            6400
+          ]
+        }
+      ]
+    },
+    "electives": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Electives",
+          "minCourses": 1,
+          "courseList": [
+            6035,
+            6235,
+            6238,
+            6260,
+            6262,
+            6310,
+            6340,
+            6365,
+            6422,
+            6550,
+            6675,
+            7210,
+            7260,
+            7270,
+            7290,
+            7292,
+            7650,
+            8803009
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "title": "Interactive Intelligence",
+    "core": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Algorithms and Design",
+          "minCourses": 1,
+          "courseList": [
+            6300,
+            6505
+          ]
+        },
+        {
+          "groupName": "And the rest",
+          "minCourses": 2,
+          "courseList": [
+            7637,
+            7641
+          ]
+        }
+      ]
+    },
+    "electives": {
+      "minCourses": 2,
+      "groups": [
+        {
+          "groupName": "Interaction",
+          "minCourses": 1,
+          "courseList": [
+            6440,
+            6460,
+            6465,
+            7634,
+            8803010,
+            7632,
+            7650,
+            8803011
+          ]
+        },
+        {
+          "groupName": "Cognition",
+          "minCourses": 1,
+          "courseList": [
+            6795,
+            7610,
+            8803012
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "title": "Machine Learning",
+    "core": {
+      "minCourses": 2,
+      "groups": [
+        {
+          "groupName": "Algorithms",
+          "minCourses": 1,
+          "courseList": [
+            6505,
+            6520,
+            6550,
+            7510,
+            7520,
+            7530,
+            6140
+          ]
+        },
+        {
+          "groupName": "And the rest",
+          "minCourses": 1,
+          "courseList": [
+            7641,
+            6740
+          ]
+        }
+      ]
+    },
+    "electives": {
+      "minCourses": 3,
+      "groups": [
+        {
+          "groupName": "Electives",
+          "minCourses": 1,
+          "courseList": [
+            7540,
+            7545,
+            7616,
+            7646,
+            7650,
+            8803013,
+            6240,
+            6242
+          ]
+        }
+      ]
+    }
+  }
+]

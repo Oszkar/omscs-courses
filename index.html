@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style/app.css" type="text/css" />
-    <link rel="stylesheet" href="style/ui-grid.css" type="text/css" />
     <link rel="stylesheet" href="style/ng-table.css" type="text/css" />    
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
     <script src="libs/jquery/jquery-2.1.1.min.js"></script>
     <script src="course.js"></script>
-    <script src="app.controller.js"></script>
+    <script src="specialization.js"></script>
+    <script src="app.courselistcontroller.js"></script>
+    <script src="app.coursematrixcontroller.js"></script>
     <script src="app.js"></script>
     <script src="libs/ng-table/ng-table.js"></script>
 </head>
@@ -22,7 +23,7 @@
             <li><label ng-click="toshow='info'">Info/About</label></li>
         </ul>
     </div>
-    <div id="ctrl" ng-controller="coursecontroller as ctrl" ng-show="toshow=='courselist'">
+    <div ng-controller="courselistcontroller as ctrl" ng-show="toshow=='courselist'">
         <div class="config-top">
             Select availability:
             <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
@@ -54,7 +55,40 @@
         </div>
     </div>
 
-    <div ng-show="toshow=='matrix'">Under construction</div>
+    <div ng-controller="coursematrixcontroller as ctrl" ng-show="toshow=='matrix'">
+        <div class="config-top">
+            Select availability:
+            <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
+                <option value=""></option>
+            </select>
+            Show only foundational courses:
+            <input type="checkbox" ng-model="onlyfoundational">
+        </div>
+
+        <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
+            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )">
+                <td data-title="'Course #'" sortable="'id'" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current}">{{course.id}}</td>
+                <td data-title="'Title'" sortable="'title'" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current}"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
+                <td data-title="'Computational Perception and Robotics'" ng-class="ctrl.getCourseType(course.id, 'Computational Perception and Robotics')">{{ctrl.getCourseType(course.id, "Computational Perception and Robotics")}}</td>
+                <td data-title="'Computing Systems'" ng-class="ctrl.getCourseType(course.id, 'Computing Systems')">{{ctrl.getCourseType(course.id, "Computing Systems")}}</td>
+                <td data-title="'Interactive Intelligence'" ng-class="ctrl.getCourseType(course.id, 'Interactive Intelligence')">{{ctrl.getCourseType(course.id, "Interactive Intelligence")}}</td>
+                <td data-title="'Machine Learning'" ng-class="ctrl.getCourseType(course.id, 'Machine Learning')">{{ctrl.getCourseType(course.id, "Machine Learning")}}</td>
+            </tr>
+        </table>
+
+        <div class="info-bottom">
+            Color codes:
+            <table>
+                <tr>
+                    <td class="foundational">Foundational course</td>
+                    <td class="regular">Regular course</td>
+                    <td class="notavailable">Not available (as of Fall 2015)</td>
+                    <td class="core">Core course in specialization (column)</td>
+                    <td class="elective">Elective course in specialization (column)</td>
+                </tr>
+            </table>
+        </div>
+    </div>
 
     <div ng-show="toshow=='specializations'">Under construction</div>
 

@@ -30,12 +30,14 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="app.controller.ts" />
+    <TypeScriptCompile Include="app.courselistcontroller.ts" />
+    <TypeScriptCompile Include="app.coursematrixcontroller.ts" />
     <TypeScriptCompile Include="app.ts" />
     <TypeScriptCompile Include="course.ts" />
     <TypeScriptCompile Include="libs\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="libs\jquery\jquery.d.ts" />
     <TypeScriptCompile Include="libs\ng-table\ng-table.d.ts" />
+    <TypeScriptCompile Include="specialization.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="coursedata.json" />
