@@ -26,20 +26,22 @@ I'm still fiddling around with the features and the code - as some basic stuff a
 | Feature  |    Status     | 
 |----------|:-------------:|
 | menu				|    ✔   | 
-| matrix view with specializations 	|    ✘   | 
-| fancy coloring of matrix view	|    ✘   |
+| matrix view with specializations 	|    ✔   | 
+| fancy coloring of matrix view	|    ✔   |
 | info page			|    ✘   |
 | code cleanup			|    ✘   | 
-| github.io page cleanup	|    ✘   | 
+| google analytics      	|    ✘   | 
 
 ##### ~Beta~
 
 | Feature  |    Status     | 
 |----------|:-------------:|
+| separate HTML into angular templates |    ✘   | 
 | look&feel / UX pimping|    ✘   |
 | specialization view	|    ✘   | 
 | instructor view	|    ✘   | 
 | code cleanup		|    ✘   | 
+| github.io page cleanup	|    ✘   |
 
 ##### ~Final/1.0~
 
