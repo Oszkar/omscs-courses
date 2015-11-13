@@ -45,9 +45,9 @@
             }
 
             if (this.isCoreOf(courseId, spec)) {
-                return "Core";
+                return "core";
             } else if (this.isElectiveOf(courseId, spec)) {
-                return "Elective";
+                return "elective";
             } else {
                 return "";
             }

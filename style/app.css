@@ -24,6 +24,14 @@ table .notavailable {
   background-color: #ffd1d1;
 }
 
+table .core {
+  background-color: lightgreen;
+}
+
+table .elective {
+  background-color: lightskyblue;
+}
+
 .config-top {
     margin-bottom: 10px;
 }
