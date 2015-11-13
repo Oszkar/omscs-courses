@@ -4,7 +4,7 @@ Simple webpage/webapp to display the courses offered by [Georgia Tech's OMSCS pr
 
 A live version can be found at [http://oszkar.github.io/omscs-courses/](http://oszkar.github.io/omscs-courses/). Latest code is on `master`, live code is on `gh-pages` branch.
 
-I'm still fiddling around with the features and the code - as some basic stuff already works, let's call it alpha stage.
+I'm still fiddling around with the features and the code - as some basic stuff already works, let's call it beta stage.
 
 ### TODO/roadmap/planned features
 
@@ -28,9 +28,9 @@ I'm still fiddling around with the features and the code - as some basic stuff a
 | menu				|    ✔   | 
 | matrix view with specializations 	|    ✔   | 
 | fancy coloring of matrix view	|    ✔   |
-| info page			|    ✘   |
+| info page			|    ✔   |
 | code cleanup			|    ✘   | 
-| google analytics      	|    ✘   | 
+| google analytics      	|    ✔   | 
 
 ##### ~Beta~
 
