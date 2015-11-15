@@ -117,22 +117,42 @@
         <p>And yeah, the page is not exactly a beauty pageant winner but hey, it does the job. I'm even less of a designer than a webdev, so that's the best I can do.</p>
         <h2>Views</h2>
         <p>They are pretty straightforward.<p>
-            <ul>
-                <li><b>Course list</b> is just a list of courses with some details about them.</li>
-                <li><b>Courses vs Specializations</b> is a matrix view of which course is elective or core in which specialization.</li>
-                <li><b>Specializazion list</b> is, similarly ti the course list, a detailed view just the specializations themselves.</li>
-            </ul>
-            <h2>The data</h2>
-            <ul>
-                <li>The data is typed in by hand from the official program page. This means that it can easily contain errors. Also, if something changes, I have to track that manually. Please bear that in mind.</li>
-                <li>In order to use the course numbers as numeric id, I excluded the dashes from them, i.e. CS8803-001 became CS8803001.</li>
-                <li>
-                    The official page lists Computer Vision as CS7495 on the <a href="http://www.omscs.gatech.edu/specialization-computational-perception-robotics/">Perception and Robotics</a> page.
-                    I suppose that is an error and it should be CS6476. I use tha latter in the database.
-                </li>
-                <li>The database is just two JSONs: <a href="coursedata.json">coursedata.json</a> and <a href="specdata.json">specdata.json</a>.</li>
-            </ul>
-            <h2>The author</h2>
+        <ul>
+            <li><b>Course list</b> is just a list of courses with some details about them.</li>
+            <li><b>Courses vs Specializations</b> is a matrix view of which course is elective or core in which specialization.</li>
+            <li><b>Specializazion list</b> is, similarly ti the course list, a detailed view just the specializations themselves.</li>
+        </ul>
+        <h2>The data</h2>
+        <ul>
+            <li>The data is typed in by hand from the official program page. This means that it can easily contain errors. Also, if something changes, I have to track that manually. Please bear that in mind.</li>
+            <li>In order to use the course numbers as numeric id, I excluded the dashes from them, i.e. CS8803-001 became CS8803001.</li>
+            <li>
+                The <b>future courses</b> are mostly taken from gathering all the courses from each of the specializations' pages. The <a href="http://www.omscs.gatech.edu/courses/">official courses page</a>
+                usually lists the new courses for the next two semesters. Note that courses have been pushed back to later semesters before multiple times so only take them for certain when they appear in OSCAR.
+                Also, the specialization pages seem to be mostly a copypaste from the <a href="http://www.cc.gatech.edu/academics/degree-programs/masters/computer-science/specializations">offline MS specializations</a>.
+                This can mean, I think, that they list all the offline courses even ones that are not considered to have an online version. So be advised, courses marked as future courses on this page
+                might be in the very-very far future.
+            </li>
+            <li>
+                The official page lists Computer Vision as CS7495 on the <a href="http://www.omscs.gatech.edu/specialization-computational-perception-robotics/">Perception and Robotics</a> page.
+                I suppose that is an error and it should be CS6476. I use the latter in the database.
+            </li>
+            <li>The database is just two JSONs: <a href="coursedata.json">coursedata.json</a> and <a href="specdata.json">specdata.json</a>.</li>
+        </ul>
+        <h2>Fun facts</h2>
+        <ul>
+            <li>As of Fall 2015, only 25.7% of the courses listed on the page are available. In Spring 2016, this ratio will raise to 31.4%.</li>
+            <li>Machine Learning specialization is impossible to complete as of Fall 2015. Even if all the planned courses will be completed in the next two semesters, it still will remain impossible, unless they change the requirements.</li>
+            <li>
+                The offline program has non-CS(E) courses also (Modeling and Simulations and Scientific Computing specializations). Those are don't seem to be planned for the OMSCS program 
+                (though I've seen forum posts stating that MATH courses are under consideration).
+            </li>
+            <li>
+                The OMSCS program did have the High Performance Computing specialization. It was removed sometime Fall 2016. I'd bet that if a new specialization would be added to the current OMSCS specializations, this would be the one (re)added.
+                However, that would require a good number of missing courses, most of them not even planned for Fall 2016. 2017 maybe...
+            </li>
+        </ul>
+        <h2>The author</h2>
         <p>My name is Oszkar Jozsa. I started the OMSCS program Fall 2015. I live in Budapest, Hungary and you can contact me at <i>jozsa [dot] oszkar [dot] gmail</i> or through the GitHub link above.</p>
     </div>
 </body>
