@@ -1,12 +1,17 @@
 ﻿module App {
     /**
-     * AngularJS contorller for the simple course list view. Holds the list of courses and can 
+     * AngularJS contorller for the course vs specialization matrix view. Holds the list of courses and specializations and can 
      * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
      * @class
      */
     export class CourseMatrixController extends App.CourseListController {
         private _specializations: Specialization[] = [];
 
+        /**
+         * @constructor
+         * @param {ng.IScope} $scope - AngularJS scope
+         * @param {NgTableParams} NgTableParams - ng-table module
+         */
         constructor($scope: ng.IScope, NgTableParams) {
             super($scope, NgTableParams);
 
@@ -19,16 +24,6 @@
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
                     that._specializations.push(CourseMatrixController.toInstance(new Specialization(), JSON.stringify(item)));
                 });
-                that.currentSelection = Semester.Spring2016;
-                that.tableParams = new NgTableParams(
-                    {
-                        count: 70 // initial page size
-                    },
-                    {
-                        counts: [],
-                        dataset: that._courses
-                    });
-
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail((jqxhr, textStatus, error) => {
@@ -37,6 +32,19 @@
             });
         }
 
+        /** @property {Specialization[]} specializations The specialization data as an array */
+        get specializations(): Specialization[] {
+            return this._specializations;
+        }
+
+        /**
+         * Resturns the type of the course (as a text) with respect the passed specialization.
+         * The returned string can be directly used as a CSS class.
+         * @function
+         * @param {number} courseId - Course id (without the subject)
+         * @param {string} specTitle - Specialization title (that serves as an id)
+         * @returns {string} "core', 'elective" or empty string as a result of the lookup
+         */
         public getCourseType(courseId: number, specTitle: string): string {
             var spec = this.getSpec(specTitle);
             if (spec == null) {
@@ -53,6 +61,11 @@
             }
         }
 
+        /**
+         * @function
+         * @param {string} title - Specialization title (that serves as an id)
+         * @returns {Specialization} The found specialization, null if not found
+         */
         public getSpec(title: string): Specialization {
             if (this._specializations == null) {
                 console.log("ERROR in getSpec, spec list is empty/null");
@@ -69,6 +82,12 @@
             return found;
         }
 
+        /**
+         * @function
+         * @param {number} courseId - Course id (without the subject)
+         * @param {Specialization} spec - The specialization
+         * @returns {boolean} Is the given course an elective in the given specialization
+         */
         public isElectiveOf(courseId: number, spec: Specialization): boolean {
             var found: boolean = false;
 
@@ -79,6 +98,12 @@
             return found;
         }
 
+        /**
+         * @function
+         * @param {number} courseId - Course id (without the subject)
+         * @param {Specialization} spec - The specialization
+         * @returns {boolean} Is the given course an core course in the given specialization
+         */
         public isCoreOf(courseId: number, spec: Specialization): boolean {
             var found: boolean = false;
 

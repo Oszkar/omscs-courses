@@ -6,12 +6,17 @@ var __extends = (this && this.__extends) || function (d, b) {
 var App;
 (function (App) {
     /**
-     * AngularJS contorller for the simple course list view. Holds the list of courses and can
+     * AngularJS contorller for the course vs specialization matrix view. Holds the list of courses and specializations and can
      * update the table via some computed parameters e.g. whether a class should be shown in the table based on the current settings.
      * @class
      */
     var CourseMatrixController = (function (_super) {
         __extends(CourseMatrixController, _super);
+        /**
+         * @constructor
+         * @param {ng.IScope} $scope - AngularJS scope
+         * @param {NgTableParams} NgTableParams - ng-table module
+         */
         function CourseMatrixController($scope, NgTableParams) {
             _super.call(this, $scope, NgTableParams);
             this._specializations = [];
@@ -24,13 +29,6 @@ var App;
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
                     that._specializations.push(CourseMatrixController.toInstance(new App.Specialization(), JSON.stringify(item)));
                 });
-                that.currentSelection = App.Semester.Spring2016;
-                that.tableParams = new NgTableParams({
-                    count: 70 // initial page size
-                }, {
-                    counts: [],
-                    dataset: that._courses
-                });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 $scope.$apply();
             }).fail(function (jqxhr, textStatus, error) {
@@ -38,6 +36,22 @@ var App;
                 console.log("Request Failed: " + err);
             });
         }
+        Object.defineProperty(CourseMatrixController.prototype, "specializations", {
+            /** @property {Specialization[]} specializations The specialization data as an array */
+            get: function () {
+                return this._specializations;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        /**
+         * Resturns the type of the course (as a text) with respect the passed specialization.
+         * The returned string can be directly used as a CSS class.
+         * @function
+         * @param {number} courseId - Course id (without the subject)
+         * @param {string} specTitle - Specialization title (that serves as an id)
+         * @returns {string} "core', 'elective" or empty string as a result of the lookup
+         */
         CourseMatrixController.prototype.getCourseType = function (courseId, specTitle) {
             var spec = this.getSpec(specTitle);
             if (spec == null) {
@@ -54,6 +68,11 @@ var App;
                 return "";
             }
         };
+        /**
+         * @function
+         * @param {string} title - Specialization title (that serves as an id)
+         * @returns {Specialization} The found specialization, null if not found
+         */
         CourseMatrixController.prototype.getSpec = function (title) {
             if (this._specializations == null) {
                 console.log("ERROR in getSpec, spec list is empty/null");
@@ -67,6 +86,12 @@ var App;
             });
             return found;
         };
+        /**
+         * @function
+         * @param {number} courseId - Course id (without the subject)
+         * @param {Specialization} spec - The specialization
+         * @returns {boolean} Is the given course an elective in the given specialization
+         */
         CourseMatrixController.prototype.isElectiveOf = function (courseId, spec) {
             var found = false;
             spec.electives.groups.forEach(function (group) {
@@ -74,6 +99,12 @@ var App;
             });
             return found;
         };
+        /**
+         * @function
+         * @param {number} courseId - Course id (without the subject)
+         * @param {Specialization} spec - The specialization
+         * @returns {boolean} Is the given course an core course in the given specialization
+         */
         CourseMatrixController.prototype.isCoreOf = function (courseId, spec) {
             var found = false;
             spec.core.groups.forEach(function (group) {
