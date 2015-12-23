@@ -10,6 +10,7 @@
     <script src="specialization.js"></script>
     <script src="app.courselistcontroller.js"></script>
     <script src="app.coursematrixcontroller.js"></script>
+    <script src="app.speclistcontroller.js"></script>
     <script src="app.js"></script>
     <script src="libs/ng-table/ng-table.js"></script>
     <script>
@@ -100,7 +101,13 @@
         </div>
     </div>
 
-    <div ng-show="toshow=='specializations'">Under construction</div>
+    <div ng-controller="speclistcontroller as ctrl" ng-show="toshow=='specializations'">
+        <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
+            <tr ng-repeat="spec in $data">
+                <td>{{spec.title}}</td>
+            </tr>
+        </table>
+    </div>
 
     <div ng-show="toshow=='info'" class="infopage">
         <h1>omscs-courses-app</h1>
