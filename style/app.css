@@ -81,9 +81,11 @@ table .elective {
 }
 
 .infopage > p {
+    font-size: 13px;
     text-align: left;
 }
 
 .infopage > ul > li {
+    font-size: 13px;
     text-align: left;
 }

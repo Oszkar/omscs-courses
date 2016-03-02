@@ -15,7 +15,7 @@ var App;
     ;
     // TODO update this every semester :)
     /** @constant {Semester} The currently ongoing semester */
-    App.CURRENT_SEMESTER = Semester.Fall2015;
+    App.CURRENT_SEMESTER = Semester.Spring2016;
     /**
      * Class that represents a single course
      * @class

@@ -8,7 +8,7 @@
 
     // TODO update this every semester :)
     /** @constant {Semester} The currently ongoing semester */
-    export const CURRENT_SEMESTER = Semester.Fall2015;
+    export const CURRENT_SEMESTER = Semester.Spring2016;
 
     /**
      * Class that represents a single course
