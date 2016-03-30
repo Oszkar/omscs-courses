@@ -281,15 +281,6 @@
     "instructors": [ ]
   },
   {
-    "id": "6465",
-    "subject": "CS",
-    "title": "Computational Journalism",
-    "available": 4,
-    "foundational": false,
-    "url": "",
-    "instructors": [ ]
-  },
-  {
     "id": "6601",
     "subject": "CS",
     "title": "Artificial Intelligence",
@@ -312,6 +303,15 @@
     "subject": "CS",
     "title": "Special Topics: Biomedical Analytics",
     "available": 4,
+    "foundational": false,
+    "url": "",
+    "instructors": [ ]
+  },
+  {
+    "id": "6465",
+    "subject": "CS",
+    "title": "Computational Journalism",
+    "available": 5,
     "foundational": false,
     "url": "",
     "instructors": [ ]
