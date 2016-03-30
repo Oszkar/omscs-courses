@@ -3,7 +3,7 @@
     "id": "6476",
     "subject": "CS",
     "title": "Computer Vision",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6476-computer-vision/",
     "instructors": [
@@ -15,7 +15,7 @@
     "id": "6035",
     "subject": "CS",
     "title": "Introduction to Information Security",
-    "available": 0,
+    "available": 1,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-6035-introduction-to-information-security/",
     "instructors": [
@@ -27,7 +27,7 @@
     "id": "6210",
     "subject": "CS",
     "title": "Advanced Operating Systems",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6210-advanced-operating-systems/",
     "instructors": [
@@ -39,7 +39,7 @@
     "id": "6220",
     "subject": "CSE",
     "title": "Intro to High-Performance Computing",
-    "available": 1,
+    "available": 2,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/courses/cse-6220-intro-hpc/",
     "instructors": [
@@ -52,7 +52,7 @@
     "id": "6250",
     "subject": "CS",
     "title": "Computer Networks",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6250-computer-networks/",
     "instructors": [
@@ -64,7 +64,7 @@
     "id": "6290",
     "subject": "CS",
     "title": "High Performance Computer Architecture",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6290-high-performance-computer-architecture/",
     "instructors": [
@@ -76,7 +76,7 @@
     "id": "6300",
     "subject": "CS",
     "title": "Software Development Process",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6300-software-development-process/",
     "instructors": [
@@ -89,7 +89,7 @@
     "id": "6310",
     "subject": "CS",
     "title": "Software Architecture and Design",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6310-software-architecture-design/",
     "instructors": [
@@ -100,7 +100,7 @@
     "id": "6440",
     "subject": "CS",
     "title": "Intro to Health Informatics",
-    "available": 1,
+    "available": 2,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-6440-intro-health-informatics/",
     "instructors": [
@@ -111,7 +111,7 @@
     "id": "6460",
     "subject": "CS",
     "title": "Educational Technology",
-    "available": 0,
+    "available": 1,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-6460-educational-technology/",
     "instructors": [
@@ -122,7 +122,7 @@
     "id": "6475",
     "subject": "CS",
     "title": "Computational Photography",
-    "available": 0,
+    "available": 1,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-6475-computational-photography/",
     "instructors": [
@@ -134,7 +134,7 @@
     "id": "6505",
     "subject": "CS",
     "title": "Computability, Complexity & Algorithms",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6505-computability-algorithms/",
     "instructors": [
@@ -145,7 +145,7 @@
     "id": "7637",
     "subject": "CS",
     "title": "Knowledge-Based Artificial Intelligence: Cognitive Systems",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-7637-knowledge-based-artificial-intelligence-cognitive-systems/",
     "instructors": [
@@ -157,7 +157,7 @@
     "id": "7641",
     "subject": "CS",
     "title": "Machine Learning",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-7641-machine-learning/",
     "instructors": [
@@ -170,7 +170,7 @@
     "id": "7646",
     "subject": "CS",
     "title": "Machine Learning for Trading",
-    "available": 0,
+    "available": 1,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-7646-machine-learning-trading/",
     "instructors": [
@@ -181,7 +181,7 @@
     "id": "8803001",
     "subject": "CS",
     "title": "Artificial Intelligence for Robotics",
-    "available": 0,
+    "available": 1,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-8803-artificial-intelligence-robotics/",
     "instructors": [
@@ -193,7 +193,7 @@
     "id": "8803002",
     "subject": "CS",
     "title": "Introduction to Operating Systems",
-    "available": 0,
+    "available": 1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-8803-introduction-operating-systems/",
     "instructors": [
@@ -205,7 +205,7 @@
     "id": "8803003",
     "subject": "CS",
     "title": "Special Topics: Reinforcement Learning",
-    "available": 1,
+    "available": 2,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/courses/cs-8803-special-topics-reinforcement-learning/",
     "instructors": [
@@ -218,7 +218,7 @@
     "id": "6340",
     "subject": "CS",
     "title": "Software Analysis and Test",
-    "available": 2,
+    "available": 3,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-6340-software-analysis-and-test/",
     "instructors": [
@@ -231,7 +231,7 @@
     "id": "6400",
     "subject": "CS",
     "title": "Database Systems Concepts and Design",
-    "available": 2,
+    "available": 3,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6400-database-systems-concepts-and-design/",
     "instructors": [
@@ -242,7 +242,7 @@
     "id": "8803004",
     "subject": "CS",
     "title": "Special Topics: Embedded Software",
-    "available": 2,
+    "available": 3,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/cs-8803-special-topics-embedded-software/",
     "instructors": [
@@ -254,7 +254,7 @@
     "id": "8803005",
     "subject": "CSE",
     "title": "Special Topics: Big Data for Health Informatics",
-    "available": 2,
+    "available": 3,
     "foundational": false,
     "url": "http://www.omscs.gatech.edu/courses/cse-8803-special-topics-big-data-for-health-informatics/",
     "instructors": [
@@ -266,7 +266,7 @@
     "id": "6242",
     "subject": "CSE",
     "title": "Data and Visual Analytics",
-    "available": 3,
+    "available": 4,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -275,16 +275,7 @@
     "id": "6262",
     "subject": "CS",
     "title": "Network Security",
-    "available": 3,
-    "foundational": false,
-    "url": "",
-    "instructors": [ ]
-  },
-  {
-    "id": "6465",
-    "subject": "CS",
-    "title": "Computational Journalism",
-    "available": 3,
+    "available": 4,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -295,14 +286,14 @@
     "title": "Artificial Intelligence",
     "available": 3,
     "foundational": false,
-    "url": "",
-    "instructors": [ ]
+    "url": "http://www.omscs.gatech.edu/cs-6601-artificial-intelligence",
+    "instructors": [ "Thad Starner" ]
   },
   {
     "id": "8803006",
     "subject": "CS",
     "title": "Special Topics: Data Visualization",
-    "available": 3,
+    "available": 4,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -311,7 +302,16 @@
     "id": "8803007",
     "subject": "CS",
     "title": "Special Topics: Biomedical Analytics",
-    "available": 3,
+    "available": 4,
+    "foundational": false,
+    "url": "",
+    "instructors": [ ]
+  },
+  {
+    "id": "6465",
+    "subject": "CS",
+    "title": "Computational Journalism",
+    "available": 5,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -320,7 +320,7 @@
     "id": "6520",
     "subject": "CS",
     "title": "Computational Complexity Theory",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -329,7 +329,7 @@
     "id": "6550",
     "subject": "CS",
     "title": "Design and Analysis of Algorithms",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -338,7 +338,7 @@
     "id": "7520",
     "subject": "CS",
     "title": "Approximation Algorithms",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -347,7 +347,7 @@
     "id": "7530",
     "subject": "CS",
     "title": "Randomized Algorithms",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -356,7 +356,7 @@
     "id": "6140",
     "subject": "CSE",
     "title": "Computational Science and Engineering Algorithms",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -365,7 +365,7 @@
     "id": "7499",
     "subject": "CS",
     "title": "3D Reconstruction",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -374,7 +374,7 @@
     "id": "7636",
     "subject": "CS",
     "title": "Computational Perception",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -383,7 +383,7 @@
     "id": "8803008",
     "subject": "CS",
     "title": "Special Topics: Multiview Geometry in Computer Vision",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -392,7 +392,7 @@
     "id": "7630",
     "subject": "CS",
     "title": "Autonomous Robotics",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -401,7 +401,7 @@
     "id": "7631",
     "subject": "CS",
     "title": "Autonomous Multi-Robot Systems",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -410,7 +410,7 @@
     "id": "7633",
     "subject": "CS",
     "title": "Human-Robot Interaction",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -419,7 +419,7 @@
     "id": "7649",
     "subject": "CS",
     "title": "Robot Intelligence: Planning",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -428,7 +428,7 @@
     "id": "6241",
     "subject": "CS",
     "title": "Compiler Design",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -437,7 +437,7 @@
     "id": "6235",
     "subject": "CS",
     "title": "Real Time Systems",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -446,7 +446,7 @@
     "id": "6238",
     "subject": "CS",
     "title": "Secure Computer Systems",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -455,7 +455,7 @@
     "id": "6260",
     "subject": "CS",
     "title": "Applied Cryptography",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -464,7 +464,7 @@
     "id": "6365",
     "subject": "CS",
     "title": "Introduction to Enterprise Computing",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -473,7 +473,7 @@
     "id": "6422",
     "subject": "CS",
     "title": "Database System Implementation",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -482,7 +482,7 @@
     "id": "6675",
     "subject": "CS",
     "title": "Advanced Internet Computing Systems and Applications",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -491,7 +491,7 @@
     "id": "7210",
     "subject": "CS",
     "title": "Distributed Computing",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -500,7 +500,7 @@
     "id": "7260",
     "subject": "CS",
     "title": "Internetworking Architectures and Protocols",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -509,7 +509,7 @@
     "id": "7270",
     "subject": "CS",
     "title": "Networked Applications and Services",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -518,7 +518,7 @@
     "id": "7290",
     "subject": "CS",
     "title": "Advanced Topics in Microarchitecture",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -527,7 +527,7 @@
     "id": "7292",
     "subject": "CS",
     "title": "Reliability and Security in Computer Architecture",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -536,7 +536,7 @@
     "id": "7560",
     "subject": "CS",
     "title": "Theory of Cryptography",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -545,7 +545,7 @@
     "id": "8803009",
     "subject": "CS",
     "title": "Special Topics: Foundations of Programming Languages",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -554,7 +554,7 @@
     "id": "7620",
     "subject": "CS",
     "title": "Case-Based Reasoning",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -563,7 +563,7 @@
     "id": "7634",
     "subject": "CS",
     "title": "AI Storytelling in Virtual Worlds",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -572,7 +572,7 @@
     "id": "8803010",
     "subject": "CS",
     "title": "Special Topics: Advanced Game AI",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -581,7 +581,7 @@
     "id": "7632",
     "subject": "CS",
     "title": "Game AI",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -590,7 +590,7 @@
     "id": "7650",
     "subject": "CS",
     "title": "Natural Language",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -599,7 +599,7 @@
     "id": "8803011",
     "subject": "CS",
     "title": "Special Topics: Computational Social Science",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -608,7 +608,7 @@
     "id": "6795",
     "subject": "CS",
     "title": "Introduction to Cognitive Science",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -617,7 +617,7 @@
     "id": "7610",
     "subject": "CS",
     "title": "Modeling and Design",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -626,7 +626,7 @@
     "id": "8803012",
     "subject": "CS",
     "title": "Special Topics: Computational Creativity",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -635,7 +635,7 @@
     "id": "7510",
     "subject": "CS",
     "title": "Graph Algorithms",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -644,7 +644,7 @@
     "id": "6740",
     "subject": "CSE",
     "title": "Computational Data Analysis: Learning, Mining, and Computation",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -653,7 +653,7 @@
     "id": "7540",
     "subject": "CS",
     "title": "Spectral Algorithms",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -662,7 +662,7 @@
     "id": "7545",
     "subject": "CS",
     "title": "Machine Learning Theory",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -671,7 +671,7 @@
     "id": "7616",
     "subject": "CS",
     "title": "Pattern Recognition",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -680,7 +680,7 @@
     "id": "8803013",
     "subject": "CS",
     "title": "Special Topics: Probabilistic Graph Models",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -689,7 +689,7 @@
     "id": "6240",
     "subject": "CS",
     "title": "Web Search and Text Mining",
-    "available": 4,
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]

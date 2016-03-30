@@ -5,7 +5,7 @@
      * @class
      */
     export class CourseMatrixController extends App.CourseListController {
-        private _specializations: Specialization[] = [];
+        protected _specializations: Specialization[] = [];
 
         /**
          * @constructor

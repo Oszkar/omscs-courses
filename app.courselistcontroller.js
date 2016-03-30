@@ -16,9 +16,9 @@ var App;
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
-                { id: App.Semester.Fall2016, text: "Current + Spring2016 + Fall2016" },
-                { id: App.Semester.Spring2016, text: "Current + Spring2016" },
-                { id: App.Semester.Fall2015, text: "Current only" }];
+                { id: App.Semester.Spring2016, text: "Current only" },
+                { id: App.Semester.Fall2016, text: "Current + Fall2016" },
+                { id: App.Semester.Spring2017, text: "Current + Fall2016 + Spring2016" }];
             var that = this;
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {
@@ -78,11 +78,15 @@ var App;
             if (typeof avail == "string") {
                 // can happen that it's in string format convert back to enum/number and compare
                 // (toString needed for typescript because it thinks it is an enum but this case it isn't)
-                return App.Semester[avail.toString()] <= this.currentSelection;
+                if (this.currentSelection == App.Semester.Future)
+                    return true;
+                return 0 < App.Semester[avail.toString()] && App.Semester[avail.toString()] <= this.currentSelection;
             }
             else if (typeof avail == "number") {
                 // happy path
-                return avail <= this.currentSelection;
+                if (this.currentSelection == App.Semester.Future)
+                    return true;
+                return 0 < avail && avail <= this.currentSelection;
             }
             else {
                 console.log("Cannot read availability property of id# " + id + ", it won't show up in the table");
@@ -108,6 +112,12 @@ var App;
                     break;
                 case App.Semester.Fall2016:
                     return "Fall 2016";
+                    break;
+                case App.Semester.Spring2017:
+                    return "Spring 2016";
+                    break;
+                case App.Semester.Fall2017:
+                    return "Fall 2017";
                     break;
                 case App.Semester.Future:
                     return "Future";

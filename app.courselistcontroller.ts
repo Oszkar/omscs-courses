@@ -15,9 +15,9 @@
         // these will be the options in the semester selector dropdown that we will be populating with angular from here
         // id will be a number on the JS side
         semesterOptions = [{ id: Semester.Future, text: "All courses" },
-            { id: Semester.Fall2016, text: "Current + Spring2016 + Fall2016" },
-            { id: Semester.Spring2016, text: "Current + Spring2016" },
-            { id: Semester.Fall2015, text: "Current only" }]
+            { id: Semester.Spring2016, text: "Current only" },
+            { id: Semester.Fall2016, text: "Current + Fall2016" },
+            { id: Semester.Spring2017, text: "Current + Fall2016 + Spring2016" }]
 
         /**
          * @constructor
@@ -88,11 +88,13 @@
             if (typeof avail == "string") {
                 // can happen that it's in string format convert back to enum/number and compare
                 // (toString needed for typescript because it thinks it is an enum but this case it isn't)
-                return Semester[avail.toString()] <= this.currentSelection;
+                if (this.currentSelection == Semester.Future) return true;
+                return 0 < Semester[avail.toString()] && Semester[avail.toString()] <= this.currentSelection;
             }
             else if (typeof avail == "number") {
                 // happy path
-                return avail <= this.currentSelection;
+                if (this.currentSelection == Semester.Future) return true;
+                return 0 < avail && avail <= this.currentSelection;
             }
             else {
                 console.log("Cannot read availability property of id# " + id + ", it won't show up in the table");
@@ -120,6 +122,12 @@
                     break;
                 case Semester.Fall2016:
                     return "Fall 2016"
+                    break;
+                case Semester.Spring2017:
+                    return "Spring 2016"
+                    break;
+                case Semester.Fall2017:
+                    return "Fall 2017"
                     break;
                 case Semester.Future:
                     return "Future"
