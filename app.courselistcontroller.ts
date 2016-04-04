@@ -17,7 +17,7 @@
         semesterOptions = [{ id: Semester.Future, text: "All courses" },
             { id: Semester.Spring2016, text: "Current only" },
             { id: Semester.Fall2016, text: "Current + Fall2016" },
-            { id: Semester.Spring2017, text: "Current + Fall2016 + Spring2016" }]
+            { id: Semester.Spring2017, text: "Current + Fall2016 + Spring2017" }]
 
         /**
          * @constructor
@@ -36,7 +36,7 @@
                 that.currentSelection = Semester.Spring2016;
                 that.tableParams = new NgTableParams(
                     {
-                        count: 70 // initial page size
+                        count: 80 // initial page size
                     },
                     {
                         counts: [],
@@ -124,7 +124,7 @@
                     return "Fall 2016"
                     break;
                 case Semester.Spring2017:
-                    return "Spring 2016"
+                    return "Spring 2017"
                     break;
                 case Semester.Fall2017:
                     return "Fall 2017"

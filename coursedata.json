@@ -263,6 +263,15 @@
     ]
   },
   {
+    "id": "6601",
+    "subject": "CS",
+    "title": "Artificial Intelligence",
+    "available": 3,
+    "foundational": false,
+    "url": "http://www.omscs.gatech.edu/cs-6601-artificial-intelligence",
+    "instructors": [ "Thad Starner" ]
+  },
+  {
     "id": "6242",
     "subject": "CSE",
     "title": "Data and Visual Analytics",
@@ -281,19 +290,10 @@
     "instructors": [ ]
   },
   {
-    "id": "6601",
+    "id": "6465",
     "subject": "CS",
-    "title": "Artificial Intelligence",
-    "available": 3,
-    "foundational": false,
-    "url": "http://www.omscs.gatech.edu/cs-6601-artificial-intelligence",
-    "instructors": [ "Thad Starner" ]
-  },
-  {
-    "id": "8803006",
-    "subject": "CS",
-    "title": "Special Topics: Data Visualization",
-    "available": 4,
+    "title": "Computational Journalism",
+    "available": 5,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -301,17 +301,26 @@
   {
     "id": "8803007",
     "subject": "CS",
-    "title": "Special Topics: Biomedical Analytics",
-    "available": 4,
+    "title": "Special Topics: Cyber-Physical Systems",
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
   },
   {
-    "id": "6465",
+    "id": "8803006",
     "subject": "CS",
-    "title": "Computational Journalism",
-    "available": 5,
+    "title": "Special Topics: Data Visualization",
+    "available": 0,
+    "foundational": false,
+    "url": "",
+    "instructors": [ ]
+  },
+  {
+    "id": "8803008",
+    "subject": "CS",
+    "title": "Special Topics: Biomedical Analytics",
+    "available": 0,
     "foundational": false,
     "url": "",
     "instructors": [ ]
@@ -380,7 +389,7 @@
     "instructors": [ ]
   },
   {
-    "id": "8803008",
+    "id": "8803009",
     "subject": "CS",
     "title": "Special Topics: Multiview Geometry in Computer Vision",
     "available": 0,
@@ -542,7 +551,7 @@
     "instructors": [ ]
   },
   {
-    "id": "8803009",
+    "id": "8803010",
     "subject": "CS",
     "title": "Special Topics: Foundations of Programming Languages",
     "available": 0,
@@ -569,7 +578,7 @@
     "instructors": [ ]
   },
   {
-    "id": "8803010",
+    "id": "8803011",
     "subject": "CS",
     "title": "Special Topics: Advanced Game AI",
     "available": 0,
@@ -596,7 +605,7 @@
     "instructors": [ ]
   },
   {
-    "id": "8803011",
+    "id": "8803012",
     "subject": "CS",
     "title": "Special Topics: Computational Social Science",
     "available": 0,
@@ -623,7 +632,7 @@
     "instructors": [ ]
   },
   {
-    "id": "8803012",
+    "id": "8803013",
     "subject": "CS",
     "title": "Special Topics: Computational Creativity",
     "available": 0,
@@ -677,7 +686,7 @@
     "instructors": [ ]
   },
   {
-    "id": "8803013",
+    "id": "8803014",
     "subject": "CS",
     "title": "Special Topics: Probabilistic Graph Models",
     "available": 0,
