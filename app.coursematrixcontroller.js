@@ -17,7 +17,7 @@ var App;
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        function CourseMatrixController($scope, NgTableParams) {
+        function CourseMatrixController($scope, NgTableParams, done) {
             _super.call(this, $scope, NgTableParams);
             this._specializations = [];
             // super loads course data, load spec data here
@@ -26,11 +26,15 @@ var App;
             $.getJSON("specdata.json", function (data) {
                 data.forEach(function (item) {
                     // use the serializationhelper to properly deserialize from JSON
-                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._specializations.push(CourseMatrixController.toInstance(new App.Specialization(), JSON.stringify(item)));
+                    // without this, we won't have the functions of Specialization, only the data that is in the JSON (no proper cast in JS)
+                    var s = CourseMatrixController.toInstance(new App.Specialization(), JSON.stringify(item));
+                    s.core = CourseMatrixController.toInstance(new App.masterGroup(), JSON.stringify(s.core));
+                    s.electives = CourseMatrixController.toInstance(new App.masterGroup(), JSON.stringify(s.electives));
+                    that._specializations.push(s);
                 });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
-                $scope.$apply();
+                if (done)
+                    done();
             }).fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);

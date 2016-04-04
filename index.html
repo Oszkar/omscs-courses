@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="style/ng-table.css" type="text/css" />
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
     <script src="libs/jquery/jquery-2.1.1.min.js"></script>
+    <script src="libs/ng-table/ng-table.js"></script>
     <script src="course.js"></script>
     <script src="specialization.js"></script>
     <script src="app.courselistcontroller.js"></script>
     <script src="app.coursematrixcontroller.js"></script>
     <script src="app.speclistcontroller.js"></script>
-    <script src="app.js"></script>
-    <script src="libs/ng-table/ng-table.js"></script>
+    <script src="app.js"></script>    
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -103,9 +103,15 @@
 
     <div ng-controller="speclistcontroller as ctrl" ng-show="toshow=='specializations'">
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
-            <tr ng-repeat="spec in $data">
-                <td>{{spec.title}}</td>
-            </tr>
+            <tbody ng-repeat="spec in $data">
+                <tr>
+                    <td rowspan="{{spec.numCourses}}">{{spec.title}}</td>
+                    <td>{{spec.core.groups[0]}}</td>
+                </tr>
+                <tr ng-repeat='course in spec.core.groups' ng-show='$index > 0'>
+                    <td>{{course}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 

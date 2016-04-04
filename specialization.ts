@@ -22,6 +22,14 @@
         minCourses: number;
         /** @property {courseGroup} groups The course groups */
         groups: courseGroup[];
+
+        get numCourses(): number {
+            var num: number = 0;
+            this.groups.forEach((item) => {
+                num += item.courseList.length;
+            });
+            return num;
+        }
     }
 
     /**
@@ -37,5 +45,9 @@
         electives: masterGroup;
         /** @property {string } url GaTech website url of the specialization */
         url: string;
+
+        get numCourses(): number {
+            return this.core.numCourses + this.electives.numCourses;
+        }
     }
 }

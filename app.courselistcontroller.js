@@ -19,6 +19,7 @@ var App;
                 { id: App.Semester.Spring2016, text: "Current only" },
                 { id: App.Semester.Fall2016, text: "Current + Fall2016" },
                 { id: App.Semester.Spring2017, text: "Current + Fall2016 + Spring2017" }];
+            this._$scope = $scope;
             var that = this;
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {

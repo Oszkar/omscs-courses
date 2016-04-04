@@ -6,15 +6,16 @@
      */
     export class CourseListController {
         protected _courses: Course[] = [];
+        protected _$scope: ng.IScope
 
         /** @property {NgTableParams } tableParams The ng-table settings */
-        tableParams: any;
+        public tableParams: any;
         /** @property {Semester } currentSelection The currently selected semester (via HTML) as an enum */
-        currentSelection: Semester;
+        public currentSelection: Semester;
 
         // these will be the options in the semester selector dropdown that we will be populating with angular from here
         // id will be a number on the JS side
-        semesterOptions = [{ id: Semester.Future, text: "All courses" },
+        public semesterOptions = [{ id: Semester.Future, text: "All courses" },
             { id: Semester.Spring2016, text: "Current only" },
             { id: Semester.Fall2016, text: "Current + Fall2016" },
             { id: Semester.Spring2017, text: "Current + Fall2016 + Spring2017" }]
@@ -25,6 +26,7 @@
          * @param {NgTableParams} NgTableParams - ng-table module
          */
         constructor($scope: ng.IScope, NgTableParams) {
+            this._$scope = $scope;
             var that = this;
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", (data) => {
