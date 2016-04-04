@@ -17,7 +17,7 @@ var App;
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        function CourseMatrixController($scope, NgTableParams) {
+        function CourseMatrixController($scope, NgTableParams, done) {
             _super.call(this, $scope, NgTableParams);
             this._specializations = [];
             // super loads course data, load spec data here
@@ -30,7 +30,8 @@ var App;
                     that._specializations.push(CourseMatrixController.toInstance(new App.Specialization(), JSON.stringify(item)));
                 });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
-                $scope.$apply();
+                if (done)
+                    done();
             }).fail(function (jqxhr, textStatus, error) {
                 var err = textStatus + ", " + error;
                 console.log("Request Failed: " + err);
