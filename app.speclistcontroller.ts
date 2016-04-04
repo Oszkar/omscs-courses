@@ -12,7 +12,7 @@ module App {
         done(): void {
             this.tableParams = new this._ngParam(
                 {
-                    count: 70 // initial page size
+                    count: 80 // initial page size
                 },
                 {
                     counts: [],

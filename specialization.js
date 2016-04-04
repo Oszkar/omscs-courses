@@ -17,6 +17,17 @@ var App;
     var masterGroup = (function () {
         function masterGroup() {
         }
+        Object.defineProperty(masterGroup.prototype, "numCourses", {
+            get: function () {
+                var num = 0;
+                this.groups.forEach(function (item) {
+                    num += item.courseList.length;
+                });
+                return num;
+            },
+            enumerable: true,
+            configurable: true
+        });
         return masterGroup;
     })();
     App.masterGroup = masterGroup;
@@ -27,6 +38,13 @@ var App;
     var Specialization = (function () {
         function Specialization() {
         }
+        Object.defineProperty(Specialization.prototype, "numCourses", {
+            get: function () {
+                return this.core.numCourses + this.electives.numCourses;
+            },
+            enumerable: true,
+            configurable: true
+        });
         return Specialization;
     })();
     App.Specialization = Specialization;

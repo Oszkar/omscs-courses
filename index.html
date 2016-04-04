@@ -103,9 +103,15 @@
 
     <div ng-controller="speclistcontroller as ctrl" ng-show="toshow=='specializations'">
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
-            <tr ng-repeat="spec in $data">
-                <td>{{spec.title}}</td>
-            </tr>
+            <tbody ng-repeat="spec in $data">
+                <tr>
+                    <td rowspan="{{spec.numCourses}}">{{spec.title}}</td>
+                    <td>{{spec.core.groups[0]}}</td>
+                </tr>
+                <tr ng-repeat='course in spec.core.groups' ng-show='$index > 0'>
+                    <td>{{course}}</td>
+                </tr>
+            </tbody>
         </table>
     </div>
 

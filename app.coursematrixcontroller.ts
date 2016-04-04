@@ -21,8 +21,11 @@
             $.getJSON("specdata.json", (data) => {
                 data.forEach((item) => {
                     // use the serializationhelper to properly deserialize from JSON
-                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._specializations.push(CourseMatrixController.toInstance(new Specialization(), JSON.stringify(item)));
+                    // without this, we won't have the functions of Specialization, only the data that is in the JSON (no proper cast in JS)
+                    var s = CourseMatrixController.toInstance(new Specialization(), JSON.stringify(item));
+                    s.core = CourseMatrixController.toInstance(new masterGroup(), JSON.stringify(s.core));
+                    s.electives = CourseMatrixController.toInstance(new masterGroup(), JSON.stringify(s.electives));
+                    that._specializations.push(s);
                 });
                 // call apply as we updated the model from jquery which is not the prettiest solution around
                 if (done) done();

@@ -14,7 +14,7 @@ var App;
         }
         SpecListController.prototype.done = function () {
             this.tableParams = new this._ngParam({
-                count: 70 // initial page size
+                count: 80 // initial page size
             }, {
                 counts: [],
                 dataset: this._specializations
