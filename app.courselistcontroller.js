@@ -18,7 +18,7 @@ var App;
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
                 { id: App.Semester.Spring2016, text: "Current only" },
                 { id: App.Semester.Fall2016, text: "Current + Fall2016" },
-                { id: App.Semester.Spring2017, text: "Current + Fall2016 + Spring2016" }];
+                { id: App.Semester.Spring2017, text: "Current + Fall2016 + Spring2017" }];
             var that = this;
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {
@@ -29,7 +29,7 @@ var App;
                 });
                 that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
-                    count: 70 // initial page size
+                    count: 80 // initial page size
                 }, {
                     counts: [],
                     dataset: that._courses
@@ -114,7 +114,7 @@ var App;
                     return "Fall 2016";
                     break;
                 case App.Semester.Spring2017:
-                    return "Spring 2016";
+                    return "Spring 2017";
                     break;
                 case App.Semester.Fall2017:
                     return "Fall 2017";
