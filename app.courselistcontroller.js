@@ -30,7 +30,8 @@ var App;
                 });
                 that.currentSelection = App.Semester.Spring2016;
                 that.tableParams = new NgTableParams({
-                    count: 80 // initial page size
+                    count: 80,
+                    sorting: { available: "asc" }
                 }, {
                     counts: [],
                     dataset: that._courses

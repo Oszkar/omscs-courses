@@ -49,7 +49,7 @@
                 <td data-title="'Subject'" sortable="'subject'">{{course.subject}}</td>
                 <td data-title="'Course #'" sortable="'id'">{{course.id}}</td>
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
-                <td data-title="'Availability'" sortable="'available'">{{ctrl.availabilityText(course.available)}}</td>
+                <td data-title="'Available from'" sortable="'available'">{{ctrl.availabilityText(course.available)}}</td>
                 <td data-title="'Instructor(s)'"><label ng-repeat="i in course.instructors">{{i}}{{$last ? '' : ', '}}</label></td>
             </tr>
         </table>
@@ -105,14 +105,43 @@
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
             <tbody ng-repeat="spec in $data">
                 <tr>
-                    <td rowspan="{{spec.numCourses}}">{{spec.title}}</td>
-                    <td>{{spec.core.groups[0]}}</td>
+                    <td rowspan="{{spec.numCourses}}" data-title="'Title'">{{spec.title}}</td>
+                    <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'">Core courses</td>
+                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'">{{spec.core.groups[0].groupName}}</td>
+                    <td data-title="'Course'" ng-init="a = ctrl.getById(spec.core.groups[0].courseList[0])" ng-class="{regular: !a.foundational, foundational: a.foundational, notavailable: !a.current}">{{a.id}} - {{a.title}}</td>
                 </tr>
-                <tr ng-repeat='course in spec.core.groups' ng-show='$index > 0'>
-                    <td>{{course}}</td>
+                <tr ng-repeat-start="group in spec.core.groups" ng-show='$index > 0'>
+                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
+                    <td ng-init="b = ctrl.getById(group.courseList[0])" ng-class="{regular: !b.foundational, foundational: b.foundational, notavailable: !b.current}">{{b.id}} - {{b.title}}</td>
+                </tr>
+                <tr ng-repeat='course in group.courseList' ng-init="c = ctrl.getById(course)" ng-show='$index> 0' ng-repeat-end>
+                    <td ng-class="{regular: !c.foundational, foundational: c.foundational, notavailable: !c.current}">{{c.id}} - {{c.title}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="{{spec.electives.numCourses}}">Electives</td>
+                    <td rowspan="{{spec.electives.groups[0].courseList.length}}">{{spec.electives.groups[0].groupName}}</td>
+                    <td ng-init="d = ctrl.getById(spec.electives.groups[0].courseList[0])" ng-class="{regular: !d.foundational, foundational: d.foundational, notavailable: !d.current}">{{d.id}} - {{d.title}}</td>
+                </tr>
+                <tr ng-repeat-start="group in spec.electives.groups" ng-show='$index > 0'>
+                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
+                    <td ng-init="e = ctrl.getById(group.courseList[0])" ng-class="{regular: !e.foundational, foundational: e.foundational, notavailable: !e.current}">{{e.id}} - {{e.title}}</td>
+                </tr>
+                <tr ng-repeat='course in group.courseList' ng-init="f = ctrl.getById(course)" ng-show='$index > 0' ng-repeat-end>
+                    <td ng-class="{regular: !f.foundational, foundational: f.foundational, notavailable: !f.current}">{{f.id}} - {{f.title}}</td>
                 </tr>
             </tbody>
         </table>
+
+        <div class="info-bottom">
+            Color codes:
+            <table>
+                <tr>
+                    <td class="foundational">Foundational course</td>
+                    <td class="regular">Regular course</td>
+                    <td class="notavailable">Not available (as of Spring 2016)</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div ng-show="toshow=='info'" class="infopage">
