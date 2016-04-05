@@ -38,7 +38,8 @@
                 that.currentSelection = Semester.Spring2016;
                 that.tableParams = new NgTableParams(
                     {
-                        count: 80 // initial page size
+                        count: 80, // initial page size
+                        sorting: { available: "asc" } 
                     },
                     {
                         counts: [],
