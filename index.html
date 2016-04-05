@@ -105,10 +105,16 @@
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
             <tbody ng-repeat="spec in $data">
                 <tr>
-                    <td rowspan="{{spec.numCourses}}">{{spec.title}}</td>
-                    <td>{{spec.core.groups[0]}}</td>
+                    <td rowspan="{{spec.numCourses}}" data-title="'Title'">{{spec.title}}</td>
+                    <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'">Core courses</td>
+                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course gruop'">{{spec.core.groups[0].groupName}}</td>
+                    <td>{{spec.core.groups[0].courseList[0]}}</td>
                 </tr>
-                <tr ng-repeat='course in spec.core.groups' ng-show='$index > 0'>
+                <tr ng-repeat-start="group in spec.core.groups" ng-show='$index > 0'>
+                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
+                    <td>{{group.courseList[0]}}</td>
+                </tr>
+                <tr ng-repeat='course in group.courseList' ng-show='$index > 0' ng-repeat-end>
                     <td>{{course}}</td>
                 </tr>
             </tbody>
