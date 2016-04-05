@@ -107,18 +107,41 @@
                 <tr>
                     <td rowspan="{{spec.numCourses}}" data-title="'Title'">{{spec.title}}</td>
                     <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'">Core courses</td>
-                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course gruop'">{{spec.core.groups[0].groupName}}</td>
-                    <td>{{spec.core.groups[0].courseList[0]}}</td>
+                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'">{{spec.core.groups[0].groupName}}</td>
+                    <td data-title="'Course'">{{spec.core.groups[0].courseList[0]}} - {{ctrl.getById(spec.core.groups[0].courseList[0]).title}}</td>
                 </tr>
                 <tr ng-repeat-start="group in spec.core.groups" ng-show='$index > 0'>
                     <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
-                    <td>{{group.courseList[0]}}</td>
+                    <td>{{group.courseList[0]}} - {{ctrl.getById(group.courseList[0]).title}}</td>
+                </tr>
+                <tr ng-repeat='course in group.courseList' ng-show='$index> 0' ng-repeat-end>
+                    <td ng-class="{regular: !ctrl.getById(course).foundational, foundational: ctrl.getById(course).foundational, notavailable: !ctrl.getById(course).current}">{{course}} - {{ctrl.getById(course).title}}</td>
+                </tr>
+                <tr>
+                    <td rowspan="{{spec.electives.numCourses}}">Electives</td>
+                    <td rowspan="{{spec.electives.groups[0].courseList.length}}" data-title="'Course group'">{{spec.electives.groups[0].groupName}}</td>
+                    <td>{{spec.electives.groups[0].courseList[0]}} - {{ctrl.getById(spec.electives.groups[0].courseList[0]).title}}</td>
+                </tr>
+                <tr ng-repeat-start="group in spec.electives.groups" ng-show='$index > 0'>
+                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
+                    <td>{{group.courseList[0]}} - {{ctrl.getById(group.courseList[0]).title}}</td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-show='$index > 0' ng-repeat-end>
-                    <td>{{course}}</td>
+                    <td ng-class="{regular: !ctrl.getById(course).foundational, foundational: ctrl.getById(course).foundational, notavailable: !ctrl.getById(course).current}">{{course}} - {{ctrl.getById(course).title}}</td>
                 </tr>
             </tbody>
         </table>
+
+        <div class="info-bottom">
+            Color codes:
+            <table>
+                <tr>
+                    <td class="foundational">Foundational course</td>
+                    <td class="regular">Regular course</td>
+                    <td class="notavailable">Not available (as of Spring 2016)</td>
+                </tr>
+            </table>
+        </div>
     </div>
 
     <div ng-show="toshow=='info'" class="infopage">
