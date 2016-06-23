@@ -35,7 +35,7 @@
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
                     that._courses.push(CourseListController.toInstance(new Course(), JSON.stringify(item)));
                 });
-                that.currentSelection = Semester.Spring2016;
+                that.currentSelection = Semester.Fall2016;
                 that.tableParams = new NgTableParams(
                     {
                         count: 80, // initial page size
