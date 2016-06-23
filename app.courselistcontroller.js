@@ -28,7 +28,7 @@ var App;
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
                     that._courses.push(CourseListController.toInstance(new App.Course(), JSON.stringify(item)));
                 });
-                that.currentSelection = App.Semester.Spring2016;
+                that.currentSelection = App.Semester.Fall2016;
                 that.tableParams = new NgTableParams({
                     count: 80,
                     sorting: { available: "asc" }

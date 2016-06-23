@@ -276,9 +276,9 @@
     "subject": "CSE",
     "title": "Data and Visual Analytics",
     "available": 4,
-    "foundational": false,
-    "url": "",
-    "instructors": [ ]
+    "foundational": true,
+    "url": "http://omscs.gatech.edu/cse-6242-data-visual-analytics",
+    "instructors": [ "Guy Lebanon" ]
   },
   {
     "id": "6262",
@@ -286,8 +286,8 @@
     "title": "Network Security",
     "available": 4,
     "foundational": false,
-    "url": "",
-    "instructors": [ ]
+    "url": "http://omscs.gatech.edu/cs-6262-network-security",
+    "instructors": [ "Wenke Lee" ]
   },
   {
     "id": "6465",
@@ -304,8 +304,8 @@
     "title": "Special Topics: Cyber-Physical Systems",
     "available": 4,
     "foundational": false,
-    "url": "",
-    "instructors": [ ]
+    "url": "http://omscs.gatech.edu/cs-8803-special-topics-cyber-physical-systems",
+    "instructors": [ "Raheem Beyah" ]
   },
   {
     "id": "8803006",
