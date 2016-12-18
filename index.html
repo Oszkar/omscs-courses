@@ -148,12 +148,9 @@
         <h1>omscs-courses-app</h1>
         <p>This a simple webpage/webapp to display the courses offered by <a href="http://www.omscs.gatech.edu/">Georgia Tech's OMSCS program</a>.</p>
         <p>
-            The webpage is written in TypeScript (compiled to JS) and using the AngularJS library. The source code is <a href="https://github.com/Oszkar/omscs-courses">available on GitHub</a>.
+            The webpage is written in TypeScript and using the AngularJS library. The source code is <a href="https://github.com/Oszkar/omscs-courses">available on GitHub</a>.
             I am not a web developer, take that into account when looking at the code.
             Feel free to ontact me with ideas/suggestions or error reports. Pull requests are also welcome.
-        </p>
-        <p>
-            Not all of the features are implemented yet - please refer to the GitHub page what I still plan or what I'm working on.
         </p>
         <h2>Views</h2>
         <p>They are pretty straightforward.<p>
@@ -164,18 +161,14 @@
         </ul>
         <h2>The data</h2>
         <ul>
-            <li>The data is typed in by hand from the official program page. This means that it can easily contain errors. Also, if something changes, I have to track that manually. Please bear that in mind.</li>
+            <li>The data is typed in manually from the official program page. This means that it can easily contain errors. Also, if something changes, I have to track that manually. Please bear that in mind.</li>
             <li>In order to use the course numbers as numeric ID, I excluded the dashes from them, i.e. CS8803-001 became CS8803001.</li>
             <li>
                 The <b>future courses</b> are mostly taken from gathering all the courses from each of the specializations' pages. The <a href="http://www.omscs.gatech.edu/courses/">official courses page</a>
                 usually lists the new courses for the next two semesters. Note that courses have been pushed back to later semesters before multiple times so only take them for certain when they appear in OSCAR.
                 Also, the specialization pages seem to be mostly a copypaste from the <a href="http://www.cc.gatech.edu/academics/degree-programs/masters/computer-science/specializations">offline MS specializations</a>.
-                This can mean, I think, that they list all the offline courses, maybe even ones that are not considered to have an online version. So be advised. Also, there may be future courses that are not part of any specialization - none of those are included in the list as there's no way of knowing other future courses than the 
+                This can mean, I think, that they list all the offline (on-campus) courses, maybe even ones that are not considered to have an online version. So be advised. Also, there may be future courses that are not part of any specialization - none of those are included in the list as there's no way of knowing other future courses than the 
                 specialization courses.
-            </li>
-            <li>
-                The official page lists Computer Vision as CS7495 on the <a href="http://www.omscs.gatech.edu/specialization-computational-perception-robotics/">Perception and Robotics</a> page.
-                I suppose that is an error and it should be CS6476. I use the latter in the database.
             </li>
             <li>The database is just two JSONs: <a href="coursedata.json">coursedata.json</a> and <a href="specdata.json">specdata.json</a>.</li>
         </ul>
@@ -187,7 +180,7 @@
             <li>The OMSCS program did have the High Performance Computing specialization also. It was removed sometime Fall 2015.</li>
         </ul>
         <h2>The author</h2>
-        <p>My name is Oszkar Jozsa. I started the OMSCS program Fall 2015. I live in Budapest, Hungary and you can contact me at <i>jozsa [dot] oszkar [dot] gmail</i> or through the GitHub link above.</p>
+        <p>My name is Oszkar Jozsa. I started the OMSCS program Fall 2015. I am from Hungary and currently live in Tokyo, Japan. You can contact me at <i>jozsa [dot] oszkar [dot] gmail</i> or through the GitHub link above.</p>
     </div>
 </body>
 </html>

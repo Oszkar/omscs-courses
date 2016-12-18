@@ -4,11 +4,11 @@
      * Enum for semesters, 'Before' is before Fall 2015, 'Future' is after Fall 2016
      * @enum {number}
      */
-    export enum Semester { Future, Before, Fall2015, Spring2016, Fall2016, Spring2017, Fall2017 }; // future and before are 0 amd 1 so that we can add stuff at the end later
+    export enum Semester { Discontinued = -1, Future, Before, Fall2015, Spring2016, Fall2016, Spring2017, Fall2017 }; // future and before are 0 amd 1 so that we can add stuff at the end later
 
     // TODO update this every semester :)
     /** @constant {Semester} The currently ongoing semester */
-    export const CURRENT_SEMESTER = Semester.Spring2016;
+    export const CURRENT_SEMESTER = Semester.Fall2016;
 
     /**
      * Class that represents a single course
