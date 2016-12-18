@@ -16,7 +16,7 @@
     "subject": "CS",
     "title": "Introduction to Information Security",
     "available": 1,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6035-introduction-to-information-security/",
     "instructors": [
       "Wenke Lee",
@@ -101,7 +101,7 @@
     "subject": "CS",
     "title": "Intro to Health Informatics",
     "available": 2,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6440-intro-health-informatics/",
     "instructors": [
       "Mark Braunstein"
@@ -123,7 +123,7 @@
     "subject": "CS",
     "title": "Computational Photography",
     "available": 1,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6475-computational-photography/",
     "instructors": [
       "Irfan Essa",
@@ -134,7 +134,7 @@
     "id": "6505",
     "subject": "CS",
     "title": "Computability, Complexity & Algorithms",
-    "available": 1,
+    "available": -1,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6505-computability-algorithms/",
     "instructors": [
@@ -171,7 +171,7 @@
     "subject": "CS",
     "title": "Machine Learning for Trading",
     "available": 1,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-7646-machine-learning-trading/",
     "instructors": [
       "Tucker Balch"
@@ -182,7 +182,7 @@
     "subject": "CS",
     "title": "Artificial Intelligence for Robotics",
     "available": 1,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-8803-artificial-intelligence-robotics/",
     "instructors": [
       "Sebastian Thrun",
@@ -206,7 +206,7 @@
     "subject": "CS",
     "title": "Special Topics: Reinforcement Learning",
     "available": 2,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/courses/cs-8803-special-topics-reinforcement-learning/",
     "instructors": [
       "Charles Isbell",
@@ -219,7 +219,7 @@
     "subject": "CS",
     "title": "Software Analysis and Test",
     "available": 3,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6340-software-analysis-and-test/",
     "instructors": [
       "Mayur Naikr",
@@ -255,7 +255,7 @@
     "subject": "CSE",
     "title": "Special Topics: Big Data for Health Informatics",
     "available": 3,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/courses/cse-8803-special-topics-big-data-for-health-informatics/",
     "instructors": [
       "Jimeng Sun",
@@ -267,7 +267,7 @@
     "subject": "CS",
     "title": "Artificial Intelligence",
     "available": 3,
-    "foundational": false,
+    "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6601-artificial-intelligence",
     "instructors": [ "Thad Starner" ]
   },
@@ -285,9 +285,18 @@
     "subject": "CS",
     "title": "Network Security",
     "available": 4,
-    "foundational": false,
+    "foundational": true,
     "url": "http://omscs.gatech.edu/cs-6262-network-security",
     "instructors": [ "Wenke Lee" ]
+  },
+  {
+    "id": "6750",
+    "subject": "CS",
+    "title": "Human-Computer Interaction",
+    "available": 4,
+    "foundational": false,
+    "url": "http://omscs.gatech.edu/cs-6750-human-computer-interaction",
+    "instructors": [ "David Joyner" ]
   },
   {
     "id": "6465",
@@ -299,13 +308,22 @@
     "instructors": [ ]
   },
   {
-    "id": "8803007",
+    "id": "8803064",
     "subject": "CS",
-    "title": "Special Topics: Cyber-Physical Systems",
-    "available": 4,
+    "title": "Graduate Algorithms ",
+    "available": 5,
     "foundational": false,
-    "url": "http://omscs.gatech.edu/cs-8803-special-topics-cyber-physical-systems",
-    "instructors": [ "Raheem Beyah" ]
+    "url": "",
+    "instructors": [ ]
+  },
+  {
+    "id": "6465",
+    "subject": "CS",
+    "title": "Computational Journalism",
+    "available": 5,
+    "foundational": true,
+    "url": "",
+    "instructors": [ ]
   },
   {
     "id": "8803006",

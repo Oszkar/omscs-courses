@@ -5,6 +5,7 @@ var App;
      * @enum {number}
      */
     (function (Semester) {
+        Semester[Semester["Discontinued"] = -1] = "Discontinued";
         Semester[Semester["Future"] = 0] = "Future";
         Semester[Semester["Before"] = 1] = "Before";
         Semester[Semester["Fall2015"] = 2] = "Fall2015";
@@ -17,7 +18,7 @@ var App;
     ; // future and before are 0 amd 1 so that we can add stuff at the end later
     // TODO update this every semester :)
     /** @constant {Semester} The currently ongoing semester */
-    App.CURRENT_SEMESTER = Semester.Spring2016;
+    App.CURRENT_SEMESTER = Semester.Fall2016;
     /**
      * Class that represents a single course
      * @class
