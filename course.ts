@@ -33,7 +33,7 @@
 
         /** @property {boolean } current Is the course currently offered? */
         get current(): boolean {
-            return this.available <= CURRENT_SEMESTER && this.available != Semester.Future;
+            return this.available <= CURRENT_SEMESTER && this.available != Semester.Future && this.available != Semester.Discontinued;
         }
 
         /** @property {string } fullCourseNumber Subject+id, e.g. CS4242 */

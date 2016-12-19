@@ -30,7 +30,7 @@ var App;
             // TODO: maybe links to reviews / critique
             /** @property {boolean } current Is the course currently offered? */
             get: function () {
-                return this.available <= App.CURRENT_SEMESTER && this.available != Semester.Future;
+                return this.available <= App.CURRENT_SEMESTER && this.available != Semester.Future && this.available != Semester.Discontinued;
             },
             enumerable: true,
             configurable: true
