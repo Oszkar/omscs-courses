@@ -6,44 +6,20 @@ A live version can be found at [http://oszkar.github.io/omscs-courses/](http://o
 
 ### TODO/roadmap/planned features
 
-##### ~Pre-Alpha~
+##### ~What is done~
 
-| Feature  |    Status     | 
-|----------|:-------------:|
-| coursedata.json 			|    ✔   | 
-| specdata.json 			|    ✔   | 
-| simple table that lists the courses 	|    ✔   | 
-| semester and foundational selector 	|    ✔   | 
-| CSS row coloring + color code table 	|    ✔   | 
-| proper display of instructors 	|    ✔   | 
-| set up github.io + gh-pages branch	|    ✔   |
-| code cleanup				|    ✔   | 
+* JSON databases
+* Course/specialization/course.vs.specialization.maxtrix view
+* Menu/color codes/info page
+* Github.io page
 
-##### ~Alpha~
-
-| Feature  |    Status     | 
-|----------|:-------------:|
-| menu				|    ✔   | 
-| matrix view with specializations 	|    ✔   | 
-| fancy coloring of matrix view	|    ✔   |
-| info page			|    ✔   |
-| code cleanup			|    ✔   | 
-| google analytics      	|    ✔   | 
-
-##### ~Beta~
-
-| Feature  |    Status     | 
-|----------|:-------------:|
-| separate HTML into angular templates |    ✘   | 
-| look&feel / UX pimping|    ✘   |
-| specialization view	|    ✔   | 
-| code cleanup		|    ✘   | 
-| github.io page cleanup	|    ✘   |
-
-##### ~Final/1.0~
+##### ~Would be nice to have~~
 
 Would-be-nice-to-have features for the future/2.0:
 
+* Cleanup of TS code and HTML
 * Cookie handling so one can select which courses he/she completed so far and in which specialization he/she is interested in
 * More links (critique, student review site, etc.)
 * Instructor view
+* API to query and/or edit the databases
+* Nicer look&feel
