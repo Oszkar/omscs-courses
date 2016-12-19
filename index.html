@@ -45,7 +45,7 @@
         </div>
 
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
-            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current}">
+            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current, discontinued: course.available == -1}">
                 <td data-title="'Subject'" sortable="'subject'">{{course.subject}}</td>
                 <td data-title="'Course #'" sortable="'id'">{{course.id}}</td>
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
@@ -60,7 +60,8 @@
                 <tr>
                     <td class="foundational">Foundational course</td>
                     <td class="regular">Regular course</td>
-                    <td class="notavailable">Not available (as of Spring 2016)</td>
+                    <td class="notavailable">Not available yet (as of Fall 2016)</td>
+                    <td class="discontinued">Discountinued/not offered currently (as of Fall 2016)</td>
                 </tr>
             </table>
         </div>
@@ -78,8 +79,8 @@
 
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
             <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )">
-                <td data-title="'Course #'" sortable="'id'" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current}">{{course.id}}</td>
-                <td data-title="'Title'" sortable="'title'" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current}"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
+                <td data-title="'Course #'" sortable="'id'" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current, discontinued: course.available == -1}">{{course.id}}</td>
+                <td data-title="'Title'" sortable="'title'" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current, discontinued: course.available == -1}"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
                 <td data-title="'Computational Perception and Robotics'" ng-class="ctrl.getCourseType(course.id, 'Computational Perception and Robotics')">{{ctrl.getCourseType(course.id, "Computational Perception and Robotics")}}</td>
                 <td data-title="'Computing Systems'" ng-class="ctrl.getCourseType(course.id, 'Computing Systems')">{{ctrl.getCourseType(course.id, "Computing Systems")}}</td>
                 <td data-title="'Interactive Intelligence'" ng-class="ctrl.getCourseType(course.id, 'Interactive Intelligence')">{{ctrl.getCourseType(course.id, "Interactive Intelligence")}}</td>
@@ -93,9 +94,10 @@
                 <tr>
                     <td class="foundational">Foundational course</td>
                     <td class="regular">Regular course</td>
-                    <td class="notavailable">Not available (as of Spring 2016)</td>
+                    <td class="notavailable">Not available yet (as of Fall 2016)</td>
                     <td class="core">Core course in specialization (column)</td>
                     <td class="elective">Elective course in specialization (column)</td>
+                    <td class="discontinued">Discountinued/not offered currently (as of Fall 2016)</td>
                 </tr>
             </table>
         </div>
@@ -108,26 +110,26 @@
                     <td rowspan="{{spec.numCourses}}" data-title="'Title'">{{spec.title}}</td>
                     <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'">Core courses</td>
                     <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'">{{spec.core.groups[0].groupName}}</td>
-                    <td data-title="'Course'" ng-init="a = ctrl.getById(spec.core.groups[0].courseList[0])" ng-class="{regular: !a.foundational, foundational: a.foundational, notavailable: !a.current}"><a target="_blank" ng-href="{{a.url}}">{{a.id}} - {{a.title}}</a></td>
+                    <td data-title="'Course'" ng-init="a = ctrl.getById(spec.core.groups[0].courseList[0])" ng-class="{regular: !a.foundational, foundational: a.foundational, notavailable: !a.current, discontinued: a.available == -1}"><a target="_blank" ng-href="{{a.url}}">{{a.id}} - {{a.title}}</a></td>
                 </tr>
                 <tr ng-repeat-start="group in spec.core.groups" ng-show='$index > 0'>
                     <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
-                    <td ng-init="b = ctrl.getById(group.courseList[0])" ng-class="{regular: !b.foundational, foundational: b.foundational, notavailable: !b.current}"><a target="_blank" ng-href="{{b.url}}">{{b.id}} - {{b.title}}</a></td>
+                    <td ng-init="b = ctrl.getById(group.courseList[0])" ng-class="{regular: !b.foundational, foundational: b.foundational, notavailable: !b.current, discontinued: b.available == -1}"><a target="_blank" ng-href="{{b.url}}">{{b.id}} - {{b.title}}</a></td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-init="c = ctrl.getById(course)" ng-show='$index> 0' ng-repeat-end>
-                    <td ng-class="{regular: !c.foundational, foundational: c.foundational, notavailable: !c.current}"><a target="_blank" ng-href="{{c.url}}">{{c.id}} - {{c.title}}</a></td>
+                    <td ng-class="{regular: !c.foundational, foundational: c.foundational, notavailable: !c.current, discontinued: v.available == -1}"><a target="_blank" ng-href="{{c.url}}">{{c.id}} - {{c.title}}</a></td>
                 </tr>
                 <tr>
                     <td rowspan="{{spec.electives.numCourses}}">Electives</td>
                     <td rowspan="{{spec.electives.groups[0].courseList.length}}">{{spec.electives.groups[0].groupName}}</td>
-                    <td ng-init="d = ctrl.getById(spec.electives.groups[0].courseList[0])" ng-class="{regular: !d.foundational, foundational: d.foundational, notavailable: !d.current}"><a target="_blank" ng-href="{{d.url}}">{{d.id}} - {{d.title}}</a></td>
+                    <td ng-init="d = ctrl.getById(spec.electives.groups[0].courseList[0])" ng-class="{regular: !d.foundational, foundational: d.foundational, notavailable: !d.current, discontinued: d.available == -1}"><a target="_blank" ng-href="{{d.url}}">{{d.id}} - {{d.title}}</a></td>
                 </tr>
                 <tr ng-repeat-start="group in spec.electives.groups" ng-show='$index > 0'>
                     <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
-                    <td ng-init="e = ctrl.getById(group.courseList[0])" ng-class="{regular: !e.foundational, foundational: e.foundational, notavailable: !e.current}"><a target="_blank" ng-href="{{e.url}}">{{e.id}} - {{e.title}}</a></td>
+                    <td ng-init="e = ctrl.getById(group.courseList[0])" ng-class="{regular: !e.foundational, foundational: e.foundational, notavailable: !e.current, discontinued: e.available == -1}"><a target="_blank" ng-href="{{e.url}}">{{e.id}} - {{e.title}}</a></td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-init="f = ctrl.getById(course)" ng-show='$index > 0' ng-repeat-end>
-                    <td ng-class="{regular: !f.foundational, foundational: f.foundational, notavailable: !f.current}"><a target="_blank" ng-href="{{f.url}}">{{f.id}} - {{f.title}}</a></td>
+                    <td ng-class="{regular: !f.foundational, foundational: f.foundational, notavailable: !f.current, discontinued: f.available == -1}"><a target="_blank" ng-href="{{f.url}}">{{f.id}} - {{f.title}}</a></td>
                 </tr>
             </tbody>
         </table>
@@ -138,7 +140,8 @@
                 <tr>
                     <td class="foundational">Foundational course</td>
                     <td class="regular">Regular course</td>
-                    <td class="notavailable">Not available (as of Spring 2016)</td>
+                    <td class="notavailable">Not available yet (as of Fall 2016)</td>
+                    <td class="discontinued">Discountinued/not offered currently (as of Fall 2016)</td>
                 </tr>
             </table>
         </div>

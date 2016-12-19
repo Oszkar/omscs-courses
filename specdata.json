@@ -9,6 +9,7 @@
           "minCourses": 1,
           "courseList": [
             6505,
+            8803064,
             6520,
             6550,
             7520,
@@ -63,7 +64,8 @@
           "groupName": "Algorithms",
           "minCourses": 1,
           "courseList": [
-            6505
+            6505,
+            8803064
           ]
         },
         {
@@ -120,7 +122,8 @@
           "minCourses": 1,
           "courseList": [
             6300,
-            6505
+            6505,
+            8803064
           ]
         },
         {
@@ -174,6 +177,7 @@
           "minCourses": 1,
           "courseList": [
             6505,
+            8803064,
             6520,
             6550,
             7510,

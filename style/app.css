@@ -31,6 +31,10 @@ table .elective {
     background-color: lightskyblue;
 }
 
+table .discontinued {
+    background-color: red;
+}
+
 .config-top {
     margin-bottom: 10px;
 }

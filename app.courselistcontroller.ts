@@ -16,9 +16,8 @@
         // these will be the options in the semester selector dropdown that we will be populating with angular from here
         // id will be a number on the JS side
         public semesterOptions = [{ id: Semester.Future, text: "All courses" },
-            { id: Semester.Spring2016, text: "Current only" },
-            { id: Semester.Fall2016, text: "Current + Fall2016" },
-            { id: Semester.Spring2017, text: "Current + Fall2016 + Spring2017" }]
+                                  { id: Semester.Fall2016, text: "Current only" },
+                                  { id: Semester.Spring2017, text: "Current + Spring2017" }]
 
         /**
          * @constructor
@@ -134,6 +133,9 @@
                     break;
                 case Semester.Future:
                     return "Future"
+                    break;
+                case Semester.Discontinued:
+                    return "Discountinued"
                     break;
                 default:
                     return "Uknown availability property"

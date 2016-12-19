@@ -310,16 +310,7 @@
   {
     "id": "8803064",
     "subject": "CS",
-    "title": "Graduate Algorithms ",
-    "available": 5,
-    "foundational": false,
-    "url": "",
-    "instructors": [ ]
-  },
-  {
-    "id": "6465",
-    "subject": "CS",
-    "title": "Computational Journalism",
+    "title": "Graduate Algorithms",
     "available": 5,
     "foundational": true,
     "url": "",

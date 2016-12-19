@@ -16,9 +16,8 @@ var App;
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
-                { id: App.Semester.Spring2016, text: "Current only" },
-                { id: App.Semester.Fall2016, text: "Current + Fall2016" },
-                { id: App.Semester.Spring2017, text: "Current + Fall2016 + Spring2017" }];
+                { id: App.Semester.Fall2016, text: "Current only" },
+                { id: App.Semester.Spring2017, text: "Current + Spring2017" }];
             this._$scope = $scope;
             var that = this;
             // TODO move json loading outside from here if I can figure out how
@@ -123,6 +122,9 @@ var App;
                     break;
                 case App.Semester.Future:
                     return "Future";
+                    break;
+                case App.Semester.Discontinued:
+                    return "Discountinued";
                     break;
                 default:
                     return "Uknown availability property";
