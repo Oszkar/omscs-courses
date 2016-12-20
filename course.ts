@@ -29,7 +29,10 @@
         url: string;
         /** @property {string[] } instructors List of the instructors/creators/main personell */
         instructors: string[];
-        // TODO: maybe links to reviews / critique
+        /** @property {string } reviews OMSCentral review page url */
+        reviews: string;
+        /** @property {string } grades OMSCentral review page url */
+        grades: string;
 
         /** @property {boolean } current Is the course currently offered? */
         get current(): boolean {

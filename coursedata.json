@@ -9,7 +9,9 @@
     "instructors": [
       "Aaron Bobick",
       "Irfan Essa"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6476",
+    "grades": "https://omscentral.com/grades/6476"
   },
   {
     "id": "6035",
@@ -21,7 +23,9 @@
     "instructors": [
       "Wenke Lee",
       "Mustaque Ahamad"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6035",
+    "grades": "https://omscentral.com/grades/6035"
   },
   {
     "id": "6210",
@@ -33,7 +37,9 @@
     "instructors": [
       "Kishore Ramachandran",
       "Charlie Brubaker"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6210",
+    "grades": "https://omscentral.com/grades/6210"
   },
   {
     "id": "6220",
@@ -46,7 +52,9 @@
       "Rich Vuduc",
       "Catherine Gamboa",
       "Amanda Deisler"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6220",
+    "grades": "https://omscentral.com/grades/6220"
   },
   {
     "id": "6250",
@@ -58,7 +66,9 @@
     "instructors": [
       "Nick Feamster",
       "Sean Donovan"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6250",
+    "grades": "https://omscentral.com/grades/6250"
   },
   {
     "id": "6290",
@@ -70,7 +80,9 @@
     "instructors": [
       "Milos Prvulovic",
       "Catherine Gamboa"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6290",
+    "grades": "https://omscentral.com/grades/6290"
   },
   {
     "id": "6300",
@@ -83,7 +95,9 @@
       "Alessandro Orso",
       "Shashank Jagirdar",
       "Mattia Fazzini"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6300",
+    "grades": "https://omscentral.com/grades/6300"
   },
   {
     "id": "6310",
@@ -94,7 +108,9 @@
     "url": "http://www.omscs.gatech.edu/cs-6310-software-architecture-design/",
     "instructors": [
       "Spencer Rugaber"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6310",
+    "grades": "https://omscentral.com/grades/6310"
   },
   {
     "id": "6440",
@@ -105,7 +121,9 @@
     "url": "http://www.omscs.gatech.edu/cs-6440-intro-health-informatics/",
     "instructors": [
       "Mark Braunstein"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6440",
+    "grades": "https://omscentral.com/grades/6440"
   },
   {
     "id": "6460",
@@ -116,7 +134,9 @@
     "url": "http://www.omscs.gatech.edu/cs-6460-educational-technology/",
     "instructors": [
       "David Joyner"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6460",
+    "grades": "https://omscentral.com/grades/6460"
   },
   {
     "id": "6475",
@@ -128,7 +148,9 @@
     "instructors": [
       "Irfan Essa",
       "Daniel Castro"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6475",
+    "grades": "https://omscentral.com/grades/6475"
   },
   {
     "id": "6505",
@@ -139,7 +161,9 @@
     "url": "http://www.omscs.gatech.edu/cs-6505-computability-algorithms/",
     "instructors": [
       "Charlie Brubaker"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6505",
+    "grades": "https://omscentral.com/grades/6505"
   },
   {
     "id": "7637",
@@ -151,7 +175,9 @@
     "instructors": [
       "Ashok Goel",
       "David Joyner"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/7637",
+    "grades": "https://omscentral.com/grades/7637"
   },
   {
     "id": "7641",
@@ -164,7 +190,9 @@
       "Charles Isbell",
       "Michael Littman",
       "Pushkar Kolhe"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/7641",
+    "grades": "https://omscentral.com/grades/7641"
   },
   {
     "id": "7646",
@@ -175,7 +203,9 @@
     "url": "http://www.omscs.gatech.edu/cs-7646-machine-learning-trading/",
     "instructors": [
       "Tucker Balch"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/7646",
+    "grades": "https://omscentral.com/grades/7646"
   },
   {
     "id": "8803001",
@@ -187,7 +217,9 @@
     "instructors": [
       "Sebastian Thrun",
       "Chris Pryby"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/8803-001",
+    "grades": "https://omscentral.com/grades/8803-001"
   },
   {
     "id": "8803002",
@@ -199,7 +231,9 @@
     "instructors": [
       "Ada Gavrilovska",
       "Jarrod Parkes"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/8803-002",
+    "grades": "https://omscentral.com/grades/8803-002"
   },
   {
     "id": "8803003",
@@ -212,7 +246,9 @@
       "Charles Isbell",
       "Michael Littman",
       "Chris Pryby"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/8803-003",
+    "grades": "https://omscentral.com/grades/8803-003"
   },
   {
     "id": "6340",
@@ -225,7 +261,9 @@
       "Mayur Naikr",
       "Chris Pryby",
       "Ravi Mangal"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6340",
+    "grades": "https://omscentral.com/grades/6340"
   },
   {
     "id": "6400",
@@ -236,7 +274,9 @@
     "url": "http://www.omscs.gatech.edu/cs-6400-database-systems-concepts-and-design/",
     "instructors": [
       "Leo Mark"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/6400",
+    "grades": "https://omscentral.com/grades/6400"
   },
   {
     "id": "8803004",
@@ -248,7 +288,9 @@
     "instructors": [
       "Santosh Pande",
       "Catherine Gamboa"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/8803-004",
+    "grades": "https://omscentral.com/grades/8803-004"
   },
   {
     "id": "8803005",
@@ -260,7 +302,9 @@
     "instructors": [
       "Jimeng Sun",
       "David Joyner"
-    ]
+    ],
+    "reviews": "https://omscentral.com/reviews/8803-BDHI",
+    "grades": "https://omscentral.com/grades/8803-BDHI"
   },
   {
     "id": "6601",
@@ -269,7 +313,9 @@
     "available": 3,
     "foundational": true,
     "url": "http://www.omscs.gatech.edu/cs-6601-artificial-intelligence",
-    "instructors": [ "Thad Starner" ]
+    "instructors": [ "Thad Starner" ],
+    "reviews": "https://omscentral.com/reviews/6601",
+    "grades": "https://omscentral.com/grades/6601"
   },
   {
     "id": "6242",
@@ -278,7 +324,9 @@
     "available": 4,
     "foundational": true,
     "url": "http://omscs.gatech.edu/cse-6242-data-visual-analytics",
-    "instructors": [ "Guy Lebanon" ]
+    "instructors": [ "Guy Lebanon" ],
+    "reviews": "https://omscentral.com/reviews/6242",
+    "grades": "https://omscentral.com/grades/6242"
   },
   {
     "id": "6262",
@@ -287,7 +335,9 @@
     "available": 4,
     "foundational": true,
     "url": "http://omscs.gatech.edu/cs-6262-network-security",
-    "instructors": [ "Wenke Lee" ]
+    "instructors": [ "Wenke Lee" ],
+    "reviews": "https://omscentral.com/reviews/6262",
+    "grades": "https://omscentral.com/grades/6262"
   },
   {
     "id": "6750",
@@ -296,7 +346,9 @@
     "available": 4,
     "foundational": false,
     "url": "http://omscs.gatech.edu/cs-6750-human-computer-interaction",
-    "instructors": [ "David Joyner" ]
+    "instructors": [ "David Joyner" ],
+    "reviews": "https://omscentral.com/reviews/6750",
+    "grades": "https://omscentral.com/grades/6750"
   },
   {
     "id": "6465",
@@ -305,7 +357,9 @@
     "available": 5,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803064",
@@ -314,7 +368,9 @@
     "available": 5,
     "foundational": true,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803006",
@@ -323,7 +379,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803008",
@@ -332,7 +390,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6520",
@@ -341,7 +401,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6550",
@@ -350,7 +412,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7520",
@@ -359,7 +423,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7530",
@@ -368,7 +434,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6140",
@@ -377,7 +445,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7499",
@@ -386,7 +456,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7636",
@@ -395,7 +467,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803009",
@@ -404,7 +478,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7630",
@@ -413,7 +489,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7631",
@@ -422,7 +500,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7633",
@@ -431,7 +511,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7649",
@@ -440,7 +522,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6241",
@@ -449,7 +533,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6235",
@@ -458,7 +544,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6238",
@@ -467,7 +555,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6260",
@@ -476,7 +566,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6365",
@@ -485,7 +577,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6422",
@@ -494,7 +588,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6675",
@@ -503,7 +599,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7210",
@@ -512,7 +610,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7260",
@@ -521,7 +621,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7270",
@@ -530,7 +632,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7290",
@@ -539,7 +643,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7292",
@@ -548,7 +654,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7560",
@@ -557,7 +665,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803010",
@@ -566,7 +676,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7620",
@@ -575,7 +687,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7634",
@@ -584,7 +698,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803011",
@@ -593,7 +709,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7632",
@@ -602,7 +720,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7650",
@@ -611,7 +731,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803012",
@@ -620,7 +742,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6795",
@@ -629,7 +753,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7610",
@@ -638,7 +764,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803013",
@@ -647,7 +775,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7510",
@@ -656,7 +786,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6740",
@@ -665,7 +797,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7540",
@@ -674,7 +808,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7545",
@@ -683,7 +819,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "7616",
@@ -692,7 +830,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "8803014",
@@ -701,7 +841,9 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   },
   {
     "id": "6240",
@@ -710,6 +852,8 @@
     "available": 0,
     "foundational": false,
     "url": "",
-    "instructors": [ ]
+    "instructors": [ ],
+    "reviews": "",
+    "grades": ""
   }
 ]
