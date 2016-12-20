@@ -27,7 +27,6 @@ var App;
         function Course() {
         }
         Object.defineProperty(Course.prototype, "current", {
-            // TODO: maybe links to reviews / critique
             /** @property {boolean } current Is the course currently offered? */
             get: function () {
                 return this.available <= App.CURRENT_SEMESTER && this.available != Semester.Future && this.available != Semester.Discontinued;
