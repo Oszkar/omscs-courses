@@ -107,25 +107,25 @@
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
             <tbody ng-repeat="spec in $data">
                 <tr>
-                    <td rowspan="{{spec.numCourses}}" data-title="'Title'">{{spec.title}}</td>
-                    <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'">Core courses</td>
-                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'">{{spec.core.groups[0].groupName}}</td>
+                    <td rowspan="{{spec.numCourses}}" data-title="'Title'"><b>{{spec.title}}</b></td>
+                    <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'"><b>Core courses</b><br/><i>Pick at least: {{spec.core.minCourses}}</i></td>
+                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'">{{spec.core.groups[0].groupName}}<br /><i>Pick at least: {{spec.core.groups[0].minCourses}}</td>
                     <td data-title="'Course'" ng-init="a = ctrl.getById(spec.core.groups[0].courseList[0])" ng-class="{regular: !a.foundational, foundational: a.foundational, notavailable: !a.current, discontinued: a.available == -1}"><a target="_blank" ng-href="{{a.url}}">{{a.id}} - {{a.title}}</a></td>
                 </tr>
                 <tr ng-repeat-start="group in spec.core.groups" ng-show='$index > 0'>
-                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
+                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}<br /><i>Pick at least: {{group.minCourses}}</td>
                     <td ng-init="b = ctrl.getById(group.courseList[0])" ng-class="{regular: !b.foundational, foundational: b.foundational, notavailable: !b.current, discontinued: b.available == -1}"><a target="_blank" ng-href="{{b.url}}">{{b.id}} - {{b.title}}</a></td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-init="c = ctrl.getById(course)" ng-show='$index> 0' ng-repeat-end>
                     <td ng-class="{regular: !c.foundational, foundational: c.foundational, notavailable: !c.current, discontinued: v.available == -1}"><a target="_blank" ng-href="{{c.url}}">{{c.id}} - {{c.title}}</a></td>
                 </tr>
                 <tr>
-                    <td rowspan="{{spec.electives.numCourses}}">Electives</td>
-                    <td rowspan="{{spec.electives.groups[0].courseList.length}}">{{spec.electives.groups[0].groupName}}</td>
+                    <td rowspan="{{spec.electives.numCourses}}"><b>Electives</b><br /><i>Pick at least: {{spec.electives.minCourses}}</i></td>
+                    <td rowspan="{{spec.electives.groups[0].courseList.length}}">{{spec.electives.groups[0].groupName}}<br /><i>Pick at least: {{spec.electives.groups[0].minCourses}}</td>
                     <td ng-init="d = ctrl.getById(spec.electives.groups[0].courseList[0])" ng-class="{regular: !d.foundational, foundational: d.foundational, notavailable: !d.current, discontinued: d.available == -1}"><a target="_blank" ng-href="{{d.url}}">{{d.id}} - {{d.title}}</a></td>
                 </tr>
                 <tr ng-repeat-start="group in spec.electives.groups" ng-show='$index > 0'>
-                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}</td>
+                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}<br /><i>Pick at least: {{group.minCourses}}</i></td>
                     <td ng-init="e = ctrl.getById(group.courseList[0])" ng-class="{regular: !e.foundational, foundational: e.foundational, notavailable: !e.current, discontinued: e.available == -1}"><a target="_blank" ng-href="{{e.url}}">{{e.id}} - {{e.title}}</a></td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-init="f = ctrl.getById(course)" ng-show='$index > 0' ng-repeat-end>
