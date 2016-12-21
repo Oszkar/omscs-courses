@@ -6,7 +6,8 @@
      */
     export class CourseListController {
         protected _courses: Course[] = [];
-        protected _$scope: ng.IScope
+        protected _$scope: ng.IScope;
+        protected _completed: number[] = [];
 
         /** @property {NgTableParams } tableParams The ng-table settings */
         public tableParams: any;
@@ -27,12 +28,15 @@
         constructor($scope: ng.IScope, NgTableParams) {
             this._$scope = $scope;
             var that = this;
+            this.parseCookies();
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", (data) => {
                 data.forEach((item) => {
                     // use the serializationhelper to properly deserialize from JSON
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._courses.push(CourseListController.toInstance(new Course(), JSON.stringify(item)));
+                    var course = CourseListController.toInstance(new Course(), JSON.stringify(item));
+                    course.completed = that._completed.indexOf(parseInt(course.id.toString())) > -1;
+                    that._courses.push(course);
                 });
                 that.currentSelection = Semester.Fall2016;
                 that.tableParams = new NgTableParams(
@@ -72,6 +76,23 @@
             });
 
             return found;
+        }
+
+        /**
+         * Called when the completed checkbox is changed. Updates the cookies and the internal completed list
+         * @function
+         * @param {number} id - Course id (without the subject)
+         */
+        public completedSelection(id: any): void {
+            // force it to be number
+            var idNum = parseInt(id.toString());
+            var idx = this._completed.indexOf(idNum);
+            if (idx > -1) {
+                this._completed.splice(idx, 1);
+            } else {
+                this._completed.push(idNum);
+            }
+            this.updateCookies();
         }
 
         /**
@@ -140,6 +161,28 @@
                 default:
                     return "Uknown availability property"
             }
+        }
+
+        /**
+         * Reads the cookie and parses the completed courses from it
+         * @function
+         */
+        private parseCookies() {
+            var completed = Cookies.get("completed").split(',');
+            var that = this;
+            completed.forEach((item) => {
+                that._completed.push(parseInt(item));
+            });
+        }
+
+        /**
+         * Saves the current completed course list into the cookie (and erases the old value)
+         * @function
+         */
+        private updateCookies() {
+            console.log(this._completed);
+            Cookies.delete("completed");
+            Cookies.set("completed", this._completed.toString());
         }
 
         /**

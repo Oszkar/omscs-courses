@@ -13,6 +13,7 @@ var App;
          */
         function CourseListController($scope, NgTableParams) {
             this._courses = [];
+            this._completed = [];
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
@@ -20,12 +21,15 @@ var App;
                 { id: App.Semester.Spring2017, text: "Current + Spring2017" }];
             this._$scope = $scope;
             var that = this;
+            this.parseCookies();
             // TODO move json loading outside from here if I can figure out how
             $.getJSON("coursedata.json", function (data) {
                 data.forEach(function (item) {
                     // use the serializationhelper to properly deserialize from JSON
                     // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._courses.push(CourseListController.toInstance(new App.Course(), JSON.stringify(item)));
+                    var course = CourseListController.toInstance(new App.Course(), JSON.stringify(item));
+                    course.completed = that._completed.indexOf(parseInt(course.id.toString())) > -1;
+                    that._courses.push(course);
                 });
                 that.currentSelection = App.Semester.Fall2016;
                 that.tableParams = new NgTableParams({
@@ -63,6 +67,23 @@ var App;
                 }
             });
             return found;
+        };
+        /**
+         * Called when the completed checkbox is changed. Updates the cookies and the internal completed list
+         * @function
+         * @param {number} id - Course id (without the subject)
+         */
+        CourseListController.prototype.completedSelection = function (id) {
+            // force it to be number
+            var idNum = parseInt(id.toString());
+            var idx = this._completed.indexOf(idNum);
+            if (idx > -1) {
+                this._completed.splice(idx, 1);
+            }
+            else {
+                this._completed.push(idNum);
+            }
+            this.updateCookies();
         };
         /**
          * @function
@@ -129,6 +150,26 @@ var App;
                 default:
                     return "Uknown availability property";
             }
+        };
+        /**
+         * Reads the cookie and parses the completed courses from it
+         * @function
+         */
+        CourseListController.prototype.parseCookies = function () {
+            var completed = App.Cookies.get("completed").split(',');
+            var that = this;
+            completed.forEach(function (item) {
+                that._completed.push(parseInt(item));
+            });
+        };
+        /**
+         * Saves the current completed course list into the cookie (and erases the old value)
+         * @function
+         */
+        CourseListController.prototype.updateCookies = function () {
+            console.log(this._completed);
+            App.Cookies.delete("completed");
+            App.Cookies.set("completed", this._completed.toString());
         };
         /**
          * SerializationHelper

@@ -27,7 +27,7 @@ var App;
         function Course() {
         }
         Object.defineProperty(Course.prototype, "current", {
-            /** @property {boolean } current Is the course currently offered? */
+            /** @property {boolean} current Is the course currently offered? */
             get: function () {
                 return this.available <= App.CURRENT_SEMESTER && this.available != Semester.Future && this.available != Semester.Discontinued;
             },
@@ -35,7 +35,7 @@ var App;
             configurable: true
         });
         Object.defineProperty(Course.prototype, "fullCourseNumber", {
-            /** @property {string } fullCourseNumber Subject+id, e.g. CS4242 */
+            /** @property {string} fullCourseNumber Subject+id, e.g. CS4242 */
             get: function () {
                 return this.subject + this.id.toString();
             },

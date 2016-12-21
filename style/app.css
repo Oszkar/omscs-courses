@@ -35,6 +35,10 @@ table .discontinued {
     background-color: red;
 }
 
+table .completed {
+    background-color: deeppink;
+}
+
 .config-top {
     margin-bottom: 10px;
 }

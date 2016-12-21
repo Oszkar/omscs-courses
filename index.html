@@ -7,6 +7,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.1/angular.min.js"></script>
     <script src="libs/jquery/jquery-2.1.1.min.js"></script>
     <script src="libs/ng-table/ng-table.js"></script>
+    <script src="cookies.js"></script>
     <script src="course.js"></script>
     <script src="specialization.js"></script>
     <script src="app.courselistcontroller.js"></script>
@@ -45,14 +46,15 @@
         </div>
 
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
-            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current, discontinued: course.available == -1}">
+            <tr ng-repeat="course in $data" ng-show="ctrl.canShow(course.id) && (!onlyfoundational || course.foundational )" ng-class="{regular: !course.foundational, foundational: course.foundational, notavailable: !course.current, discontinued: course.available == -1, completed: course.completed}">
                 <td data-title="'Subject'" sortable="'subject'">{{course.subject}}</td>
                 <td data-title="'Course #'" sortable="'id'">{{course.id}}</td>
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
                 <td data-title="'Available from'" sortable="'available'">{{ctrl.availabilityText(course.available)}}</td>
                 <td data-title="'Instructor(s)'"><label ng-repeat="i in course.instructors">{{i}}{{$last ? '' : ', '}}</label></td>
-                <td data-title="'Reviews'" sortable="'title'"><a target="_blank" ng-href="{{course.reviews}}">OMSCentral</a></td>
-                <td data-title="'Grades'" sortable="'title'"><a target="_blank" ng-href="{{course.grades}}">OMSCentral</a></td>
+                <td data-title="'Reviews'"><a target="_blank" ng-href="{{course.reviews}}">OMSCentral</a></td>
+                <td data-title="'Grades'"><a target="_blank" ng-href="{{course.grades}}">OMSCentral</a></td>
+                <td data-title="'Completed?'"><input type="checkbox" ng-model="course.completed" ng-change="ctrl.completedSelection(course.id)"></td>
             </tr>
         </table>
 

@@ -23,23 +23,25 @@
         title: string;
         /** @property {Semester} available From which semester is the course available */
         available: Semester;
-        /** @property {boolean } foundational Is the course foundational? */
+        /** @property {boolean} foundational Is the course foundational? */
         foundational: boolean;
-        /** @property {string } url GaTech website url of the course */
+        /** @property {string} url GaTech website url of the course */
         url: string;
-        /** @property {string[] } instructors List of the instructors/creators/main personell */
+        /** @property {string[]} instructors List of the instructors/creators/main personell */
         instructors: string[];
-        /** @property {string } reviews OMSCentral review page url */
+        /** @property {string} reviews OMSCentral review page url */
         reviews: string;
-        /** @property {string } grades OMSCentral review page url */
+        /** @property {string} grades OMSCentral review page url */
         grades: string;
+        /** @property {boolean} whether this course was already completed by the current user. This is stored in cookie, not in JSON! */
+        completed: boolean;
 
-        /** @property {boolean } current Is the course currently offered? */
+        /** @property {boolean} current Is the course currently offered? */
         get current(): boolean {
             return this.available <= CURRENT_SEMESTER && this.available != Semester.Future && this.available != Semester.Discontinued;
         }
 
-        /** @property {string } fullCourseNumber Subject+id, e.g. CS4242 */
+        /** @property {string} fullCourseNumber Subject+id, e.g. CS4242 */
         get fullCourseNumber(): string {
             return this.subject + this.id.toString();
         }
