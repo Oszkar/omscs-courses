@@ -24,7 +24,6 @@ var App;
             if (courses) {
                 this._courses = courses;
             }
-            this.parseCompletedCookies();
         }
         Object.defineProperty(CourseListController.prototype, "courses", {
             /** @property {Course[]} Courses The course data as an array */
@@ -41,6 +40,7 @@ var App;
                     counts: [],
                     dataset: this._courses
                 });
+                this.parseCompletedCookies();
             },
             enumerable: true,
             configurable: true
@@ -150,7 +150,11 @@ var App;
             var completed = App.Cookies.get("completed").split(',');
             var that = this;
             completed.forEach(function (item) {
-                that._completed.push(parseInt(item));
+                var intitem = parseInt(item);
+                that._completed.push(intitem);
+                var c = that.getById(intitem);
+                if (c)
+                    c.completed = true;
             });
         };
         /**

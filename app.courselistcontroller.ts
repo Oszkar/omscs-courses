@@ -32,8 +32,6 @@
             if (courses) {
                 this._courses = courses;
             }
-
-            this.parseCompletedCookies();
         }
 
         /** @property {Course[]} Courses The course data as an array */
@@ -52,6 +50,7 @@
                     counts: [],
                     dataset: this._courses
                 });
+            this.parseCompletedCookies();
         }
 
         /**
@@ -163,7 +162,10 @@
             var completed = Cookies.get("completed").split(',');
             var that = this;
             completed.forEach((item) => {
-                that._completed.push(parseInt(item));
+                var intitem = parseInt(item);
+                that._completed.push(intitem);
+                var c = that.getById(intitem);
+                if (c) c.completed = true;
             });
         }
 
@@ -176,5 +178,7 @@
             Cookies.delete("completed");
             Cookies.set("completed", this._completed.toString());
         }
+
+
     }
 }
