@@ -6,38 +6,23 @@
      */
     export class CourseMatrixController extends App.CourseListController {
         protected _specializations: Specialization[] = [];
+        protected d: any;
 
         /**
          * @constructor
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        constructor($scope: ng.IScope, NgTableParams, done: any) {
-            super($scope, NgTableParams);
-
-            // super loads course data, load spec data here
-            var that = this;
-            // TODO move json loading outside from here if I can figure out how
-            $.getJSON("specdata.json", (data) => {
-                data.forEach((item) => {
-                    // use the serializationhelper to properly deserialize from JSON
-                    // without this, we won't have the functions of Specialization, only the data that is in the JSON (no proper cast in JS)
-                    var s = CourseMatrixController.toInstance(new Specialization(), JSON.stringify(item));
-                    s.core = CourseMatrixController.toInstance(new masterGroup(), JSON.stringify(s.core));
-                    s.electives = CourseMatrixController.toInstance(new masterGroup(), JSON.stringify(s.electives));
-                    that._specializations.push(s);
-                });
-                // call apply as we updated the model from jquery which is not the prettiest solution around
-                if (done) done();
-            }).fail((jqxhr, textStatus, error) => {
-                var err = textStatus + ", " + error;
-                console.log("Request Failed: " + err);
-            });
+        constructor($scope: ng.IScope, NgTableParams, done: any, courses?: Course[]) {
+            super($scope, NgTableParams, courses);
         }
 
         /** @property {Specialization[]} specializations The specialization data as an array */
         get specializations(): Specialization[] {
             return this._specializations;
+        }
+        set specializations(s: Specialization[])  {
+            this._specializations = s;
         }
 
         /**

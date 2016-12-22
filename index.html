@@ -35,7 +35,7 @@
             <li><label ng-click="toshow='info'">Info/About</label></li>
         </ul>
     </div>
-    <div ng-controller="courselistcontroller as ctrl" ng-show="toshow=='courselist'">
+    <div ng-controller="courselistcontroller as ctrl" ng-show="toshow=='courselist'" id="coursectrl">
         <div class="config-top">
             Select availability:
             <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
@@ -71,7 +71,7 @@
         </div>
     </div>
 
-    <div ng-controller="coursematrixcontroller as ctrl" ng-show="toshow=='matrix'">
+    <div ng-controller="coursematrixcontroller as ctrl" ng-show="toshow=='matrix'" id="matrixctrl">
         <div class="config-top">
             Select availability:
             <select ng-options="item.id as item.text for item in ctrl.semesterOptions" ng-model="ctrl.currentSelection" required>
@@ -89,6 +89,7 @@
                 <td data-title="'Computing Systems'" ng-class="ctrl.getCourseType(course.id, 'Computing Systems')">{{ctrl.getCourseType(course.id, "Computing Systems")}}</td>
                 <td data-title="'Interactive Intelligence'" ng-class="ctrl.getCourseType(course.id, 'Interactive Intelligence')">{{ctrl.getCourseType(course.id, "Interactive Intelligence")}}</td>
                 <td data-title="'Machine Learning'" ng-class="ctrl.getCourseType(course.id, 'Machine Learning')">{{ctrl.getCourseType(course.id, "Machine Learning")}}</td>
+                <td data-title="'Completed?'"><input type="checkbox" ng-model="course.completed" ng-change="ctrl.completedSelection(course.id)"></td>
             </tr>
         </table>
 
@@ -107,7 +108,7 @@
         </div>
     </div>
 
-    <div ng-controller="speclistcontroller as ctrl" ng-show="toshow=='specializations'">
+    <div ng-controller="speclistcontroller as ctrl" ng-show="toshow=='specializations'" id="speclistctrl">
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
             <tbody ng-repeat="spec in $data">
                 <tr>
