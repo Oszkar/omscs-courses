@@ -17,7 +17,7 @@ var App;
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        function CourseMatrixController($scope, NgTableParams, done, courses) {
+        function CourseMatrixController($scope, NgTableParams, courses) {
             _super.call(this, $scope, NgTableParams, courses);
             this._specializations = [];
         }
@@ -28,6 +28,8 @@ var App;
             },
             set: function (s) {
                 this._specializations = s;
+                // we doesn't need to update the table here because the table actually shows the courses, the specialization data is used for coloring the table
+                // see CourseListController, the course update happens there
             },
             enumerable: true,
             configurable: true
@@ -38,7 +40,7 @@ var App;
          * @function
          * @param {number} courseId - Course id (without the subject)
          * @param {string} specTitle - Specialization title (that serves as an id)
-         * @returns {string} "core', 'elective" or empty string as a result of the lookup
+         * @returns {string} 'core', 'elective' or empty string as a result of the lookup
          */
         CourseMatrixController.prototype.getCourseType = function (courseId, specTitle) {
             var spec = this.getSpec(specTitle);

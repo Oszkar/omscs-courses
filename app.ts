@@ -9,12 +9,16 @@ module App {
     // start up an angular module and the controllers
     var app = angular.module('omscs-course-app', ['ngTable']);
     app.controller('courselistcontroller', ($scope, NgTableParams) => new App.CourseListController($scope, NgTableParams));
-    app.controller('coursematrixcontroller', ($scope, NgTableParams) => new App.CourseMatrixController($scope, NgTableParams, () => { $scope.$apply(); }));
+    app.controller('coursematrixcontroller', ($scope, NgTableParams) => new App.CourseMatrixController($scope, NgTableParams));
     app.controller('speclistcontroller', ($scope, NgTableParams) => new App.SpecListController($scope, NgTableParams));
 
     loadCourses();
     loadSpecializations();
 
+    /**
+     * Loads course json, deserializes json data and feeds the course objects into the 3 controllers
+     * @function
+     */
     function loadCourses() {
         $.getJSON("coursedata.json", (data) => {
             data.forEach((item) => {
@@ -24,12 +28,13 @@ module App {
                 course.completed = _completed.indexOf(parseInt(course.id.toString())) > -1;
                 _courses.push(course);
             });
-            // call apply as we updated the model from jquery which is not the prettiest solution around
-            //$scope.$apply(); // this will be called in matrixcontroller instead
         }).fail((jqxhr, textStatus, error) => {
             var err = textStatus + ", " + error;
             console.log("Request Failed: " + err);
-        }).done((jqxhr, textStatus, error) => {
+        }).done((json) => {
+            // yes, this is raping the Angular philosophy, we access the controller via the DOM
+            // for some reason unbeknownst to me, you cannot initialize the controllers from this callback
+            // so we initialize them above at the entry point and query them here once the json load is done and pass the serialized json to them
             var cscope: any = angular.element(document.getElementById("coursectrl")).scope();
             var mscope: any = angular.element(document.getElementById("matrixctrl")).scope();
             var sscope: any = angular.element(document.getElementById("speclistctrl")).scope();            
@@ -39,6 +44,10 @@ module App {
         });
     }
 
+    /**
+     * Loads specialization json, deserializes json data and feeds the course objects into the 2 controllers
+     * @function
+     */
     function loadSpecializations() {
         $.getJSON("specdata.json", (data) => {
             data.forEach((item) => {
@@ -52,7 +61,10 @@ module App {
         }).fail((jqxhr, textStatus, error) => {
             var err = textStatus + ", " + error;
             console.log("Request Failed: " + err);
-        }).done((jqxhr, textStatus, error) => {
+        }).done((json) => {
+            // yes, this is raping the Angular philosophy, we access the controller via the DOM
+            // for some reason unbeknownst to me, you cannot initialize the controllers from this callback
+            // so we initialize them above at the entry point and query them here once the json load is done and pass the serialized json to them
             var mscope: any = angular.element(document.getElementById("matrixctrl")).scope();
             var sscope: any = angular.element(document.getElementById("speclistctrl")).scope();
             mscope.ctrl.specializations = _specializations;

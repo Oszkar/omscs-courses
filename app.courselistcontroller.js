@@ -20,7 +20,7 @@ var App;
                 { id: App.Semester.Fall2016, text: "Current only" },
                 { id: App.Semester.Spring2017, text: "Current + Spring2017" }];
             this._$scope = $scope;
-            this.sdf = NgTableParams;
+            this._ngTableClass = NgTableParams;
             if (courses) {
                 this._courses = courses;
             }
@@ -34,7 +34,7 @@ var App;
             set: function (c) {
                 this._courses = c;
                 this.currentSelection = App.Semester.Fall2016;
-                this.tableParams = new this.sdf({
+                this.tableParams = new this._ngTableClass({
                     count: 80,
                     sorting: { available: "asc" }
                 }, {

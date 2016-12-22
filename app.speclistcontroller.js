@@ -9,11 +9,16 @@ var App;
     var SpecListController = (function (_super) {
         __extends(SpecListController, _super);
         function SpecListController($scope, NgTableParams, courses) {
-            _super.call(this, $scope, NgTableParams, null, courses);
+            _super.call(this, $scope, NgTableParams, courses);
             this._ngParam = NgTableParams;
         }
         Object.defineProperty(SpecListController.prototype, "specializations", {
-            /** @property {Specialization[]} specializations The specialization data as an array */
+            /**
+             * @property {Specialization[]} specializations The specialization data as an array
+             * The one thing this controller is different compared to its parent, CourseMatrixController, is that its table contains the specializations
+             * The parent lists the courses (just as the courselistcontroller) and colors them based on specializations, this lists the specializations themselves
+             * The rest of the difference is on the HTML side
+             */
             get: function () {
                 return this._specializations;
             },

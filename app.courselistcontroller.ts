@@ -8,7 +8,7 @@
         protected _courses: Course[] = [];
         protected _$scope: ng.IScope;
         protected _completed: number[] = [];
-        protected sdf: any;
+        protected _ngTableClass: any;
 
         /** @property {NgTableParams} tableParams The ng-table settings */
         public tableParams: any;
@@ -28,7 +28,7 @@
          */
         constructor($scope: ng.IScope, NgTableParams, courses?: Course[]) {
             this._$scope = $scope;
-            this.sdf = NgTableParams;
+            this._ngTableClass = NgTableParams;
             if (courses) {
                 this._courses = courses;
             }
@@ -43,7 +43,7 @@
         set courses(c: Course[]) {
             this._courses = c;
             this.currentSelection = Semester.Fall2016;
-            this.tableParams = new this.sdf(
+            this.tableParams = new this._ngTableClass(
                 {
                     count: 80, // initial page size
                     sorting: { available: "asc" }

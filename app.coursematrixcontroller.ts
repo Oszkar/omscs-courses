@@ -13,7 +13,7 @@
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        constructor($scope: ng.IScope, NgTableParams, done: any, courses?: Course[]) {
+        constructor($scope: ng.IScope, NgTableParams, courses?: Course[]) {
             super($scope, NgTableParams, courses);
         }
 
@@ -23,6 +23,8 @@
         }
         set specializations(s: Specialization[])  {
             this._specializations = s;
+            // we doesn't need to update the table here because the table actually shows the courses, the specialization data is used for coloring the table
+            // see CourseListController, the course update happens there
         }
 
         /**
@@ -31,7 +33,7 @@
          * @function
          * @param {number} courseId - Course id (without the subject)
          * @param {string} specTitle - Specialization title (that serves as an id)
-         * @returns {string} "core', 'elective" or empty string as a result of the lookup
+         * @returns {string} 'core', 'elective' or empty string as a result of the lookup
          */
         public getCourseType(courseId: number, specTitle: string): string {
             var spec = this.getSpec(specTitle);
