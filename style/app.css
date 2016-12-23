@@ -36,7 +36,12 @@ table .discontinued {
 }
 
 table .completed {
-    background-color: deeppink;
+    font-style: italic;
+    border: solid green 2px;
+}
+
+table .completedbox.completed {
+    background-color: green;
 }
 
 .config-top {
