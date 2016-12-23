@@ -1,13 +1,38 @@
 ﻿module App {
     export class Cookies {
-        private static _expirationDays: number = 180;
+        private static _expirationDays: number = 365;
+
+        /**
+         * Reads the cookie and parses the completed course IDs from it.
+         * @function
+         */
+        public static parseCompletedCookies(): number[] {
+            var completed = Cookies.get("completed").split(',');
+            var list: number[] = [];
+            if (completed && completed != [] && completed != ['']) {
+                completed.forEach(function (item) {
+                    var num = parseInt(item);
+                    if (!isNaN(num)) list.push(num);
+                });
+            }
+            return list;
+        }
+
+        /**
+         * Saves the passed completed course list IDs into the cookie (and erases the old value)
+         * @function
+         */
+        public static updateCompletedCookies(list: number[]) {
+            Cookies.delete("completed");
+            if(list && list != []) Cookies.set("completed", list.toString());
+        }
 
         /**
          * Returns the value of the requested cookie
          * @function
          * @param {string} name the name of the cookie you are looking for
          */
-        public static get(name: string) {
+        private static get(name: string) {
             let ca: Array<string> = document.cookie.split(/;\s/);
             let cookieName = name + "=";
             let c: string;
@@ -25,7 +50,7 @@
          * @function
          * @param {string} name the name of the cookie to delete
          */
-        public static delete(name) {
+        private static delete(name) {
             Cookies.set(name, "");
         }
 
@@ -35,11 +60,11 @@
          * @param {string} name the name of the cookie you are setting
          * @param {string} value the value of the cookie
          */
-        public static set(name: string, value: string) {
+        private static set(name: string, value: string) {
             let d: Date = new Date();
             d.setTime(d.getTime() + Cookies._expirationDays * 24 * 60 * 60 * 1000);
             let expires: string = "expires=" + d.toUTCString();
             document.cookie = name + "=" + value + "; " + expires;
-        }
+        }    
     }
 }

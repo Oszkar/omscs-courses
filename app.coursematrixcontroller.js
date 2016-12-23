@@ -19,7 +19,6 @@ var App;
          */
         function CourseMatrixController($scope, NgTableParams, courses) {
             _super.call(this, $scope, NgTableParams, courses);
-            this._specializations = [];
         }
         Object.defineProperty(CourseMatrixController.prototype, "specializations", {
             /** @property {Specialization[]} specializations The specialization data as an array */

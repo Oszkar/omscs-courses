@@ -11,6 +11,8 @@
         minCourses: number;
         /** @property {number[]} courseList Array of course ids that are within this group */
         courseList: number[];
+        /** @property {boolean} whether this group was already completed by the current user. This is stored in cookie, not in JSON! */
+        completed: boolean;
     }
 
     /**

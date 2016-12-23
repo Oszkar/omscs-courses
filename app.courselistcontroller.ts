@@ -6,8 +6,8 @@
      */
     export class CourseListController {
         protected _courses: Course[] = [];
+        protected _specializations: Specialization[] = [];
         protected _$scope: ng.IScope;
-        protected _completed: number[] = [];
         protected _ngTableClass: any;
 
         /** @property {NgTableParams} tableParams The ng-table settings */
@@ -50,7 +50,6 @@
                     counts: [],
                     dataset: this._courses
                 });
-            this.parseCompletedCookies();
         }
 
         /**
@@ -67,23 +66,6 @@
             });
 
             return found;
-        }
-
-        /**
-         * Called when the completed checkbox is changed. Updates the cookies and the internal completed list
-         * @function
-         * @param {number} id - Course id (without the subject)
-         */
-        public completedSelection(id: any): void {
-            // force it to be number
-            var idNum = parseInt(id.toString());
-            var idx = this._completed.indexOf(idNum);
-            if (idx > -1) {
-                this._completed.splice(idx, 1);
-            } else {
-                this._completed.push(idNum);
-            }
-            this.updateCompletedCookies();
         }
 
         /**
@@ -153,32 +135,5 @@
                     return "Uknown availability property"
             }
         }
-
-        /**
-         * Reads the cookie and parses the completed courses from it
-         * @function
-         */
-        private parseCompletedCookies() {
-            var completed = Cookies.get("completed").split(',');
-            var that = this;
-            completed.forEach((item) => {
-                var intitem = parseInt(item);
-                that._completed.push(intitem);
-                var c = that.getById(intitem);
-                if (c) c.completed = true;
-            });
-        }
-
-        /**
-         * Saves the current completed course list into the cookie (and erases the old value)
-         * @function
-         */
-        private updateCompletedCookies() {
-            console.log(this._completed);
-            Cookies.delete("completed");
-            Cookies.set("completed", this._completed.toString());
-        }
-
-
     }
 }
