@@ -4,6 +4,31 @@ var App;
         function Cookies() {
         }
         /**
+         * Reads the cookie and parses the completed course IDs from it.
+         * @function
+         */
+        Cookies.parseCompletedCookies = function () {
+            var completed = Cookies.get("completed").split(',');
+            var list = [];
+            if (completed && completed != [] && completed != ['']) {
+                completed.forEach(function (item) {
+                    var num = parseInt(item);
+                    if (!isNaN(num))
+                        list.push(num);
+                });
+            }
+            return list;
+        };
+        /**
+         * Saves the passed completed course list IDs into the cookie (and erases the old value)
+         * @function
+         */
+        Cookies.updateCompletedCookies = function (list) {
+            Cookies.delete("completed");
+            if (list && list != [])
+                Cookies.set("completed", list.toString());
+        };
+        /**
          * Returns the value of the requested cookie
          * @function
          * @param {string} name the name of the cookie you are looking for
@@ -40,7 +65,7 @@ var App;
             var expires = "expires=" + d.toUTCString();
             document.cookie = name + "=" + value + "; " + expires;
         };
-        Cookies._expirationDays = 180;
+        Cookies._expirationDays = 365;
         return Cookies;
     })();
     App.Cookies = Cookies;

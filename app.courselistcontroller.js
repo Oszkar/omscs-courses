@@ -13,7 +13,7 @@ var App;
          */
         function CourseListController($scope, NgTableParams, courses) {
             this._courses = [];
-            this._completed = [];
+            this._specializations = [];
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
@@ -40,7 +40,6 @@ var App;
                     counts: [],
                     dataset: this._courses
                 });
-                this.parseCompletedCookies();
             },
             enumerable: true,
             configurable: true
@@ -58,23 +57,6 @@ var App;
                 }
             });
             return found;
-        };
-        /**
-         * Called when the completed checkbox is changed. Updates the cookies and the internal completed list
-         * @function
-         * @param {number} id - Course id (without the subject)
-         */
-        CourseListController.prototype.completedSelection = function (id) {
-            // force it to be number
-            var idNum = parseInt(id.toString());
-            var idx = this._completed.indexOf(idNum);
-            if (idx > -1) {
-                this._completed.splice(idx, 1);
-            }
-            else {
-                this._completed.push(idNum);
-            }
-            this.updateCompletedCookies();
         };
         /**
          * @function
@@ -141,30 +123,6 @@ var App;
                 default:
                     return "Uknown availability property";
             }
-        };
-        /**
-         * Reads the cookie and parses the completed courses from it
-         * @function
-         */
-        CourseListController.prototype.parseCompletedCookies = function () {
-            var completed = App.Cookies.get("completed").split(',');
-            var that = this;
-            completed.forEach(function (item) {
-                var intitem = parseInt(item);
-                that._completed.push(intitem);
-                var c = that.getById(intitem);
-                if (c)
-                    c.completed = true;
-            });
-        };
-        /**
-         * Saves the current completed course list into the cookie (and erases the old value)
-         * @function
-         */
-        CourseListController.prototype.updateCompletedCookies = function () {
-            console.log(this._completed);
-            App.Cookies.delete("completed");
-            App.Cookies.set("completed", this._completed.toString());
         };
         return CourseListController;
     })();

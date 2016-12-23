@@ -9,6 +9,7 @@
     <script src="libs/ng-table/ng-table.js"></script>
     <script src="cookies.js"></script>
     <script src="Cookies.js"></script>
+    <script src="serialization.js"></script>
     <script src="course.js"></script>
     <script src="specialization.js"></script>
     <script src="app.courselistcontroller.js"></script>
@@ -55,7 +56,7 @@
                 <td data-title="'Instructor(s)'"><label ng-repeat="i in course.instructors">{{i}}{{$last ? '' : ', '}}</label></td>
                 <td data-title="'Reviews'"><a target="_blank" ng-href="{{course.reviews}}" ng-show="course.reviews != ''">OMSCentral</a></td>
                 <td data-title="'Grades'"><a target="_blank" ng-href="{{course.grades}}" ng-show="course.reviews != ''">OMSCentral</a></td>
-                <td data-title="'Completed?'" class="completedbox" ng-class="{completed: course.completed}"><input type="checkbox" ng-model="course.completed" ng-change="ctrl.completedSelection(course.id)"></td>
+                <td data-title="'Completed?'" class="completedbox" ng-class="{completed: course.completed}"><input type="checkbox" ng-model="course.completed" ng-change="omsapp.completedSelection(course.id)"></td>
             </tr>
         </table>
 
@@ -90,7 +91,7 @@
                 <td data-title="'Computing Systems'" ng-class="ctrl.getCourseType(course.id, 'Computing Systems')">{{ctrl.getCourseType(course.id, "Computing Systems")}}</td>
                 <td data-title="'Interactive Intelligence'" ng-class="ctrl.getCourseType(course.id, 'Interactive Intelligence')">{{ctrl.getCourseType(course.id, "Interactive Intelligence")}}</td>
                 <td data-title="'Machine Learning'" ng-class="ctrl.getCourseType(course.id, 'Machine Learning')">{{ctrl.getCourseType(course.id, "Machine Learning")}}</td>
-                <td data-title="'Completed?'" class="completedbox" ng-class="{completed: course.completed}"><input type="checkbox" ng-model="course.completed" ng-change="ctrl.completedSelection(course.id)"></td>
+                <td data-title="'Completed?'" class="completedbox" ng-class="{completed: course.completed}"><input type="checkbox" ng-model="course.completed" ng-change="omsapp.completedSelection(course.id)"></td>
             </tr>
         </table>
 
@@ -116,27 +117,33 @@
                 <tr>
                     <td rowspan="{{spec.numCourses}}" data-title="'Title'"><b>{{spec.title}}</b></td>
                     <td rowspan="{{spec.core.numCourses}}" data-title="'Core/Elective'"><b>Core courses</b><br/><i>Pick at least: {{spec.core.minCourses}}</i></td>
-                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'">{{spec.core.groups[0].groupName}}<br /><i>Pick at least: {{spec.core.groups[0].minCourses}}</td>
+                    <td rowspan="{{spec.core.groups[0].courseList.length}}" data-title="'Course group'" ng-class="{completed: spec.core.groups[0].completed, completedbox: spec.core.groups[0].completed}">{{spec.core.groups[0].groupName}}<br /><i>Pick at least: {{spec.core.groups[0].minCourses}}</i></td>
                     <td data-title="'Course'" ng-init="a = ctrl.getById(spec.core.groups[0].courseList[0])" ng-class="{regular: !a.foundational, foundational: a.foundational, notavailable: !a.current, discontinued: a.available == -1, completed: a.completed}"><a target="_blank" ng-href="{{a.url}}">{{a.id}} - {{a.title}}</a></td>
+                    <td data-title="'Completed?'" class="completedbox" ng-class="{completed: a.completed}"><input type="checkbox" ng-model="a.completed" ng-change="omsapp.completedSelection(a.id)"></td>
                 </tr>
                 <tr ng-repeat-start="group in spec.core.groups" ng-show='$index > 0'>
-                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}<br /><i>Pick at least: {{group.minCourses}}</td>
+                    <td rowspan="{{group.courseList.length}}" ng-class="{completed: group.completed, completedbox: group.completed}">{{group.groupName}}<br /><i>Pick at least: {{group.minCourses}}</i></td>
                     <td ng-init="b = ctrl.getById(group.courseList[0])" ng-class="{regular: !b.foundational, foundational: b.foundational, notavailable: !b.current, discontinued: b.available == -1, completed: b.completed}"><a target="_blank" ng-href="{{b.url}}">{{b.id}} - {{b.title}}</a></td>
+                    <td data-title="'Completed?'" class="completedbox" ng-class="{completed: b.completed}"><input type="checkbox" ng-model="b.completed" ng-change="omsapp.completedSelection(b.id)"></td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-init="c = ctrl.getById(course)" ng-show='$index> 0' ng-repeat-end>
                     <td ng-class="{regular: !c.foundational, foundational: c.foundational, notavailable: !c.current, discontinued: c.available == -1, completed: c.completed}"><a target="_blank" ng-href="{{c.url}}">{{c.id}} - {{c.title}}</a></td>
+                    <td data-title="'Completed?'" class="completedbox" ng-class="{completed: c.completed}"><input type="checkbox" ng-model="c.completed" ng-change="omsapp.completedSelection(c.id)"></td>
                 </tr>
                 <tr>
                     <td rowspan="{{spec.electives.numCourses}}"><b>Electives</b><br /><i>Pick at least: {{spec.electives.minCourses}}</i></td>
-                    <td rowspan="{{spec.electives.groups[0].courseList.length}}">{{spec.electives.groups[0].groupName}}<br /><i>Pick at least: {{spec.electives.groups[0].minCourses}}</td>
+                    <td rowspan="{{spec.electives.groups[0].courseList.length}}" ng-class="{completed: spec.electives.groups[0].completed, completedbox: spec.electives.groups[0].completed}">{{spec.electives.groups[0].groupName}}<br /><i>Pick at least: {{spec.electives.groups[0].minCourses}}</i></td>
                     <td ng-init="d = ctrl.getById(spec.electives.groups[0].courseList[0])" ng-class="{regular: !d.foundational, foundational: d.foundational, notavailable: !d.current, discontinued: d.available == -1, completed: d.completed}"><a target="_blank" ng-href="{{d.url}}">{{d.id}} - {{d.title}}</a></td>
+                    <td data-title="'Completed?'" class="completedbox" ng-class="{completed: d.completed}"><input type="checkbox" ng-model="d.completed" ng-change="omsapp.completedSelection(d.id)"></td>
                 </tr>
                 <tr ng-repeat-start="group in spec.electives.groups" ng-show='$index > 0'>
-                    <td rowspan="{{group.courseList.length}}">{{group.groupName}}<br /><i>Pick at least: {{group.minCourses}}</i></td>
+                    <td rowspan="{{group.courseList.length}}" ng-class="{completed: group.completed, completedbox: group.completed}">{{group.groupName}}<br /><i>Pick at least: {{group.minCourses}}</i></td>
                     <td ng-init="e = ctrl.getById(group.courseList[0])" ng-class="{regular: !e.foundational, foundational: e.foundational, notavailable: !e.current, discontinued: e.available == -1, completed: e.completed}"><a target="_blank" ng-href="{{e.url}}">{{e.id}} - {{e.title}}</a></td>
+                    <td data-title="'Completed?'" class="completedbox" ng-class="{completed: e.completed}"><input type="checkbox" ng-model="e.completed" ng-change="omsapp.completedSelection(e.id)"></td>
                 </tr>
                 <tr ng-repeat='course in group.courseList' ng-init="f = ctrl.getById(course)" ng-show='$index > 0' ng-repeat-end>
                     <td ng-class="{regular: !f.foundational, foundational: f.foundational, notavailable: !f.current, discontinued: f.available == -1, completed: f.completed}"><a target="_blank" ng-href="{{f.url}}">{{f.id}} - {{f.title}}</a></td>
+                    <td data-title="'Completed?'" class="completedbox" ng-class="{completed: f.completed}"><input type="checkbox" ng-model="f.completed" ng-change="omsapp.completedSelection(f.id)"></td>
                 </tr>
             </tbody>
         </table>
