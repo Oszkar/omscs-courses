@@ -11,41 +11,36 @@ var App;
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        function CourseListController($scope, NgTableParams) {
+        function CourseListController($scope, NgTableParams, courses) {
             this._courses = [];
+            this._completed = [];
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
                 { id: App.Semester.Fall2016, text: "Current only" },
                 { id: App.Semester.Spring2017, text: "Current + Spring2017" }];
             this._$scope = $scope;
-            var that = this;
-            // TODO move json loading outside from here if I can figure out how
-            $.getJSON("coursedata.json", function (data) {
-                data.forEach(function (item) {
-                    // use the serializationhelper to properly deserialize from JSON
-                    // without this, we won't have the functions of Course, only the data that is in the JSON (no proper cast in JS)
-                    that._courses.push(CourseListController.toInstance(new App.Course(), JSON.stringify(item)));
-                });
-                that.currentSelection = App.Semester.Fall2016;
-                that.tableParams = new NgTableParams({
-                    count: 80,
-                    sorting: { available: "asc" }
-                }, {
-                    counts: [],
-                    dataset: that._courses
-                });
-                // call apply as we updated the model from jquery which is not the prettiest solution around
-                //$scope.$apply(); // this will be called in matrixcontroller instead
-            }).fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ", " + error;
-                console.log("Request Failed: " + err);
-            });
+            this._ngTableClass = NgTableParams;
+            if (courses) {
+                this._courses = courses;
+            }
         }
         Object.defineProperty(CourseListController.prototype, "courses", {
             /** @property {Course[]} Courses The course data as an array */
             get: function () {
                 return this._courses;
+            },
+            set: function (c) {
+                this._courses = c;
+                this.currentSelection = App.Semester.Fall2016;
+                this.tableParams = new this._ngTableClass({
+                    count: 80,
+                    sorting: { available: "asc" }
+                }, {
+                    counts: [],
+                    dataset: this._courses
+                });
+                this.parseCompletedCookies();
             },
             enumerable: true,
             configurable: true
@@ -63,6 +58,23 @@ var App;
                 }
             });
             return found;
+        };
+        /**
+         * Called when the completed checkbox is changed. Updates the cookies and the internal completed list
+         * @function
+         * @param {number} id - Course id (without the subject)
+         */
+        CourseListController.prototype.completedSelection = function (id) {
+            // force it to be number
+            var idNum = parseInt(id.toString());
+            var idx = this._completed.indexOf(idNum);
+            if (idx > -1) {
+                this._completed.splice(idx, 1);
+            }
+            else {
+                this._completed.push(idNum);
+            }
+            this.updateCompletedCookies();
         };
         /**
          * @function
@@ -131,24 +143,28 @@ var App;
             }
         };
         /**
-         * SerializationHelper
-         * helps to properly deserialize JSON data so that the deserialized object will have functions also not only the data in the JSON
+         * Reads the cookie and parses the completed courses from it
          * @function
-         * @param {T} obj - The object to deserialize into
-         * @param {string} json - The json
-         * @returns {T} The object filled with the json data
          */
-        CourseListController.toInstance = function (obj, json) {
-            var jsonObj = JSON.parse(json);
-            if (typeof obj["fromJSON"] === "function") {
-                obj["fromJSON"](jsonObj);
-            }
-            else {
-                for (var propName in jsonObj) {
-                    obj[propName] = jsonObj[propName];
-                }
-            }
-            return obj;
+        CourseListController.prototype.parseCompletedCookies = function () {
+            var completed = App.Cookies.get("completed").split(',');
+            var that = this;
+            completed.forEach(function (item) {
+                var intitem = parseInt(item);
+                that._completed.push(intitem);
+                var c = that.getById(intitem);
+                if (c)
+                    c.completed = true;
+            });
+        };
+        /**
+         * Saves the current completed course list into the cookie (and erases the old value)
+         * @function
+         */
+        CourseListController.prototype.updateCompletedCookies = function () {
+            console.log(this._completed);
+            App.Cookies.delete("completed");
+            App.Cookies.set("completed", this._completed.toString());
         };
         return CourseListController;
     })();

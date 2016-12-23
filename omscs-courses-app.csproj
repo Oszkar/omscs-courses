@@ -34,6 +34,7 @@
     <TypeScriptCompile Include="app.coursematrixcontroller.ts" />
     <TypeScriptCompile Include="app.speclistcontroller.ts" />
     <TypeScriptCompile Include="app.ts" />
+    <TypeScriptCompile Include="cookies.ts" />
     <TypeScriptCompile Include="course.ts" />
     <TypeScriptCompile Include="libs\angularjs\angular.d.ts" />
     <TypeScriptCompile Include="libs\jquery\jquery.d.ts" />

@@ -17,33 +17,19 @@ var App;
          * @param {ng.IScope} $scope - AngularJS scope
          * @param {NgTableParams} NgTableParams - ng-table module
          */
-        function CourseMatrixController($scope, NgTableParams, done) {
-            _super.call(this, $scope, NgTableParams);
+        function CourseMatrixController($scope, NgTableParams, courses) {
+            _super.call(this, $scope, NgTableParams, courses);
             this._specializations = [];
-            // super loads course data, load spec data here
-            var that = this;
-            // TODO move json loading outside from here if I can figure out how
-            $.getJSON("specdata.json", function (data) {
-                data.forEach(function (item) {
-                    // use the serializationhelper to properly deserialize from JSON
-                    // without this, we won't have the functions of Specialization, only the data that is in the JSON (no proper cast in JS)
-                    var s = CourseMatrixController.toInstance(new App.Specialization(), JSON.stringify(item));
-                    s.core = CourseMatrixController.toInstance(new App.masterGroup(), JSON.stringify(s.core));
-                    s.electives = CourseMatrixController.toInstance(new App.masterGroup(), JSON.stringify(s.electives));
-                    that._specializations.push(s);
-                });
-                // call apply as we updated the model from jquery which is not the prettiest solution around
-                if (done)
-                    done();
-            }).fail(function (jqxhr, textStatus, error) {
-                var err = textStatus + ", " + error;
-                console.log("Request Failed: " + err);
-            });
         }
         Object.defineProperty(CourseMatrixController.prototype, "specializations", {
             /** @property {Specialization[]} specializations The specialization data as an array */
             get: function () {
                 return this._specializations;
+            },
+            set: function (s) {
+                this._specializations = s;
+                // we doesn't need to update the table here because the table actually shows the courses, the specialization data is used for coloring the table
+                // see CourseListController, the course update happens there
             },
             enumerable: true,
             configurable: true
@@ -54,7 +40,7 @@ var App;
          * @function
          * @param {number} courseId - Course id (without the subject)
          * @param {string} specTitle - Specialization title (that serves as an id)
-         * @returns {string} "core', 'elective" or empty string as a result of the lookup
+         * @returns {string} 'core', 'elective' or empty string as a result of the lookup
          */
         CourseMatrixController.prototype.getCourseType = function (courseId, specTitle) {
             var spec = this.getSpec(specTitle);
