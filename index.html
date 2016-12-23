@@ -52,8 +52,8 @@
                 <td data-title="'Title'" sortable="'title'"><a target="_blank" ng-href="{{course.url}}">{{course.title}}</a></td>
                 <td data-title="'Available from'" sortable="'available'">{{ctrl.availabilityText(course.available)}}</td>
                 <td data-title="'Instructor(s)'"><label ng-repeat="i in course.instructors">{{i}}{{$last ? '' : ', '}}</label></td>
-                <td data-title="'Reviews'"><a target="_blank" ng-href="{{course.reviews}}" ng-show="{{course.reviews}}">OMSCentral</a></td>
-                <td data-title="'Grades'"><a target="_blank" ng-href="{{course.grades}}" ng-show="{{course.reviews}}">OMSCentral</a></td>
+                <td data-title="'Reviews'"><a target="_blank" ng-href="{{course.reviews}}" ng-show="course.reviews != ''">OMSCentral</a></td>
+                <td data-title="'Grades'"><a target="_blank" ng-href="{{course.grades}}" ng-show="course.reviews != ''">OMSCentral</a></td>
                 <td data-title="'Completed?'" class="completedbox" ng-class="{completed: course.completed}"><input type="checkbox" ng-model="course.completed" ng-change="ctrl.completedSelection(course.id)"></td>
             </tr>
         </table>
