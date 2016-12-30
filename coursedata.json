@@ -351,6 +351,28 @@
     "grades": "https://omscentral.com/grades/6750"
   },
   {
+    "id": "8803007",
+    "subject": "CS",
+    "title": "Special Topics: Cyber-Physical Systems Security",
+    "available": 4,
+    "foundational": false,
+    "url": "https://www.omscs.gatech.edu/cs-8803-special-topics-cyber-physical-systems",
+    "instructors": [ "Raheem Beyah" ],
+    "reviews": "https://omscentral.com/reviews/8803-007",
+    "grades": "https://omscentral.com/grades/8803-007"
+  },
+  {
+    "id": "8803008",
+    "subject": "CS",
+    "title": "Compilers - Theory and Practice",
+    "available": 5,
+    "foundational": false,
+    "url": "http://omscs.gatech.edu/cs-8803-o08-compilers-theory-and-practice",
+    "instructors": [ "Santosh Pande" ],
+    "reviews": "",
+    "grades": ""
+  },
+  {
     "id": "6465",
     "subject": "CS",
     "title": "Computational Journalism",
