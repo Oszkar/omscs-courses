@@ -17,8 +17,8 @@ var App;
             // these will be the options in the semester selector dropdown that we will be populating with angular from here
             // id will be a number on the JS side
             this.semesterOptions = [{ id: App.Semester.Future, text: "All courses" },
-                { id: App.Semester.Fall2016, text: "Current only" },
-                { id: App.Semester.Spring2017, text: "Current + Spring2017" }];
+                { id: App.Semester.Spring2017, text: "Current only" },
+                { id: App.Semester.Fall2017, text: "Current + Fall2017" }];
             this._$scope = $scope;
             this._ngTableClass = NgTableParams;
             if (courses) {
@@ -32,7 +32,7 @@ var App;
             },
             set: function (c) {
                 this._courses = c;
-                this.currentSelection = App.Semester.Fall2016;
+                this.currentSelection = App.Semester.Spring2017;
                 this.tableParams = new this._ngTableClass({
                     count: 80,
                     sorting: { available: "asc" }
