@@ -111,6 +111,8 @@
     </div>
 
     <div ng-controller="speclistcontroller as ctrl" ng-show="toshow=='specializations'" id="speclistctrl">
+        <p><small>Sorry if the green table borders look weird in some cases, it is a known bug in Chrome for years now, they don't seem to want to fix it.</small></p>
+
         <table ng-table="ctrl.tableParams" class="table table-condensed table-bordered table-striped table-courselist">
             <tbody ng-repeat="spec in $data">
                 <!-- TODO I could solve this only by handling the first ([0]) element separately because of rowspans. Might need to investigate more --> 
