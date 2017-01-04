@@ -13,12 +13,14 @@ var App;
         Semester[Semester["Fall2016"] = 4] = "Fall2016";
         Semester[Semester["Spring2017"] = 5] = "Spring2017";
         Semester[Semester["Fall2017"] = 6] = "Fall2017";
+        Semester[Semester["Spring2018"] = 7] = "Spring2018";
+        Semester[Semester["Fall2018"] = 8] = "Fall2018";
     })(App.Semester || (App.Semester = {}));
     var Semester = App.Semester;
     ; // future and before are 0 amd 1 so that we can add stuff at the end later
     // TODO update this every semester :)
     /** @constant {Semester} The currently ongoing semester */
-    App.CURRENT_SEMESTER = Semester.Fall2016;
+    App.CURRENT_SEMESTER = Semester.Spring2017;
     /**
      * Class that represents a single course
      * @class

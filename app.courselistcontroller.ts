@@ -18,8 +18,8 @@
         // these will be the options in the semester selector dropdown that we will be populating with angular from here
         // id will be a number on the JS side
         public semesterOptions = [{ id: Semester.Future, text: "All courses" },
-                                  { id: Semester.Fall2016, text: "Current only" },
-                                  { id: Semester.Spring2017, text: "Current + Spring2017" }]
+                                  { id: Semester.Spring2017, text: "Current only" },
+                                  { id: Semester.Fall2017, text: "Current + Fall2017" }]
 
         /**
          * @constructor
@@ -40,7 +40,7 @@
         }
         set courses(c: Course[]) {
             this._courses = c;
-            this.currentSelection = Semester.Fall2016;
+            this.currentSelection = Semester.Spring2017;
             this.tableParams = new this._ngTableClass(
                 {
                     count: 80, // initial page size
